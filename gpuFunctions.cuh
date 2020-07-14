@@ -135,23 +135,72 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 }
 
 
-//void processCE(int deviceId, int totalChange, changeEdge* allChange_device, RT_Vertex* SSSP, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device)
-//{
-//	cudaError_t cudaStatus;
-//	double inf = std::numeric_limits<double>::infinity();
-//	int* Edgedone;
-//	cudaMallocManaged(&Edgedone, (totalChange) * sizeof(int));
-//	if (cudaStatus != cudaSuccess) {
-//		fprintf(stderr, "cudaMalloc failed at SSSP structure");
-//	}
-//	cudaMemPrefetchAsync(Edgedone, (totalChange) * sizeof(int), deviceId);
-//	//initialize Edgedone array with -1
-//	initializeEdgedone << <(totalChange / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (Edgedone, totalChange);
-//	insertDeleteEdge << < (totalChange / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChange, inf, InEdgesListFull_device, OutEdgesListFull_device, InEdgesListTracker_device, OutEdgesListTracker_device);
-//	cudaDeviceSynchronize();
-//	
-//	cudaFree(Edgedone);
-//}
+//1. This method tries to connect the disconnected nodes(disconnected by deletion) with other nodes using the original graph
+//2. This method propagates the dist update till the leaf nodes
+__global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, double inf, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device, int* change_d)
+{
+	int index = threadIdx.x + blockIdx.x * blockDim.x;
+	if (index < nodes)
+	{
+
+		//If i is updated--update its neighbors as required
+		if (SSSP[index].Update)
+		{
+			SSSP[index].Update = false;
+
+			//For incoming edges of the affected nodes
+			for (int j = InEdgesListTracker_device[index]; j < InEdgesListTracker_device[index + 1]; j++)
+			{
+				int myn = InEdgesListFull_device[j].col;
+				int mywt = InEdgesListFull_device[j].wt;
+
+				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
+				if(SSSP[myn].Parent == index) { continue; } //avoiding loop formation
+
+				if (SSSP[index].Dist > SSSP[myn].Dist + mywt) //update both cases where parent of myn == index or parent of myn != index
+				{
+					SSSP[index].Dist = SSSP[myn].Dist + mywt;
+					SSSP[index].Update = true;
+					SSSP[index].Parent = myn;
+					SSSP[index].EDGwt = mywt;
+					change_d[0] = 1;
+					continue;
+				}
+			}
+			for (int j = OutEdgesListTracker_device[index]; j < OutEdgesListTracker_device[index + 1]; j++)
+			{
+				int myn = OutEdgesListFull_device[j].col;
+				int mywt = OutEdgesListFull_device[j].wt;
+				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
+				//if index node is the parent node of myn, dist of myn is updated even if it increases the dist of myn
+				if (SSSP[myn].Parent == index)
+				{
+					if (SSSP[index].Dist >= inf) //in case of disconnected index node due to deletion
+					{
+						SSSP[myn].Dist = inf;
+					}
+					else { //when the dist of index increases due to reconnecting the disconnected subgraphs
+						SSSP[myn].Dist = SSSP[index].Dist + mywt;
+					}
+					SSSP[myn].Update = true;
+					//SSSP[myn].Parent = index; //parent of myn is already the index node
+					SSSP[myn].EDGwt = mywt; //helps to avoid sync error. might be removed
+					change_d[0] = 1;
+					continue;
+				}
+				if (SSSP[myn].Dist > SSSP[index].Dist + mywt) //update both cases where parent of myn == index or parent of myn != index
+				{
+					SSSP[myn].Dist = SSSP[index].Dist + mywt;
+					SSSP[myn].Update = true;
+					SSSP[myn].Parent = index;
+					SSSP[myn].EDGwt = mywt;
+					change_d[0] = 1;
+					//continue;
+				}
+			}
+		}
+	}
+}
 
 
 #endif
