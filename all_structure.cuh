@@ -122,7 +122,7 @@ struct RT_Vertex
  Format of change edges file: node1 node2 edge_weight insert_status
  insert_status = 1 for insertion. insert_status = 0 for deletion.
  */
-void readin_changes(char* myfile, vector<changeEdge>& allChange)
+void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtList>& InEdgesList, vector<ColWtList>& OutEdgesList)
 {
 	FILE* graph_file;
 	char line[128];
@@ -137,6 +137,19 @@ void readin_changes(char* myfile, vector<changeEdge>& allChange)
 		cE.edge_wt = wt;
 		cE.inst = inst_status;
 		allChange.push_back(cE);
+
+		//add change edges with inst status = 1 to Inedge and OutEdge list
+		if (inst_status == 1)
+		{
+			ColWt colwt;
+			colwt.col = n1;
+			colwt.wt = wt;
+			InEdgesList.at(n2).push_back(colwt);
+			ColWt colwt2;
+			colwt2.col = n2;
+			colwt2.wt = wt;
+			OutEdgesList.at(n1).push_back(colwt2);
+		}
 	}
 	fclose(graph_file);
 	return;
@@ -186,7 +199,7 @@ void read_SSSP(RT_Vertex* SSSP, char* myfile, int* nodes)
 read_graphEdges reads the original graph file
 accepted data format: node1 node2 edge_weight
 */
-void read_graphEdges(vector<ColWtList>& InEdgesList, int* InEdgesListTracker, vector<ColWt>& InEdgesListFull, char* myfile, int* nodes, vector<ColWtList>& OutEdgesList, int* OutEdgesListTracker, vector<ColWt>& OutEdgesListFull)
+void read_graphEdges(vector<ColWtList>& InEdgesList, /*int* InEdgesListTracker, vector<ColWt>& InEdgesListFull,*/ char* myfile, int* nodes, vector<ColWtList>& OutEdgesList/*, int* OutEdgesListTracker, vector<ColWt>& OutEdgesListFull*/)
 {
 	FILE* graph_file;
 	char line[128];
@@ -208,15 +221,15 @@ void read_graphEdges(vector<ColWtList>& InEdgesList, int* InEdgesListTracker, ve
 
 	}
 	fclose(graph_file);
-	InEdgesListTracker[0] = 0; //start pointer points to the first index of InEdgesList
-	OutEdgesListTracker[0] = 0; //start pointer points to the first index of OutEdgesList
-	for (int i = 0; i < *nodes; i++)
-	{
-		InEdgesListTracker[i + 1] = InEdgesListTracker[i] + InEdgesList.at(i).size();
-		InEdgesListFull.insert(std::end(InEdgesListFull), std::begin(InEdgesList.at(i)), std::end(InEdgesList.at(i)));
-		OutEdgesListTracker[i + 1] = OutEdgesListTracker[i] + OutEdgesList.at(i).size();
-		OutEdgesListFull.insert(std::end(OutEdgesListFull), std::begin(OutEdgesList.at(i)), std::end(OutEdgesList.at(i)));
-	}
+	//InEdgesListTracker[0] = 0; //start pointer points to the first index of InEdgesList
+	//OutEdgesListTracker[0] = 0; //start pointer points to the first index of OutEdgesList
+	//for (int i = 0; i < *nodes; i++)
+	//{
+	//	InEdgesListTracker[i + 1] = InEdgesListTracker[i] + InEdgesList.at(i).size();
+	//	InEdgesListFull.insert(std::end(InEdgesListFull), std::begin(InEdgesList.at(i)), std::end(InEdgesList.at(i)));
+	//	OutEdgesListTracker[i + 1] = OutEdgesListTracker[i] + OutEdgesList.at(i).size();
+	//	OutEdgesListFull.insert(std::end(OutEdgesListFull), std::begin(OutEdgesList.at(i)), std::end(OutEdgesList.at(i)));
+	//}
 
 	return;
 }

@@ -45,10 +45,23 @@ int main(int argc, char* argv[]) {
 	OutEdgesList.resize(nodes);
 	int* OutEdgesListTracker = (int*)malloc((nodes + 1) * sizeof(int));//we take nodes +1 to store the start ptr of the first row 
 	vector<ColWt> OutEdgesListFull;
-	read_graphEdges(InEdgesList, InEdgesListTracker, InEdgesListFull, argv[1], &nodes,  OutEdgesList, OutEdgesListTracker, OutEdgesListFull);
+	read_graphEdges(InEdgesList, argv[1], &nodes,  OutEdgesList);
 	//Reading change edges input
 	vector<changeEdge> allChange;
-	readin_changes(argv[5], allChange);
+	readin_changes(argv[5], allChange, InEdgesList, OutEdgesList);
+
+	//create 1D array from 2D to fit it in GPU
+	InEdgesListTracker[0] = 0; //start pointer points to the first index of InEdgesList
+	OutEdgesListTracker[0] = 0; //start pointer points to the first index of OutEdgesList
+	for (int i = 0; i < nodes; i++)
+	{
+		InEdgesListTracker[i + 1] = InEdgesListTracker[i] + InEdgesList.at(i).size();
+		InEdgesListFull.insert(std::end(InEdgesListFull), std::begin(InEdgesList.at(i)), std::end(InEdgesList.at(i)));
+		OutEdgesListTracker[i + 1] = OutEdgesListTracker[i] + OutEdgesList.at(i).size();
+		OutEdgesListFull.insert(std::end(OutEdgesListFull), std::begin(OutEdgesList.at(i)), std::end(OutEdgesList.at(i)));
+	}
+
+
 
 	//Transferring input graph and change edges data to GPU
 	ColWt* InEdgesListFull_device;
@@ -90,6 +103,11 @@ int main(int argc, char* argv[]) {
 
 
 	//Test start
+	/*cout << "change edges:" << endl;
+	for (int i = 0; i < totalChangeEdges; i++)
+	{
+		cout << allChange_device[i].node1 << " " << allChange_device[i].node2 << " " << allChange_device[i].edge_wt << " " << allChange_device[i].inst << endl;
+	}
 	cout << "In edges in Unified memory" << endl;
 	for (int i = 0; i < nodes; i++)
 	{
@@ -107,7 +125,7 @@ int main(int argc, char* argv[]) {
 		{
 			cout << OutEdgesListFull_device[j].col << " : " << OutEdgesListFull_device[j].wt << endl;
 		}
-	}
+	}*/
 	//Test end
 	
 	//Reading SSSP Tree input and storing directly on unified memory
@@ -122,10 +140,19 @@ int main(int argc, char* argv[]) {
 
 
 
+	//test start
+	/*cout << "after reading SSSP:" << endl;
+	for (int i = 0; i < nodes; i++)
+	{
+		cout << "row: " << i << " dist: " << SSSP[i].Dist << " parent: " << SSSP[i].Parent << endl;
+
+	}*/
+	//test end
 
 
 
-	double inf = std::numeric_limits<double>::infinity();
+	//double inf = std::numeric_limits<double>::infinity();
+	int inf = 999999;
 	int* Edgedone;
 	cudaMallocManaged(&Edgedone, (totalChangeEdges) * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
@@ -141,8 +168,25 @@ int main(int argc, char* argv[]) {
 	cudaMemPrefetchAsync(OutEdgesListFull_device, edges * sizeof(ColWt), deviceId);
 	//initialize Edgedone array with -1
 	initializeEdgedone << <(totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (Edgedone, totalChangeEdges);
-	insertDeleteEdge << < (totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChangeEdges, inf, InEdgesListFull_device, OutEdgesListFull_device, InEdgesListTracker_device, OutEdgesListTracker_device);
-	//cudaDeviceSynchronize();
+	deleteEdge << < (totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChangeEdges, inf, InEdgesListFull_device, OutEdgesListFull_device, InEdgesListTracker_device, OutEdgesListTracker_device);
+	insertEdge << < (totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChangeEdges, inf, InEdgesListFull_device, OutEdgesListFull_device, InEdgesListTracker_device, OutEdgesListTracker_device);
+	
+	
+	
+	//test start
+	/*cudaDeviceSynchronize();
+	cout << "\nafter insertDeleteEdge SSSP:" << endl;
+	
+	for (int i = 0; i < nodes; i++)
+	{
+		cout << "row: " << i << " dist: " << SSSP[i].Dist << " parent: " << SSSP[i].Parent << endl;
+
+	}*/
+	//test end
+
+
+
+
 
 	//Go over the inserted edges to see if they need to be changed. Correct edges are connected in this stage
 	int* change_d = new int[1];
@@ -161,14 +205,30 @@ int main(int argc, char* argv[]) {
 
 	cudaFree(Edgedone); //free memory before neighbor update
 
+	int its = 0;
+	change[0] = 1;
+	while (change[0] == 1 && its < 70)
+	{
+		//printf("Iteration:%d \n", its);
+
+		change[0] = 0;
+		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
+		updateNeighbors << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, InEdgesListFull_device, OutEdgesListFull_device, InEdgesListTracker_device, OutEdgesListTracker_device, change_d);
+		cudaMemcpy(change, change_d, 1 * sizeof(int), cudaMemcpyDeviceToHost);
+		cudaDeviceSynchronize();
+		its++;
+	}//end of while
+	printf("Total Iterations to Converge %d \n", its);
+
+	for (int i = 0; i < nodes; i++)
+	{
+		cout << "row: " << i << " dist: " << SSSP[i].Dist <<" parent: " << SSSP[i].Parent << endl;
+		
+	}
 
 
 
-
-
-
-
-
+	cudaFree(change_d);
 	cudaFree(InEdgesListTracker_device);
 	cudaFree(OutEdgesListTracker_device);
 	cudaFree(OutEdgesListFull_device);
