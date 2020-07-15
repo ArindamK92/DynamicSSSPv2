@@ -13,7 +13,7 @@ _____________
 
 example:  
 ```shell
-./op_main graph.txt 6 5 SSSP.txt cE.txt
+./op_main graph.txt 6 7 SSSP.txt cE.txt
 ```
 
 
