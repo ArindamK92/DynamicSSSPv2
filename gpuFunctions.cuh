@@ -43,7 +43,7 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 				SSSP[node_2].EDGwt = inf;
 				SSSP[node_2].Update = true;
 				iskeyedge = true;
-				printf("inside del: %d %d \n", node_2, SSSP[node_2].EDGwt, edge_weight);
+				//printf("inside del: %d %d \n", node_2, SSSP[node_2].EDGwt, edge_weight);
 			}
 			//If  Key Edge is Deleted Set weights to -1 in input graph 
 			if (iskeyedge)
@@ -54,7 +54,7 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 					if (InEdgesListFull_device[j].col == node_1 && InEdgesListFull_device[j].wt == edge_weight)
 					{
 						InEdgesListFull_device[j].wt = -1;
-						printf("inside del inedge: %d %d %d \n", node_1, node_2, edge_weight);
+						//printf("inside del inedge: %d %d %d \n", node_1, node_2, edge_weight);
 					}
 
 				}
@@ -64,7 +64,7 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 					if (OutEdgesListFull_device[j].col == node_2 && OutEdgesListFull_device[j].wt == edge_weight)
 					{
 						OutEdgesListFull_device[j].wt = -1;
-						printf("inside del outedge: %d %d %d \n", node_1, node_2, edge_weight);
+						//printf("inside del outedge: %d %d %d \n", node_1, node_2, edge_weight);
 					}
 
 				}
@@ -85,7 +85,7 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			int node_1 = allChange_device[index].node1;
 			int node_2 = allChange_device[index].node2;
 			int edge_weight = allChange_device[index].edge_wt;
-			printf("inside ins: %d %d %d \n", node_1, node_2, edge_weight);
+			//printf("inside ins: %d %d %d \n", node_1, node_2, edge_weight);
 			//Check whether node1 is relaxed
 			if (SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight)
 			{
@@ -96,7 +96,7 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 				SSSP[node_2].Update = true;
 				//Mark Edge to be added
 				Edgedone[index] = 1;
-				printf("inside ins if: %d %d \n", node_2, SSSP[node_2].Dist, edge_weight);
+				//printf("inside ins if: %d %d \n", node_2, SSSP[node_2].Dist, edge_weight);
 			}
 		}
 	}
