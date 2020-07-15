@@ -33,6 +33,6 @@ example: ./op_ssspSeq graph.txt 6
 
 How to prepare change edges:
 ____________________________
-nvcc -o op_cE createChangedEdges.cpp
-./op_cE original_graph_file_name number_of_nodes number_of_change_edges percent_of_insertion
+nvcc -o op_cE createChangedEdges.cpp  
+./op_cE original_graph_file_name number_of_nodes number_of_change_edges percent_of_insertion  
 example: ./op_cE graph.txt 6 10 50
