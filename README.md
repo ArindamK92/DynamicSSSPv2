@@ -1,4 +1,4 @@
-"# DynamicSSSPv2" 
+"# DynamicSSSPv2"   
 compile:
 _____________
 nvcc -o op_main CudaSSSPmain.cu
