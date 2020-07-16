@@ -122,7 +122,7 @@ struct RT_Vertex
  Format of change edges file: node1 node2 edge_weight insert_status
  insert_status = 1 for insertion. insert_status = 0 for deletion.
  */
-void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtList>& InEdgesList, vector<ColWtList>& OutEdgesList)
+void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtList>& InEdgesList, vector<ColWtList>& OutEdgesList,int& totalInsertion)
 {
 	FILE* graph_file;
 	char line[128];
@@ -141,6 +141,7 @@ void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtLis
 		//add change edges with inst status = 1 to Inedge and OutEdge list
 		if (inst_status == 1)
 		{
+			totalInsertion++;
 			ColWt colwt;
 			colwt.col = n1;
 			colwt.wt = wt;

@@ -32,6 +32,7 @@ int main(int argc, char* argv[]) {
 	edges = atoi(argv[3]);
 	int deviceId;
 	int numberOfSMs;
+	int totalInsertion = 0;
 
 	//Get gpu device id and number of SMs
 	cudaGetDevice(&deviceId);
@@ -58,10 +59,10 @@ int main(int argc, char* argv[]) {
 	vector<changeEdge> allChange;
 	cout << "Reading input changed edges data..." << endl;
 	auto readCEstartTime = high_resolution_clock::now();//Time calculation starts
-	readin_changes(argv[5], allChange, InEdgesList, OutEdgesList);
+	readin_changes(argv[5], allChange, InEdgesList, OutEdgesList, totalInsertion);
 	auto readCEstopTime = high_resolution_clock::now();//Time calculation ends
 	auto readCEduration = duration_cast<microseconds>(readCEstopTime - readCEstartTime);// duration calculation
-	cout << "Reading input changed edges data completed" << endl;
+	cout << "Reading input changed edges data completed. totalInsertion:" << totalInsertion << endl;
 	cout << "Time taken to read input changed edges: " << readCEduration.count() << " microseconds" << endl;
 
 	//create 1D array from 2D to fit it in GPU
@@ -81,15 +82,20 @@ int main(int argc, char* argv[]) {
 	//Transferring input graph and change edges data to GPU
 	cout << "Transferring incoming edges data to GPU" << endl;
 	ColWt* InEdgesListFull_device;
-	cudaStatus = cudaMallocManaged(&InEdgesListFull_device, edges * sizeof(ColWt));
+	cudaStatus = cudaMallocManaged(&InEdgesListFull_device, (edges + totalInsertion) * sizeof(ColWt));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListFull structure");
 	}
+	cout << "Transferring incoming edges data to GPU before copy. size:" << InEdgesListFull.size() << endl;
+	/*for (int i = 0; i < InEdgesListFull.size(); i++)
+	{
+		cout << InEdgesListFull.at(i).col << ":" << InEdgesListFull.at(i).wt << endl;
+	}*/
 	std::copy(InEdgesListFull.begin(), InEdgesListFull.end(), InEdgesListFull_device);
 
 	cout << "Transferring outgoing edges data to GPU" << endl;
 	ColWt* OutEdgesListFull_device;
-	cudaStatus = cudaMallocManaged(&OutEdgesListFull_device, edges * sizeof(ColWt));
+	cudaStatus = cudaMallocManaged(&OutEdgesListFull_device, (edges + totalInsertion) * sizeof(ColWt));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListFull structure");
 	}
