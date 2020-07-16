@@ -46,14 +46,26 @@ int main(int argc, char* argv[]) {
 	OutEdgesList.resize(nodes);
 	int* OutEdgesListTracker = (int*)malloc((nodes + 1) * sizeof(int));//we take nodes +1 to store the start ptr of the first row 
 	vector<ColWt> OutEdgesListFull;
+	cout << "Reading input graph..." << endl;
+	auto readGraphstartTime = high_resolution_clock::now();//Time calculation starts
 	read_graphEdges(InEdgesList, argv[1], &nodes,  OutEdgesList);
-	
+	auto readGraphstopTime = high_resolution_clock::now();//Time calculation ends
+	auto readGraphduration = duration_cast<microseconds>(readGraphstopTime - readGraphstartTime);// duration calculation
+	cout << "Reading input graph completed" << endl;
+	cout << "Time taken to read input graph: "<< readGraphduration.count() << " microseconds" << endl;
 	
 	//Reading change edges input
 	vector<changeEdge> allChange;
+	cout << "Reading input changed edges data..." << endl;
+	auto readCEstartTime = high_resolution_clock::now();//Time calculation starts
 	readin_changes(argv[5], allChange, InEdgesList, OutEdgesList);
+	auto readCEstopTime = high_resolution_clock::now();//Time calculation ends
+	auto readCEduration = duration_cast<microseconds>(readCEstopTime - readCEstartTime);// duration calculation
+	cout << "Reading input changed edges data completed" << endl;
+	cout << "Time taken to read input changed edges: " << readCEduration.count() << " microseconds" << endl;
 
 	//create 1D array from 2D to fit it in GPU
+	cout << "creating 1D array from 2D to fit it in GPU" << endl;
 	InEdgesListTracker[0] = 0; //start pointer points to the first index of InEdgesList
 	OutEdgesListTracker[0] = 0; //start pointer points to the first index of OutEdgesList
 	for (int i = 0; i < nodes; i++)
@@ -63,10 +75,11 @@ int main(int argc, char* argv[]) {
 		OutEdgesListTracker[i + 1] = OutEdgesListTracker[i] + OutEdgesList.at(i).size();
 		OutEdgesListFull.insert(std::end(OutEdgesListFull), std::begin(OutEdgesList.at(i)), std::end(OutEdgesList.at(i)));
 	}
-
+	cout << "creating 1D array from 2D completed" << endl;
 
 
 	//Transferring input graph and change edges data to GPU
+	cout << "Transferring incoming edges data to GPU" << endl;
 	ColWt* InEdgesListFull_device;
 	cudaStatus = cudaMallocManaged(&InEdgesListFull_device, edges * sizeof(ColWt));
 	if (cudaStatus != cudaSuccess) {
@@ -74,6 +87,7 @@ int main(int argc, char* argv[]) {
 	}
 	std::copy(InEdgesListFull.begin(), InEdgesListFull.end(), InEdgesListFull_device);
 
+	cout << "Transferring outgoing edges data to GPU" << endl;
 	ColWt* OutEdgesListFull_device;
 	cudaStatus = cudaMallocManaged(&OutEdgesListFull_device, edges * sizeof(ColWt));
 	if (cudaStatus != cudaSuccess) {
@@ -81,12 +95,15 @@ int main(int argc, char* argv[]) {
 	}
 	std::copy(OutEdgesListFull.begin(), OutEdgesListFull.end(), OutEdgesListFull_device);
 	
+	cout << "Transferring incoming edges tracker to GPU" << endl;
 	int* InEdgesListTracker_device;
 	cudaStatus = cudaMalloc((void**)&InEdgesListTracker_device, nodes * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListTracker_device");
 	}
 	cudaMemcpy(InEdgesListTracker_device, InEdgesListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);
+	
+	cout << "Transferring outgoing edges tracker to GPU" << endl;
 	int* OutEdgesListTracker_device;
 	cudaStatus = cudaMalloc((void**)&OutEdgesListTracker_device, nodes * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
@@ -94,6 +111,7 @@ int main(int argc, char* argv[]) {
 	}
 	cudaMemcpy(OutEdgesListTracker_device, OutEdgesListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);
 	
+	cout << "Transferring change edges data to GPU" << endl;
 	int totalChangeEdges = allChange.size();
 	changeEdge* allChange_device;
 	cudaStatus = cudaMallocManaged(&allChange_device, totalChangeEdges * sizeof(changeEdge));
@@ -102,6 +120,7 @@ int main(int argc, char* argv[]) {
 	}
 	std::copy(allChange.begin(), allChange.end(), allChange_device);
 	//set cudaMemAdviseSetReadMostly by the GPU for change edge data
+	cout << "setting GPU advice for change edges" << endl;
 	cudaMemAdvise(allChange_device, totalChangeEdges * sizeof(changeEdge), cudaMemAdviseSetReadMostly, deviceId);
 
 
@@ -137,7 +156,13 @@ int main(int argc, char* argv[]) {
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at SSSP structure");
 	}
+	cout << "Reading input SSSP tree data..." << endl;
+	auto readSSSPstartTime = high_resolution_clock::now();//Time calculation starts
 	read_SSSP(SSSP, argv[4], &nodes);
+	auto readSSSPstopTime = high_resolution_clock::now();//Time calculation ends
+	auto readSSSPduration = duration_cast<microseconds>(readSSSPstopTime - readSSSPstartTime);// duration calculation
+	cout << "Reading input SSSP tree data completed" << endl;
+	cout << "Time taken to read input input SSSP tree: " << readSSSPduration.count() << " microseconds" << endl;
 	//set cudaMemAdviseSetPreferredLocation at GPU for SSSP data
 	cudaMemAdvise(SSSP, nodes * sizeof(RT_Vertex), cudaMemAdviseSetPreferredLocation, deviceId);
 
@@ -174,7 +199,7 @@ int main(int argc, char* argv[]) {
 	change[0] = 1;
 	cudaMalloc((void**)&change_d, 1 * sizeof(int));
 	int its = 0;
-
+	cout << "reading input data completed" << endl;
 
 
 	
@@ -228,8 +253,8 @@ int main(int argc, char* argv[]) {
 	}
 	auto stopTime = high_resolution_clock::now();//Time calculation ends
 	auto duration = duration_cast<microseconds>(stopTime - startTime);// duration calculation
-	cout << "Time taken: "
-		<< duration.count() << " microseconds" << endl;
+	cout << "***Time taken for updating SSSP: "
+		<< duration.count() << " microseconds***" << endl;
 	printf("Total Iterations to Converge %d \n", its);
 
 
