@@ -1,0 +1,260 @@
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14015919 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:10000000
+Time taken to read input changed edges: 9784825 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:33422053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 901511 microseconds
+reading input data completed
+***Time taken for updating SSSP: 952268 microseconds***
+Total Iterations to Converge 36 
+from GPU:
+[0:0:0 1:39:4019 2:38:14574 3:41:8601 4:49:29 5:42:1 6:39:2585272 7:37:25062 8:39:9789 9:39:663414 10:33:2566997 11:38:29 12:36:3686899 13:44:1 14:39:662 15:40:892043 16:38:2334 17:50:1 18:45:1 19:41:1 20:49:1 21:50:1 22:56:1 23:44:12111 24:34:25 25:33:179 26:42:13720 27:39:23677 28:48:1 29:34:25 30:38:1295 31:43:32 32:40:4004 33:44:1295 34:39:6624 35:45:25062 36:46:1 37:54:44013 38:41:4018 39:45:1 ]
+from CPU: 
+[0:0 1:39 2:38 3:41 4:49 5:42 6:39 7:37 8:39 9:39 10:33 11:38 12:36 13:44 14:39 15:40 16:38 17:50 18:45 19:41 20:49 21:50 22:56 23:44 24:34 25:33 26:42 27:39 28:48 29:34 30:38 31:43 32:40 33:44 34:39 35:45 36:46 37:54 38:41 39:45 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14015934 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:7500000
+Time taken to read input changed edges: 9056621 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:30922053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 866071 microseconds
+reading input data completed
+***Time taken for updating SSSP: 2667536 microseconds***
+Total Iterations to Converge 32 
+from GPU:
+[0:0:0 1:44:4018 2:42:674 3:47:1 4:52:29 5:47:1 6:42:97006 7:43:104 8:40:2223261 9:43:514696 10:39:71221 11:41:29 12:40:2665214 13:47:33649 14:47:239 15:44:3500191 16:38:2334 17:55:1 18:50:1 19:46:1 20:54:1 21:55:1 22:61:1 23:47:12111 24:37:25 25:36:493502 26:46:4026 27:42:23677 28:53:1 29:37:25 30:47:32 31:49:32 32:46:4004 33:58:1 34:45:25062 35:48:25062 36:51:1 37:58:44013 38:44:4018 39:50:1 ]
+from CPU: 
+[0:0 1:44 2:42 3:47 4:52 5:47 6:42 7:43 8:40 9:43 10:39 11:41 12:40 13:47 14:47 15:44 16:38 17:55 18:50 19:46 20:54 21:55 22:61 23:47 24:37 25:36 26:46 27:42 28:53 29:37 30:47 31:49 32:46 33:58 34:45 35:48 36:51 37:58 38:44 39:50 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14016404 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 6785290 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:28422053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 865885 microseconds
+reading input data completed
+***Time taken for updating SSSP: 3760107 microseconds***
+Total Iterations to Converge 33 
+from GPU:
+[0:0:0 1:57:4044 2:49:976342 3:64:135328 4:68:1 5:60:1 6:53:44508 7:58:1950 8:48:3420733 9:49:301210 10:45:20401 11:60:29 12:48:2493614 13:57:2084595 14:62:4047 15:47:2334 16:38:2334 17:68:1 18:63:1 19:999999:1 20:67:1 21:68:1 22:74:1 23:62:12111 24:68:21725 25:58:4004 26:58:4026 27:61:8602 28:66:1 29:56:4025 30:59:32 31:61:32 32:58:4004 33:72:6797 34:60:80363 35:66:25062 36:64:1 37:74:1 38:61:4018 39:62:1059787 ]
+from CPU: 
+[0:0 1:57 2:49 3:64 4:68 5:60 6:53 7:58 8:48 9:49 10:45 11:60 12:48 13:57 14:62 15:47 16:38 17:68 18:63 19:999999 20:67 21:68 22:74 23:62 24:68 25:58 26:58 27:61 28:66 29:56 30:59 31:61 32:58 33:72 34:60 35:66 36:64 37:74 38:61 39:62 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14020186 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 5555464 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:25922053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 862156 microseconds
+reading input data completed
+***Time taken for updating SSSP: 5251455 microseconds***
+Total Iterations to Converge 34 
+from GPU:
+[0:0:0 1:60:111 2:49:976342 3:63:1 4:71:1 5:63:1 6:53:44508 7:55:104 8:56:2065554 9:54:514696 10:47:588992 11:66:23677 12:48:2493614 13:63:33649 14:63:135328 15:51:3353004 16:54:2334 17:71:1 18:66:1 19:999999:1 20:70:1 21:71:1 22:999999:1 23:62:12111 24:68:21725 25:56:4019 26:64:4026 27:62:23677 28:69:1 29:56:4025 30:65:32 31:66:4019 32:64:4004 33:73:6797 34:62:80363 35:65:4019 36:67:1 37:77:1 38:75:1 39:66:1 ]
+from CPU: 
+[0:0 1:60 2:49 3:63 4:71 5:63 6:53 7:55 8:56 9:54 10:47 11:66 12:48 13:63 14:63 15:51 16:54 17:71 18:66 19:999999 20:70 21:71 22:999999 23:62 24:68 25:56 26:64 27:62 28:69 29:56 30:65 31:66 32:64 33:73 34:62 35:65 36:67 37:77 38:75 39:66 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14026885 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 5770646 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:23422053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 867641 microseconds
+reading input data completed
+***Time taken for updating SSSP: 5169295 microseconds***
+Total Iterations to Converge 33 
+from GPU:
+[0:0:0 1:65:6624 2:66:243 3:67:8599 4:76:1 5:68:1 6:53:44508 7:65:104 8:64:2883764 9:54:514696 10:54:588992 11:76:23677 12:52:2493614 13:66:1659006 14:68:10809 15:65:2334285 16:59:2334 17:76:1 18:999999:1 19:999999:1 20:75:1 21:76:1 22:999999:1 23:76:8976 24:69:8622 25:66:10236 26:68:13720 27:67:8602 28:74:1 29:68:4025 30:69:1295 31:73:32 32:70:4004 33:75:1295 34:62:80363 35:77:10236 36:72:1 37:81:1751884 38:80:1 39:71:1 ]
+from CPU: 
+[0:0 1:65 2:66 3:67 4:76 5:68 6:53 7:65 8:64 9:54 10:54 11:76 12:52 13:66 14:68 15:65 16:59 17:76 18:999999 19:999999 20:75 21:76 22:999999 23:76 24:69 25:66 26:68 27:67 28:74 29:68 30:69 31:73 32:70 33:75 34:62 35:77 36:72 37:81 38:80 39:71 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14045085 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1000000
+Time taken to read input changed edges: 1708003 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:24422053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 863665 microseconds
+reading input data completed
+***Time taken for updating SSSP: 90639 microseconds***
+Total Iterations to Converge 20 
+from GPU:
+[0:0:0 1:50:10229 2:51:14574 3:53:1 4:61:1 5:53:1 6:49:3409376 7:50:12790 8:51:3290924 9:51:514696 10:38:3533032 11:54:29 12:53:56144 13:55:1 14:51:662 15:51:3353004 16:45:2334 17:61:1 18:56:1 19:52:1 20:60:1 21:61:1 22:67:1 23:58:26 24:50:25 25:49:4004 26:49:4026 27:54:8602 28:59:1 29:50:25 30:50:32 31:52:32 32:49:4004 33:62:6797 34:51:6624 35:58:10229 36:57:1 37:59:44013 38:54:4018 39:56:1 ]
+from CPU: 
+[0:0 1:50 2:51 3:53 4:61 5:53 6:49 7:50 8:51 9:51 10:38 11:54 12:53 13:55 14:51 15:51 16:45 17:61 18:56 19:52 20:60 21:61 22:67 23:58 24:50 25:49 26:49 27:54 28:59 29:50 30:50 31:52 32:49 33:62 34:51 35:58 36:57 37:59 38:54 39:56 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14052425 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:750000
+Time taken to read input changed edges: 1519789 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:24172053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 850949 microseconds
+reading input data completed
+***Time taken for updating SSSP: 321132 microseconds***
+Total Iterations to Converge 20 
+from GPU:
+[0:0:0 1:50:10229 2:51:14574 3:53:1 4:61:1 5:53:1 6:49:3409376 7:50:12790 8:51:3290924 9:51:514696 10:38:3533032 11:54:29 12:53:56144 13:55:1 14:51:662 15:51:3353004 16:45:2334 17:61:1 18:56:1 19:52:1 20:60:1 21:61:1 22:67:1 23:58:26 24:50:25 25:49:4004 26:49:4026 27:54:8602 28:59:1 29:50:25 30:50:32 31:52:32 32:49:4004 33:62:6797 34:51:6624 35:58:10229 36:57:1 37:59:44013 38:54:4018 39:56:1 ]
+from CPU: 
+[0:0 1:50 2:51 3:53 4:61 5:53 6:49 7:50 8:51 9:51 10:38 11:54 12:53 13:55 14:51 15:51 16:45 17:61 18:56 19:52 20:60 21:61 22:67 23:58 24:50 25:49 26:49 27:54 28:59 29:50 30:50 31:52 32:49 33:62 34:51 35:58 36:57 37:59 38:54 39:56 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14023503 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 857361 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:23922053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 859594 microseconds
+reading input data completed
+***Time taken for updating SSSP: 433769 microseconds***
+Total Iterations to Converge 20 
+from GPU:
+[0:0:0 1:50:10229 2:51:14574 3:53:1 4:61:1 5:53:1 6:49:3409376 7:50:12790 8:51:3290924 9:51:514696 10:38:3533032 11:54:29 12:53:56144 13:55:1 14:51:662 15:51:3353004 16:45:2334 17:61:1 18:56:1 19:52:1 20:60:1 21:61:1 22:67:1 23:58:26 24:50:25 25:49:4004 26:49:4026 27:54:8602 28:59:1 29:50:25 30:50:32 31:52:32 32:49:4004 33:62:6797 34:51:6624 35:58:10229 36:57:1 37:59:44013 38:54:4018 39:56:1 ]
+from CPU: 
+[0:0 1:50 2:51 3:53 4:61 5:53 6:49 7:50 8:51 9:51 10:38 11:54 12:53 13:55 14:51 15:51 16:45 17:61 18:56 19:52 20:60 21:61 22:67 23:58 24:50 25:49 26:49 27:54 28:59 29:50 30:50 31:52 32:49 33:62 34:51 35:58 36:57 37:59 38:54 39:56 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14058840 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:250000
+Time taken to read input changed edges: 991969 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:23672053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 860830 microseconds
+reading input data completed
+***Time taken for updating SSSP: 812389 microseconds***
+Total Iterations to Converge 37 
+from GPU:
+[0:0:0 1:50:10229 2:49:976342 3:53:1 4:61:1 5:53:1 6:48:3362710 7:50:12790 8:48:2247080 9:49:663414 10:38:3533032 11:57:29 12:48:2493614 13:50:119121 14:51:662 15:48:2334 16:39:2334 17:61:1 18:56:1 19:52:1 20:60:1 21:61:1 22:67:1 23:53:12111 24:50:25 25:49:4004 26:49:4026 27:55:23677 28:59:1 29:53:4025 30:50:32 31:52:32 32:49:4004 33:60:1295 34:55:37345 35:58:10229 36:57:1 37:59:44013 38:56:4018 39:56:1 ]
+from CPU: 
+[0:0 1:50 2:49 3:53 4:61 5:53 6:48 7:50 8:48 9:49 10:38 11:57 12:48 13:50 14:51 15:48 16:39 17:61 18:56 19:52 20:60 21:61 22:67 23:53 24:50 25:49 26:49 27:55 28:59 29:53 30:50 31:52 32:49 33:60 34:55 35:58 36:57 37:59 38:56 39:56 ]
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14015893 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 704354 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:23422053
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 861893 microseconds
+reading input data completed
+***Time taken for updating SSSP: 814510 microseconds***
+Total Iterations to Converge 34 
+from GPU:
+[0:0:0 1:50:10229 2:49:8624 3:53:1 4:61:1 5:53:1 6:48:3362710 7:50:12790 8:48:2247080 9:49:663414 10:38:3533032 11:57:29 12:48:2493614 13:50:119121 14:51:662 15:48:2334 16:39:2334 17:61:1 18:56:1 19:52:1 20:60:1 21:61:1 22:67:1 23:53:12111 24:50:25 25:49:4004 26:49:4026 27:55:23677 28:59:1 29:53:4025 30:50:32 31:52:32 32:49:4004 33:60:1295 34:55:37345 35:58:10229 36:57:1 37:59:44013 38:56:4018 39:56:1 ]
+from CPU: 
+[0:0 1:50 2:49 3:53 4:61 5:53 6:48 7:50 8:48 9:49 10:38 11:57 12:48 13:50 14:51 15:48 16:39 17:61 18:56 19:52 20:60 21:61 22:67 23:53 24:50 25:49 26:49 27:55 28:59 29:53 30:50 31:52 32:49 33:60 34:55 35:58 36:57 37:59 38:56 39:56 ]

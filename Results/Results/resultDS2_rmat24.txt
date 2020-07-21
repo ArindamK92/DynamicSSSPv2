@@ -1,0 +1,240 @@
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 167095344 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:100000
+Time taken to read input changed edges: 125542 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269122768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3806035 microseconds
+reading input data completed
+***Time taken for updating SSSP: 423673 microseconds***
+Total Iterations to Converge 12 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 166936759 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:75000
+Time taken to read input changed edges: 104923 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269097768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3770333 microseconds
+reading input data completed
+***Time taken for updating SSSP: 450158 microseconds***
+Total Iterations to Converge 70 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 166812221 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:50000
+Time taken to read input changed edges: 83503 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269072768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3773202 microseconds
+reading input data completed
+***Time taken for updating SSSP: 460631 microseconds***
+Total Iterations to Converge 70 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 166885120 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:25000
+Time taken to read input changed edges: 60561 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269047768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3769829 microseconds
+reading input data completed
+***Time taken for updating SSSP: 436166 microseconds***
+Total Iterations to Converge 32 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 166789488 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 32186 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269022768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3766455 microseconds
+reading input data completed
+***Time taken for updating SSSP: 461322 microseconds***
+Total Iterations to Converge 70 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 167359592 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1000000
+Time taken to read input changed edges: 927100 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:270022768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3769922 microseconds
+reading input data completed
+***Time taken for updating SSSP: 445610 microseconds***
+Total Iterations to Converge 30 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 166697686 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:750000
+Time taken to read input changed edges: 822673 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269772768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3771631 microseconds
+reading input data completed
+***Time taken for updating SSSP: 479998 microseconds***
+Total Iterations to Converge 70 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 173317446 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 673892 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269522768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3770896 microseconds
+reading input data completed
+***Time taken for updating SSSP: 485233 microseconds***
+Total Iterations to Converge 70 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 166811072 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:250000
+Time taken to read input changed edges: 510809 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269272768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3769301 microseconds
+reading input data completed
+***Time taken for updating SSSP: 488825 microseconds***
+Total Iterations to Converge 70
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 166790869 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 298673 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:269022768
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 3770427 microseconds
+reading input data completed
+***Time taken for updating SSSP: 487663 microseconds***
+Total Iterations to Converge 70 
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]

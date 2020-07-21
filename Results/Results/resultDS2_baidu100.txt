@@ -1,0 +1,260 @@
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_10M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14035157 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:10000000
+Time taken to read input changed edges: 7877111 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:36493629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 452944 microseconds
+reading input data completed
+***Time taken for updating SSSP: 175649 microseconds***
+Total Iterations to Converge 14 
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:16:1848452 15:51:14 16:52:14 17:58:14 18:16:127110 19:15:528052 20:18:110727 21:67:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:17:764385 28:12:146369 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:22:27 ]
+from CPU: 
+[0:0 1:33 2:9 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:16 15:51 16:52 17:58 18:16 19:15 20:18 21:67 22:14 23:23 24:13 25:13 26:13 27:17 28:12 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:22 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_10M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14038774 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:7500000
+Time taken to read input changed edges: 6732833 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:33993629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 461720 microseconds
+reading input data completed
+***Time taken for updating SSSP: 522944 microseconds***
+Total Iterations to Converge 14 
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:16:1640680 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:163315 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:16:1776747 20:18:110727 21:999999:20 22:15:92152 23:23:906833 24:14:1558 25:15:99492 26:13:54967 27:23:764385 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:27823 33:12:2555 34:18:432600 35:12:667202 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:9 3:16 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:16 20:18 21:999999 22:15 23:23 24:14 25:15 26:13 27:23 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:12 36:14 37:24 38:12 39:25 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_10M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14083010 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 5528785 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:31493629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 455768 microseconds
+reading input data completed
+***Time taken for updating SSSP: 761570 microseconds***
+Total Iterations to Converge 13 
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:16:1640680 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:14:12203 9:11:20502 10:26:9 11:19:163315 12:62:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:17:127110 19:16:1776747 20:23:805580 21:999999:20 22:16:10045 23:24:906833 24:15:1558 25:15:99492 26:13:54967 27:23:764385 28:14:169397 29:22:69 30:22:1664809 31:999999:336833 32:13:7011 33:12:222 34:19:432600 35:12:667202 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:9 3:16 4:10 5:46 6:15 7:42 8:14 9:11 10:26 11:19 12:62 13:13 14:17 15:52 16:53 17:59 18:17 19:16 20:23 21:999999 22:16 23:24 24:15 25:15 26:13 27:23 28:14 29:22 30:22 31:999999 32:13 33:12 34:19 35:12 36:14 37:24 38:12 39:25 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_10M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14038502 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 4209464 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:28993629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 456403 microseconds
+reading input data completed
+***Time taken for updating SSSP: 974741 microseconds***
+Total Iterations to Converge 16 
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:17:1352248 4:12:179454 5:48:4 6:15:168509 7:42:6 8:14:171915 9:11:20502 10:26:9 11:20:324610 12:63:11 13:13:5404 14:18:285398 15:53:14 16:999999:14 17:60:14 18:19:27826 19:18:1903419 20:24:1770288 21:999999:20 22:15:92152 23:24:906833 24:15:1558 25:15:99492 26:13:54967 27:31:336833 28:15:169397 29:23:69 30:27:1664809 31:999999:336833 32:13:181164 33:12:222 34:21:432600 35:12:667202 36:15:342447 37:24:5048 38:14:21529 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:9 3:17 4:12 5:48 6:15 7:42 8:14 9:11 10:26 11:20 12:63 13:13 14:18 15:53 16:999999 17:60 18:19 19:18 20:24 21:999999 22:15 23:24 24:15 25:15 26:13 27:31 28:15 29:23 30:27 31:999999 32:13 33:12 34:21 35:12 36:15 37:24 38:14 39:25 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_10M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14016171 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 2904499 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:26493629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 458442 microseconds
+reading input data completed
+***Time taken for updating SSSP: 1147970 microseconds***
+Total Iterations to Converge 16 
+from GPU:
+[0:0:0 1:33:0 2:14:43749 3:19:1352248 4:14:386985 5:999999:4 6:17:1638520 7:44:6 8:15:171915 9:12:20502 10:27:9 11:21:423341 12:64:11 13:15:5404 14:19:285398 15:54:14 16:999999:14 17:61:14 18:21:27826 19:19:1991394 20:25:1796070 21:999999:20 22:18:92152 23:24:906833 24:18:1558 25:16:48908 26:13:54967 27:34:336833 28:16:169397 29:26:69 30:28:1542311 31:999999:336833 32:15:27823 33:14:222 34:23:432600 35:15:667202 36:18:342447 37:28:336833 38:14:21529 39:28:30724 ]
+from CPU: 
+[0:0 1:33 2:14 3:19 4:14 5:999999 6:17 7:44 8:15 9:12 10:27 11:21 12:64 13:15 14:19 15:54 16:999999 17:61 18:21 19:19 20:25 21:999999 22:18 23:24 24:18 25:16 26:13 27:34 28:16 29:26 30:28 31:999999 32:15 33:14 34:23 35:15 36:18 37:28 38:14 39:28 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_1M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14029319 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1000000
+Time taken to read input changed edges: 803964 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:27493629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 456017 microseconds
+reading input data completed
+***Time taken for updating SSSP: 74589 microseconds***
+Total Iterations to Converge 9 
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:67:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:12:146369 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:67 22:14 23:23 24:13 25:13 26:13 27:22 28:12 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_1M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14014854 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:750000
+Time taken to read input changed edges: 678736 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:27243629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 456540 microseconds
+reading input data completed
+***Time taken for updating SSSP: 135273 microseconds***
+Total Iterations to Converge 10 
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:67:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:67 22:14 23:23 24:13 25:13 26:13 27:22 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14019586 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 686571 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:26993629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 459971 microseconds
+reading input data completed
+***Time taken for updating SSSP: 165611 microseconds***
+Total Iterations to Converge 12 
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:999999:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:999999 22:14 23:23 24:13 25:13 26:13 27:22 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_1M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14015917 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:250000
+Time taken to read input changed edges: 420789 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:26743629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 460157 microseconds
+reading input data completed
+***Time taken for updating SSSP: 185366 microseconds***
+Total Iterations to Converge 11 
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:999999:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:222 34:18:432600 35:9:81270 36:15:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:999999 22:14 23:23 24:13 25:13 26:13 27:22 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:15 37:24 38:12 39:25 ]
+./op_main ../DataNew/baidu100_w_sorted_f 2141301 26493629 ../DataNew/SSSP_baidu100 ../DataNew/cE_baidu100_1M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 14065698 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 276348 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:26493629
+Transferring outgoing edges data to GPU
+Transferring incoming edges tracker to GPU
+Transferring outgoing edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 460193 microseconds
+reading input data completed
+***Time taken for updating SSSP: 191480 microseconds***
+Total Iterations to Converge 11 
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:881344 4:10:1485319 5:999999:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:999999:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:12:146369 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:222 34:18:432600 35:9:81270 36:15:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:999999 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:999999 22:14 23:23 24:13 25:13 26:13 27:22 28:12 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:15 37:24 38:12 39:25 ]

@@ -1,0 +1,55 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 100000 100 > ../DataNew/changedEdges_r24_100K_100
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 100000 75 > ../DataNew/changedEdges_r24_100K_75
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 100000 25 > ../DataNew/changedEdges_r24_100K_25
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 100000 0 > ../DataNew/changedEdges_r24_100K_0
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 1000000 75 > ../DataNew/changedEdges_r24_1M_75
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 1000000 50 > ../DataNew/changedEdges_r24_1M_50
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 1000000 25 > ../DataNew/changedEdges_r24_1M_25
+./op_changeEdge ../DataNew/rmat248_sorted_ext 16777215 1000000 0 > ../DataNew/changedEdges_r24_1M_0
+
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_100" > ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_100 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_75" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_75 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_50" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_50 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_25" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_25 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_0" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_100K_0 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_100" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_100 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_75" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_75 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_50" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_50 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_25" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_25 >> ../DataNew/resultDS2_rmat24.txt
+
+echo "./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_0" >> ../DataNew/resultDS2_rmat24.txt
+./op_main ../DataNew/rmat248_sorted_ext 16777215 269022768 ../DataNew/SSSP_rmat24 ../DataNew/changedEdges_r24_1M_0 >> ../DataNew/resultDS2_rmat24.txt
+
+
+echo "completed"
