@@ -34,7 +34,7 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			int node_2 = allChange_device[index].node2;
 			int edge_weight = allChange_device[index].edge_wt;
 			Edgedone[index] = 3;
-			bool iskeyedge = false;
+			//bool iskeyedge = false;
 			//this will check if node1 is parent of node2
 			//Mark edge as deleted by making edgewt = inf
 			if (SSSP[node_2].Parent == node_1)
@@ -42,12 +42,15 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 				SSSP[node_2].Dist = inf;
 				SSSP[node_2].EDGwt = inf;
 				SSSP[node_2].Update = true;
-				iskeyedge = true;
+				//new addition starts(under testing)
+				//SSSP[node_2].Parent = node_2; //marked disconnected node's parent as the same node
+				//new addition ends(under testing)
+				//iskeyedge = true;
 				//printf("inside del: %d %d \n", node_2, SSSP[node_2].EDGwt, edge_weight);
 			}
 			//If  Key Edge is Deleted Set weights to -1 in input graph 
-			if (iskeyedge)
-			{
+			//if (iskeyedge)
+			//{
 				//mark the edge as deleted in inEdges list
 				for (int j = InEdgesListTracker_device[node_2]; j < InEdgesListTracker_device[node_2 + 1]; j++)
 				{
@@ -68,7 +71,7 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 					}
 
 				}
-			}
+			//}
 
 		}
 	}
@@ -86,8 +89,12 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			int node_2 = allChange_device[index].node2;
 			int edge_weight = allChange_device[index].edge_wt;
 			//printf("inside ins: %d %d %d \n", node_1, node_2, edge_weight);
+			//new addition starts(under testing)
+			int flag = 1;
+			if (SSSP[node_1].Parent == node_2) { flag = 0; } //avoiding loop creation
+			//new addition ends(under testing)
 			//Check whether node1 is relaxed
-			if (SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight)
+			if ((SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight) && flag == 1)
 			{
 				//Update Parent and EdgeWt
 				SSSP[node_2].Parent = node_1;
@@ -135,6 +142,9 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 				Edgedone[index] = 1;
 			}
 
+			//new addition starts(under testing)
+			if (SSSP[node_1].Parent == node_2) { Edgedone[index] = 0; } //avoiding loop creation
+			//new addition ends(under testing)
 
 			if (Edgedone[index] == 1)
 			{
@@ -148,6 +158,35 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 		}
 	}
 }
+
+
+/*
+updateNeighbors_del function makes dist value of child nodes of a disconnected node to inf
+It marks the child nodes also as disconnected nodes
+*/
+__global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* OutEdgesListFull_device, int* OutEdgesListTracker_device, int* change_d)
+{
+	int index = threadIdx.x + blockIdx.x * blockDim.x;
+	if (index < nodes && SSSP[index].Dist == inf)
+	{
+			for (int j = OutEdgesListTracker_device[index]; j < OutEdgesListTracker_device[index + 1]; j++)
+			{
+				int myn = OutEdgesListFull_device[j].col;
+				int mywt = OutEdgesListFull_device[j].wt;
+				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
+				
+				if (SSSP[myn].Parent == index && SSSP[myn].Dist != inf)
+				{
+					SSSP[myn].Dist = inf;
+					SSSP[myn].Update = true;
+					//SSSP[myn].EDGwt = inf; //helps to avoid sync error. might be removed
+					change_d[0] = 1;
+				}
+				
+			}
+	}
+}
+
 
 
 //1. This method tries to connect the disconnected nodes(disconnected by deletion) with other nodes using the original graph
@@ -170,9 +209,15 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 				int mywt = InEdgesListFull_device[j].wt;
 
 				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
+				//new addition starts
+				/*if (SSSP[index].Parent == myn && SSSP[myn].Parent == index)
+				{
+					printf("!!!!loop: %d-%d", index, myn);
+				}*/
+				//new addition ends
 				if(SSSP[myn].Parent == index) { continue; } //avoiding loop formation
 
-				if (SSSP[index].Dist > SSSP[myn].Dist + mywt) //update both cases where parent of myn == index or parent of myn != index
+				if (SSSP[index].Dist > SSSP[myn].Dist + mywt) //update where parent of myn != index
 				{
 					SSSP[index].Dist = SSSP[myn].Dist + mywt;
 					SSSP[index].Update = true;
@@ -187,6 +232,13 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 				int myn = OutEdgesListFull_device[j].col;
 				int mywt = OutEdgesListFull_device[j].wt;
 				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
+				//new addition starts(under testing)
+				/*if (SSSP[index].Parent == myn && SSSP[myn].Parent == index)
+				{
+					printf("!!!!loop: %d-%d", index, myn);
+				}*/
+				if (SSSP[index].Parent == myn) { continue; }
+				//new addition ends(under testing)
 				//if index node is the parent node of myn, dist of myn is updated even if it increases the dist of myn
 				if (SSSP[myn].Parent == index)
 				{
@@ -210,12 +262,34 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 					SSSP[myn].Parent = index;
 					SSSP[myn].EDGwt = mywt;
 					change_d[0] = 1;
-					//continue;
 				}
 			}
 		}
 	}
 }
 
+
+__global__ void printSSSP(RT_Vertex* SSSP, int nodes)
+{
+	int index = threadIdx.x + blockIdx.x * blockDim.x;
+	if (index < 2)
+	{
+		int x;
+		if (nodes < 40)
+		{
+			x = nodes;
+		}
+		else {
+			x = 40;
+		}
+		printf("from GPU:\n[");
+		for (int i = 0; i < x; i++)
+		{
+			//cout << "row: " << i << " dist: " << SSSP[i].Dist <<" parent: " << SSSP[i].Parent << endl;
+			printf("%d:%d:%d ", i, SSSP[i].Dist, SSSP[i].Parent);
+		}
+		printf("]\n");
+	}
+}
 
 #endif

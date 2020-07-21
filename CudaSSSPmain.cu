@@ -245,11 +245,30 @@ int main(int argc, char* argv[]) {
 	}
 	cudaFree(Edgedone); //free memory before neighbor update
 
-	//update the distance of neighbors and connect the disconnected subgraphs
+
+	//new addition starts
 	change[0] = 1;
-	while (change[0] == 1 && its < 70)
+	while (change[0] == 1 /*&& its < 202*/)
 	{
 		//printf("Iteration:%d \n", its);
+		change[0] = 0;
+		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
+		updateNeighbors_del << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, OutEdgesListFull_device, OutEdgesListTracker_device, change_d);
+		cudaMemcpy(change, change_d, 1 * sizeof(int), cudaMemcpyDeviceToHost);
+		cudaDeviceSynchronize();
+		//its++;
+		//cout << "itr:" << its << " " << endl;
+	}
+	/*its = 0;*/
+	//new addition ends
+
+
+
+
+	//update the distance of neighbors and connect the disconnected subgraphs
+	change[0] = 1;
+	while (change[0] == 1 /*&& its < 200*/)
+	{
 		change[0] = 0;
 		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
 		updateNeighbors << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, InEdgesListFull_device, OutEdgesListFull_device, InEdgesListTracker_device, OutEdgesListTracker_device, change_d);
@@ -265,6 +284,8 @@ int main(int argc, char* argv[]) {
 
 
 	//print output:
+	printSSSP << <1,1>> > (SSSP, nodes);
+	cudaDeviceSynchronize();
 	int x;
 	if (nodes < 40)
 	{
@@ -273,13 +294,13 @@ int main(int argc, char* argv[]) {
 	else {
 		x = 40;
 	}
-	cout << "[";
+	cout << "from CPU: \n[";
 	for (int i = 0; i < x; i++)
 	{
 		//cout << "row: " << i << " dist: " << SSSP[i].Dist <<" parent: " << SSSP[i].Parent << endl;
 		cout << i << ":" << SSSP[i].Dist << " ";
 	}
-	cout << "]";
+	cout << "]\n";
 	//print output ends
 
 
