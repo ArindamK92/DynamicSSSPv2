@@ -81,7 +81,8 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			//printf("inside ins: %d %d %d \n", node_1, node_2, edge_weight);
 			//new addition starts(under testing)
 			int flag = 1;
-			if (SSSP[node_1].Parent == node_2) { flag = 0; } //avoiding loop creation
+			if (SSSP[node_1].Parent == node_2) { flag = 0; } //avoiding 1st type loop creation
+			if (SSSP[node_2].Dist == inf && SSSP[node_2].Update == true) { flag = 0; } //avoiding 2nd type loop creation
 			//new addition ends(under testing)
 			//Check whether node1 is relaxed
 			if ((SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight) && flag == 1){
