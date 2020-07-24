@@ -13,8 +13,7 @@ using namespace std;
 
 #define THREADS_PER_BLOCK 1024 //we can change it
 
-__global__ void initializeEdgedone(int* Edgedone, int totalChange)
-{
+__global__ void initializeEdgedone(int* Edgedone, int totalChange){
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
 	if (index < totalChange)
 	{
@@ -22,14 +21,12 @@ __global__ void initializeEdgedone(int* Edgedone, int totalChange)
 	}
 }
 
-__global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Vertex* SSSP, int totalChange, int inf, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device)
-{
+__global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Vertex* SSSP, int totalChange, int inf, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device){
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
-	if (index < totalChange)
-	{
+	if (index < totalChange){
 		////Deletion case
-		if (allChange_device[index].inst == 0)  //for Deletion inst should be 0
-		{
+		//for Deletion inst should be 0
+		if (allChange_device[index].inst == 0)  {
 			int node_1 = allChange_device[index].node1;
 			int node_2 = allChange_device[index].node2;
 			int edge_weight = allChange_device[index].edge_wt;
@@ -37,8 +34,7 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			//bool iskeyedge = false;
 			//this will check if node1 is parent of node2
 			//Mark edge as deleted by making edgewt = inf
-			if (SSSP[node_2].Parent == node_1)
-			{
+			if (SSSP[node_2].Parent == node_1){
 				SSSP[node_2].Dist = inf;
 				SSSP[node_2].EDGwt = inf;
 				SSSP[node_2].Update = true;
@@ -52,20 +48,16 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			//if (iskeyedge)
 			//{
 				//mark the edge as deleted in inEdges list
-				for (int j = InEdgesListTracker_device[node_2]; j < InEdgesListTracker_device[node_2 + 1]; j++)
-				{
-					if (InEdgesListFull_device[j].col == node_1 && InEdgesListFull_device[j].wt == edge_weight)
-					{
+				for (int j = InEdgesListTracker_device[node_2]; j < InEdgesListTracker_device[node_2 + 1]; j++){
+					if (InEdgesListFull_device[j].col == node_1 && InEdgesListFull_device[j].wt == edge_weight){
 						InEdgesListFull_device[j].wt = -1;
 						//printf("inside del inedge: %d %d %d \n", node_1, node_2, edge_weight);
 					}
 
 				}
 				//mark the edge as deleted in outEdges list
-				for (int j = OutEdgesListTracker_device[node_1]; j < OutEdgesListTracker_device[node_1 + 1]; j++)
-				{
-					if (OutEdgesListFull_device[j].col == node_2 && OutEdgesListFull_device[j].wt == edge_weight)
-					{
+				for (int j = OutEdgesListTracker_device[node_1]; j < OutEdgesListTracker_device[node_1 + 1]; j++){
+					if (OutEdgesListFull_device[j].col == node_2 && OutEdgesListFull_device[j].wt == edge_weight){
 						OutEdgesListFull_device[j].wt = -1;
 						//printf("inside del outedge: %d %d %d \n", node_1, node_2, edge_weight);
 					}
@@ -77,14 +69,12 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 	}
 }
 
-__global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Vertex* SSSP, int totalChange, int inf, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device)
-{
+__global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Vertex* SSSP, int totalChange, int inf, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device){
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
-	if (index < totalChange)
-	{
+	if (index < totalChange){
 		//Insertion case
-		if (allChange_device[index].inst == 1)  //for Insertion inst should be 1
-		{
+		//for Insertion inst should be 1
+		if (allChange_device[index].inst == 1){
 			int node_1 = allChange_device[index].node1;
 			int node_2 = allChange_device[index].node2;
 			int edge_weight = allChange_device[index].edge_wt;
@@ -94,8 +84,7 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			if (SSSP[node_1].Parent == node_2) { flag = 0; } //avoiding loop creation
 			//new addition ends(under testing)
 			//Check whether node1 is relaxed
-			if ((SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight) && flag == 1)
-			{
+			if ((SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight) && flag == 1){
 				//Update Parent and EdgeWt
 				SSSP[node_2].Parent = node_1;
 				SSSP[node_2].EDGwt = edge_weight;
@@ -113,14 +102,11 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
  We avoid this error by the below method without using locking approach
  This method tries to fit the edges using relax step and if it can fit, a flag is raised. 
 */
-__global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange, int* Edgedone, RT_Vertex* SSSP, int* change_d)
-{
+__global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange, int* Edgedone, RT_Vertex* SSSP, int* change_d){
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
-	if (index < totalChange)
-	{
-
-		if (Edgedone[index] == 1) //Edgedone will be 1 when edge is marked to be inserted
-		{
+	if (index < totalChange){
+		//Edgedone will be 1 when edge is marked to be inserted
+		if (Edgedone[index] == 1){
 
 			//get the edge
 			int node_1 = allChange_device[index].node1;
@@ -131,14 +117,12 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 
 			//***Below two if logic will connect the correct edges.***
 			//Check if some other edge was added--mark edge to be added //check x
-			if (SSSP[node_2].Dist > SSSP[node_1].Dist + edgeWeight)
-			{
+			if (SSSP[node_2].Dist > SSSP[node_1].Dist + edgeWeight){
 				Edgedone[index] = 1;
 			}
 
 			//Check if correct edge wt was written--mark edge to be added //check x
-			if ((SSSP[node_2].Parent == node_1) && (SSSP[node_2].EDGwt > edgeWeight))
-			{
+			if ((SSSP[node_2].Parent == node_1) && (SSSP[node_2].EDGwt > edgeWeight)){
 				Edgedone[index] = 1;
 			}
 
@@ -146,8 +130,7 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 			if (SSSP[node_1].Parent == node_2) { Edgedone[index] = 0; } //avoiding loop creation
 			//new addition ends(under testing)
 
-			if (Edgedone[index] == 1)
-			{
+			if (Edgedone[index] == 1){
 				//Update Parent and EdgeWt
 				SSSP[node_2].Parent = node_1;
 				SSSP[node_2].EDGwt = edgeWeight;
@@ -164,19 +147,15 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 updateNeighbors_del function makes dist value of child nodes of a disconnected node to inf
 It marks the child nodes also as disconnected nodes
 */
-__global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* OutEdgesListFull_device, int* OutEdgesListTracker_device, int* change_d)
-{
+__global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* OutEdgesListFull_device, int* OutEdgesListTracker_device, int* change_d){
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
-	if (index < nodes && SSSP[index].Dist == inf)
-	{
-			for (int j = OutEdgesListTracker_device[index]; j < OutEdgesListTracker_device[index + 1]; j++)
-			{
+	if (index < nodes && SSSP[index].Dist == inf){
+			for (int j = OutEdgesListTracker_device[index]; j < OutEdgesListTracker_device[index + 1]; j++){
 				int myn = OutEdgesListFull_device[j].col;
 				int mywt = OutEdgesListFull_device[j].wt;
 				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
 				
-				if (SSSP[myn].Parent == index && SSSP[myn].Dist != inf)
-				{
+				if (SSSP[myn].Parent == index && SSSP[myn].Dist != inf){
 					SSSP[myn].Dist = inf;
 					SSSP[myn].Update = true;
 					//SSSP[myn].EDGwt = inf; //helps to avoid sync error. might be removed
@@ -191,20 +170,16 @@ __global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* 
 
 //1. This method tries to connect the disconnected nodes(disconnected by deletion) with other nodes using the original graph
 //2. This method propagates the dist update till the leaf nodes
-__global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device, int* change_d)
-{
+__global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEdgesListFull_device, ColWt* OutEdgesListFull_device, int* InEdgesListTracker_device, int* OutEdgesListTracker_device, int* change_d){
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
-	if (index < nodes)
-	{
+	if (index < nodes){
 
 		//If i is updated--update its neighbors as required
-		if (SSSP[index].Update)
-		{
+		if (SSSP[index].Update){
 			SSSP[index].Update = false;
 
 			//For incoming edges of the affected nodes
-			for (int j = InEdgesListTracker_device[index]; j < InEdgesListTracker_device[index + 1]; j++)
-			{
+			for (int j = InEdgesListTracker_device[index]; j < InEdgesListTracker_device[index + 1]; j++){
 				int myn = InEdgesListFull_device[j].col;
 				int mywt = InEdgesListFull_device[j].wt;
 
@@ -217,8 +192,8 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 				//new addition ends
 				if(SSSP[myn].Parent == index) { continue; } //avoiding loop formation
 
-				if (SSSP[index].Dist > SSSP[myn].Dist + mywt) //update where parent of myn != index
-				{
+				//update where parent of myn != index
+				if (SSSP[index].Dist > SSSP[myn].Dist + mywt) {
 					SSSP[index].Dist = SSSP[myn].Dist + mywt;
 					SSSP[index].Update = true;
 					SSSP[index].Parent = myn;
@@ -227,8 +202,7 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 					continue;
 				}
 			}
-			for (int j = OutEdgesListTracker_device[index]; j < OutEdgesListTracker_device[index + 1]; j++)
-			{
+			for (int j = OutEdgesListTracker_device[index]; j < OutEdgesListTracker_device[index + 1]; j++){
 				int myn = OutEdgesListFull_device[j].col;
 				int mywt = OutEdgesListFull_device[j].wt;
 				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
@@ -240,10 +214,9 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 				if (SSSP[index].Parent == myn) { continue; }
 				//new addition ends(under testing)
 				//if index node is the parent node of myn, dist of myn is updated even if it increases the dist of myn
-				if (SSSP[myn].Parent == index)
-				{
-					if (SSSP[index].Dist == inf) //in case of disconnected index node due to deletion
-					{
+				if (SSSP[myn].Parent == index){
+					//in case of disconnected index node due to deletion
+					if (SSSP[index].Dist == inf) {
 						SSSP[myn].Dist = inf;
 					}
 					else { //when the dist of index increases due to reconnecting the disconnected subgraphs
@@ -255,8 +228,9 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 					change_d[0] = 1;
 					continue;
 				}
-				if (SSSP[myn].Dist > SSSP[index].Dist + mywt) //update both cases where parent of myn == index or parent of myn != index
-				{
+
+				//update both cases where parent of myn == index or parent of myn != index
+				if (SSSP[myn].Dist > SSSP[index].Dist + mywt) {
 					SSSP[myn].Dist = SSSP[index].Dist + mywt;
 					SSSP[myn].Update = true;
 					SSSP[myn].Parent = index;
@@ -269,22 +243,18 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* InEd
 }
 
 
-__global__ void printSSSP(RT_Vertex* SSSP, int nodes)
-{
+__global__ void printSSSP(RT_Vertex* SSSP, int nodes){
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
-	if (index < 2)
-	{
+	if (index < 2){
 		int x;
-		if (nodes < 40)
-		{
+		if (nodes < 40){
 			x = nodes;
 		}
 		else {
 			x = 40;
 		}
 		printf("from GPU:\n[");
-		for (int i = 0; i < x; i++)
-		{
+		for (int i = 0; i < x; i++){
 			//cout << "row: " << i << " dist: " << SSSP[i].Dist <<" parent: " << SSSP[i].Parent << endl;
 			printf("%d:%d:%d ", i, SSSP[i].Dist, SSSP[i].Parent);
 		}

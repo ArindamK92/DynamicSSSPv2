@@ -21,8 +21,8 @@ using namespace std::chrono;
 4th arg: input SSSP file name
 5th arg: change edges file name
 ****main commands to run****
-nvcc -o op main2.cu
-./op <fullgraph file name> <SSSP file name> <changeEdges file name> <no. of nodes> <no. of edges * 2 (or total number of lines in fullgraph file)>
+nvcc -o op_main CudaSSSPmain.cu
+./op_main original_graph_file_name number_of_nodes number_of_edges input_SSSP_file_name change_edge_file_name
 */
 int main(int argc, char* argv[]) {
 
@@ -69,8 +69,7 @@ int main(int argc, char* argv[]) {
 	cout << "creating 1D array from 2D to fit it in GPU" << endl;
 	InEdgesListTracker[0] = 0; //start pointer points to the first index of InEdgesList
 	OutEdgesListTracker[0] = 0; //start pointer points to the first index of OutEdgesList
-	for (int i = 0; i < nodes; i++)
-	{
+	for (int i = 0; i < nodes; i++){
 		InEdgesListTracker[i + 1] = InEdgesListTracker[i] + InEdgesList.at(i).size();
 		InEdgesListFull.insert(std::end(InEdgesListFull), std::begin(InEdgesList.at(i)), std::end(InEdgesList.at(i)));
 		OutEdgesListTracker[i + 1] = OutEdgesListTracker[i] + OutEdgesList.at(i).size();
@@ -234,8 +233,7 @@ int main(int argc, char* argv[]) {
 
 
 	//Go over the inserted edges to see if they need to be changed. Correct edges are connected in this stage
-	while (change[0] == 1)
-	{
+	while (change[0] == 1){
 		change[0] = 0;
 		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
 		checkInsertedEdges << < (totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, totalChangeEdges, Edgedone, SSSP, change_d);
@@ -248,8 +246,7 @@ int main(int argc, char* argv[]) {
 
 	//new addition starts
 	change[0] = 1;
-	while (change[0] == 1 /*&& its < 202*/)
-	{
+	while (change[0] == 1 /*&& its < 202*/){
 		//printf("Iteration:%d \n", its);
 		change[0] = 0;
 		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
@@ -267,8 +264,7 @@ int main(int argc, char* argv[]) {
 
 	//update the distance of neighbors and connect the disconnected subgraphs
 	change[0] = 1;
-	while (change[0] == 1 /*&& its < 200*/)
-	{
+	while (change[0] == 1 /*&& its < 200*/){
 		change[0] = 0;
 		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
 		updateNeighbors << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, InEdgesListFull_device, OutEdgesListFull_device, InEdgesListTracker_device, OutEdgesListTracker_device, change_d);
@@ -287,16 +283,14 @@ int main(int argc, char* argv[]) {
 	printSSSP << <1,1>> > (SSSP, nodes);
 	cudaDeviceSynchronize();
 	int x;
-	if (nodes < 40)
-	{
+	if (nodes < 40){
 		x = nodes;
 	}
 	else {
 		x = 40;
 	}
 	cout << "from CPU: \n[";
-	for (int i = 0; i < x; i++)
-	{
+	for (int i = 0; i < x; i++){
 		//cout << "row: " << i << " dist: " << SSSP[i].Dist <<" parent: " << SSSP[i].Parent << endl;
 		cout << i << ":" << SSSP[i].Dist << " ";
 	}

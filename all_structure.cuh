@@ -14,8 +14,7 @@ struct ColWt {
 	int col;
 	int wt;
 };
-//Note: Edges are not ordered, unless specified by code
-// Node+Weight = -1;0 indicates buffer space
+
 //Structure for Edge
 struct Edge
 {
@@ -24,74 +23,17 @@ struct Edge
 	double edge_wt;
 };
 
-Edge create(int n1, int n2, double wt)
-{
-	Edge e;
-	e.node1 = n1;
-	e.node2 = n2;
-	e.edge_wt = wt;
-
-	return e;
-}
-//========================|
-//Structure to indicate whether Edge is to be inserted/deleted
-//struct xEdge {
-//	Edge theEdge;
-//	int inst;
-//	bool insertedToDatastructure;
-//
-//	xEdge()
-//	{
-//		insertedToDatastructure = false;
-//	}
-//	void clear()
-//	{}
-//};
 
 struct changeEdge {
 	int node1;
 	int node2;
 	double edge_wt;
 	int inst;
+};
 
-	//void clear()
-	//{}
-};
-struct ThreadHelper
-{
-	int src; //source
-	int start; //start points to the starting of adjlist of the node in the full adj list
-	int offset; //it stores the lenght of adjlist upto last node
-};
-/*** Pairs ***/
-typedef pair<int, int> int_int;  /** /typedef pair of integers */
-typedef pair<int, double> int_double; /** /typedef pair of integer and double */
-typedef pair<double, int> double_int; /** /typedef pair of integer and double */
 typedef vector<ColWt> ColWtList;
-//typedef vector<ColWtList> AdjList;
-
-//Structure in STATIC Adjacency List---For diagram go to () 
-//Rows=global ID of the rows
-//For edges connected with Rows
-//NListW.first=Column number
-//NListW.second=Value of edge
-struct ADJ_Bundle
-{
-	int Row;
-	vector <int_double> ListW;
-
-	//Constructor
-	ADJ_Bundle() { ListW.resize(0); }
-
-	//Destructor
-	void clear()
-	{
-		while (!ListW.empty()) { ListW.pop_back(); }
-	}
 
 
-};
-typedef  vector<ADJ_Bundle> A_Network;
 
 
 
@@ -101,18 +43,16 @@ struct RT_Vertex
 	//int Root;    //root fo the tree
 	int Parent; //mark the parent in the tree
 	int EDGwt; //mark weight of the edge
-	int marked; //whether the vertex and the edge connecting its parent ..
+	//int marked; //whether the vertex and the edge connecting its parent ..
 				//..exists(-1); has been deleted(-2); is marked for replacement (+ve value index of changed edge)
 
 	int Dist;  //Distance from root
-	bool Update;  //Whether the distance of this edge was updated
+	bool Update;  //Whether the distance of this edge was updated / affected
 };
-//The Rooted tree is a vector of structure RT_Vertex;
+
 
 ////functions////
-//Assumes the all nodes present
 //Node starts from 0
-//Total number of vertices=nodes and are consecutively arranged
 //reads only the edges in the edge list, does not reverse them to make undirected
 
 
@@ -172,8 +112,7 @@ void read_SSSP(RT_Vertex* SSSP, char* myfile, int* nodes)
 	{
 		int node, parent, dist;
 		sscanf(line, "%d %d %d", &node, &parent, &dist);
-		if (node > prev_node + 1)
-		{
+		if (node > prev_node + 1){
 			for (int i = prev_node + 1; i < node; i++)
 			{
 				SSSP[i].Dist = 9999999;
