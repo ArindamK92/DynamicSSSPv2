@@ -33,6 +33,11 @@ inst_status can be 0(for deletion) or 1(for insertion)
 
 **How to prepare input SSSP data from original graph:**
 ___________________________________________________
+Take sorted original_graph_file. If not sorted, sort it first using:
+```shell
+sort -n -k1 unsortedGraphFile > sortedFile
+```
+Now use bellow command to generate input SSSP tree:
 ```shell
 nvcc -o op_ssspSeq seqSSSPwithDist.cpp
 ./op_ssspSeq original_graph_file_name number_of_nodes
