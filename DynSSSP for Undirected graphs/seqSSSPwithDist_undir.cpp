@@ -37,6 +37,9 @@ void readin_graphU2(A_Network* X, int nodes, char* myfile)
 	int_double dummy;
 	dummy.first = 1;
 	dummy.second = 0;
+	int_double dummy2;
+	dummy2.first = 1;
+	dummy2.second = 0;
 	vector <int_double> ListW;
 
 	while (fgets(line, 128, graph_file) != NULL)
@@ -61,6 +64,12 @@ void readin_graphU2(A_Network* X, int nodes, char* myfile)
 		dummy.first = n2;
 		dummy.second = (double)wt;
 		ListW.push_back(dummy);
+		
+		dummy2.first = n1;
+		dummy2.second = (double)wt;
+		X->at(n2).ListW.push_back(dummy2);
+		X->at(n2).Row = n1;
+		
 	}//end of while
 	X->at(prev_node).ListW = ListW;
 	X->at(prev_node).Row = prev_node;
