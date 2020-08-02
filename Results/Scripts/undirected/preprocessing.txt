@@ -1,0 +1,29 @@
+preparing dataset(mtx to our format):
+remove commented line and add weight 1:
+awk '!/^%/ {print $1" "$2" "1}' hollywood-2009.mtx > hollywood-2009_w.mtx
+
+remove selfloop:
+awk '$1!=$2 {print}' hollywood-2009_w.mtx > hollywood-2009_wp.mtx
+
+start from node 0 instead of node 1:
+awk '!/^%/ {print $1-1" "$2-1" "1}' hollywood-2009_wp.mtx > hollywood-2009_wp
+
+remove 1st line (total node and edges) using vim edit
+
+
+mv hollywood-2009_wp /home/akkcm/DataNew/gunrockGraphs/hollywood-2009_wp
+sort -n -k1 hollywood-2009_wp > hollywood-2009_wp_sor
+
+
+
+
+hollywood-2009_wp_sor
+________________________
+nodes: 1069112 
+edges: 29142494
+
+
+
+
+
+awk '{print $1+1" "$2+1" "1}'
