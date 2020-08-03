@@ -1,0 +1,63 @@
+akkcm@cuda-15-23:~/GunRock/gunrock/examples/sssp$ ./bin/test_sssp_10.2_x86_64 market /home/akkcm/GunRock/gunrock/dataset/large/soc-orkut/soc-orkut.mtx --src=0 --device=0 --undirected=1 > /home/akkcm/DataNew/gunrockGraphs/result_gunrock_soc-orkut
+
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from /home/akkcm/GunRock/gunrock/dataset/large/soc-orkut/soc-orkut.mtx.meta
+  Reading edge lists from /home/akkcm/GunRock/gunrock/dataset/large/soc-orkut/soc-orkut.mtx.coo_edge_pairs
+Reading from /home/akkcm/GunRock/gunrock/dataset/large/soc-orkut/soc-orkut.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 106349209
+  Assigning 1 to all 106349209 edges
+  Substracting 1 from node Ids...
+  Edge doubleing: 106349209 -> 212698418 edges
+  graph loaded as COO in 48.479128s.
+Converting 2997166 vertices, 212698418 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 212698418 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 63854 (2.130479 %)
+    Degree 2^1: 84970 (2.835011 %)
+    Degree 2^2: 161332 (5.382818 %)
+    Degree 2^3: 322996 (10.776714 %)
+    Degree 2^4: 567614 (18.938357 %)
+    Degree 2^5: 750256 (25.032180 %)
+    Degree 2^6: 638015 (21.287276 %)
+    Degree 2^7: 297993 (9.942492 %)
+    Degree 2^8: 83002 (2.769349 %)
+    Degree 2^9: 23853 (0.795852 %)
+    Degree 2^10: 2349 (0.078374 %)
+    Degree 2^11: 617 (0.020586 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1937.523071 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73887543
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73887543
+0	 5	 0	 queue3 	 oversize :	 73887543 ->	 135105896
+0	 5	 0	 queue3 	 oversize :	 73887543 ->	 135105896
+--------------------------
+Run 0 elapsed: 57.856083 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 57.856083 ms
+ iterations: 8
+ min. elapsed: 57.856083 ms
+ max. elapsed: 57.856083 ms
+ rate: 3676.336303 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 212698418
+ load time: 50689.6 ms
+ preprocess time: 607.346000 ms
+ postprocess time: 19.089937 ms
+ total time: 684.434891 ms
