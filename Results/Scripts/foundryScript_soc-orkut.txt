@@ -1,0 +1,84 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 100000 100 > ../DataNew/gunrockGraphs/soc-orkut_cE_100K_100
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 100000 75 > ../DataNew/gunrockGraphs/soc-orkut_cE_100K_75
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 100000 50 > ../DataNew/gunrockGraphs/soc-orkut_cE_100K_50
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 100000 25 > ../DataNew/gunrockGraphs/soc-orkut_cE_100K_25
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 100000 0 > ../DataNew/gunrockGraphs/soc-orkut_cE_100K_0
+
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 1000000 100 > ../DataNew/gunrockGraphs/soc-orkut_cE_1M_100
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 1000000 75 > ../DataNew/gunrockGraphs/soc-orkut_cE_1M_75
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 1000000 50 > ../DataNew/gunrockGraphs/soc-orkut_cE_1M_50
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 1000000 25 > ../DataNew/gunrockGraphs/soc-orkut_cE_1M_25
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 1000000 0 > ../DataNew/gunrockGraphs/soc-orkut_cE_1M_0
+
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 10000000 100 > ../DataNew/gunrockGraphs/soc-orkut_cE_10M_100
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 10000000 75 > ../DataNew/gunrockGraphs/soc-orkut_cE_10M_75
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 10000000 50 > ../DataNew/gunrockGraphs/soc-orkut_cE_10M_50
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 10000000 25 > ../DataNew/gunrockGraphs/soc-orkut_cE_10M_25
+./op_changeEdge ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 10000000 0 > ../DataNew/gunrockGraphs/soc-orkut_cE_10M_0
+
+./op_ssspSeq ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 > ../DataNew/gunrockGraphs/SSSPsoc-orkut
+
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_100" > ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_100 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_75" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_75 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_50" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_50 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_25" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_25 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_0" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_100K_0 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_100" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_100 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_75" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_75 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_50" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_50 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_25" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_25 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_0" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_1M_0 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_100" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_100 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_75" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_75 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_50" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_50 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_25" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_25 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_0" >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+./op_main ../DataNew/gunrockGraphs/soc-orkut_wp_sor 2997166 106349209 ../DataNew/gunrockGraphs/SSSPsoc-orkut ../DataNew/gunrockGraphs/soc-orkut_cE_10M_0 >> ../DataNew/gunrockGraphs/resultDS_soc-orkut.txt
+
+
+
+echo "completed"
