@@ -169,6 +169,31 @@ from CPU:
 [0:0 1:1 2:1 3:2 4:3 5:3 6:2 7:18 8:19 9:19 10:18 11:17 12:16 13:16 14:17 15:18 16:18 17:19 18:20 19:21 20:22 21:23 22:999999 23:22 24:23 25:23 26:24 27:23 28:66 29:22 30:21 31:20 32:21 33:20 34:21 35:20 36:20 37:19 38:18 39:17 ]
 
 
+akkcm@cuda-15-23:~/DynamicSSSP_undir$ ./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 1716209 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 638210 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:6533214
+Transferring incoming edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 424532 microseconds
+reading input data completed
+***Time taken for updating SSSP: 71863 microseconds***
+Total Iterations to Converge 57
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:3:6 6:2:1 7:25:8 8:24:33 9:19:10 10:18:11 11:17:12 12:16:108 13:16:95 14:17:13 15:18:14 16:999999:14 17:19:77 18:20:17 19:21:18 20:22:19 21:23:20 22:999999:20 23:22:19 24:23:23 25:23:23 26:24:25 27:22:29 28:73:1073213 29:21:30 30:20:3253 31:21:30 32:22:31 33:23:32 34:24:33 35:22:50 36:22:35885 37:23:36 38:25:1641586 39:26:1641587 ]
+from CPU:
+[0:0 1:1 2:1 3:2 4:3 5:3 6:2 7:25 8:24 9:19 10:18 11:17 12:16 13:16 14:17 15:18 16:999999 17:19 18:20 19:21 20:22 21:23 22:999999 23:22 24:23 25:23 26:24 27:22 28:73 29:21 30:20 31:21 32:22 33:23 34:24 35:22 36:22 37:23 38:25 39:26 ]
+
 
 akkcm@cuda-15-23:~/DynamicSSSP_undir$ ./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_1M_25
 Reading input graph...
@@ -220,3 +245,137 @@ from GPU:
 [0:0:0 1:1:0 2:5:3 3:4:422 4:4:5 5:3:6 6:2:1 7:999999:9 8:999999:7 9:41:84 10:41:84 11:37:12 12:36:95 13:999999:94 14:999999:13 15:999999:14 16:999999:14 17:999999:77 18:999999:17 19:999999:18 20:999999:19 21:999999:20 22:999999:20 23:999999:19 24:999999:23 25:999999:23 26:999999:25 27:999999:29 28:999999:27 29:999999:3255 30:999999:29 31:999999:30 32:999999:31 33:999999:8 34:999999:33 35:140:1199 36:141:35 37:149:1641586 38:149:1641586 39:150:38 ]
 from CPU:
 [0:0 1:1 2:5 3:4 4:4 5:3 6:2 7:999999 8:999999 9:41 10:41 11:37 12:36 13:999999 14:999999 15:999999 16:999999 17:999999 18:999999 19:999999 20:999999 21:999999 22:999999 23:999999 24:999999 25:999999 26:999999 27:999999 28:999999 29:999999 30:999999 31:999999 32:999999 33:999999 34:999999 35:140 36:141 37:149 38:149 39:150 ]
+
+akkcm@cuda-15-23:~/DynamicSSSP_undir$ ./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 1844511 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 4444441 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:15533214
+Transferring incoming edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 424196 microseconds
+reading input data completed
+***Time taken for updating SSSP: 88693 microseconds***
+Total Iterations to Converge 22
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:3:6 6:2:1 7:7:262567 8:8:7 9:8:7 10:9:9 11:10:10 12:10:13 13:9:94 14:10:13 15:11:14 16:11:14 17:10:77 18:11:17 19:12:18 20:13:19 21:14:20 22:14:20 23:11:25 24:12:23 25:10:27 26:11:25 27:9:204387 28:10:27 29:9:30 30:8:31 31:7:3246 32:8:31 33:9:8 34:9:95144 35:11:1199 36:12:35 37:12:38 38:11:39 39:10:40 ]
+from CPU:
+[0:0 1:1 2:1 3:2 4:3 5:3 6:2 7:7 8:8 9:8 10:9 11:10 12:10 13:9 14:10 15:11 16:11 17:10 18:11 19:12 20:13 21:14 22:14 23:11 24:12 25:10 26:11 27:9 28:10 29:9 30:8 31:7 32:8 33:9 34:9 35:11 36:12 37:12 38:11 39:10 ]
+
+akkcm@cuda-15-23:~/DynamicSSSP_undir$ ./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 1714529 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:3750000
+Time taken to read input changed edges: 3831351 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:13033214
+Transferring incoming edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 425640 microseconds
+reading input data completed
+***Time taken for updating SSSP: 116646 microseconds***
+Total Iterations to Converge 30
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:2:1 7:19:262567 8:20:7 9:14:10 10:13:1930291 11:14:10 12:18:108 13:15:94 14:16:13 15:17:14 16:71:1525347 17:16:77 18:17:17 19:18:18 20:19:19 21:20:20 22:25:417917 23:17:25 24:18:23 25:16:27 26:17:25 27:15:29 28:64:1073213 29:14:30 30:13:31 31:12:32 32:11:33 33:10:34 34:9:95144 35:13:50 36:14:35 37:15:36 38:17:1641586 39:18:38 ]
+from CPU:
+[0:0 1:1 2:1 3:2 4:3 5:4 6:2 7:19 8:20 9:14 10:13 11:14 12:18 13:15 14:16 15:17 16:71 17:16 18:17 19:18 20:19 21:20 22:25 23:17 24:18 25:16 26:17 27:15 28:64 29:14 30:13 31:12 32:11 33:10 34:9 35:13 36:14 37:15 38:17 39:18 ]
+
+
+akkcm@cuda-15-23:~/DynamicSSSP_undir$ ./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 1717116 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 3168650 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:10533214
+Transferring incoming edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 423231 microseconds
+reading input data completed
+***Time taken for updating SSSP: 90754 microseconds***
+Total Iterations to Converge 48
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:2:1 7:44:262567 8:45:7 9:31:10 10:30:1930291 11:31:10 12:88:95 13:99:94 14:90:1798992 15:91:14 16:87:1525347 17:100:77 18:50:19 19:49:23 20:50:19 21:999999:20 22:56:417917 23:48:1398958 24:49:23 25:49:23 26:87:1155467 27:66:105723 28:66:1073213 29:53:30 30:52:3253 31:53:30 32:54:31 33:27:212317 34:28:33 35:47:931957 36:35:37 37:34:834768 38:36:1641586 39:37:38 ]
+from CPU:
+[0:0 1:1 2:1 3:2 4:3 5:4 6:2 7:44 8:45 9:31 10:30 11:31 12:88 13:99 14:90 15:91 16:87 17:100 18:50 19:49 20:50 21:999999 22:56 23:48 24:49 25:49 26:87 27:66 28:66 29:53 30:52 31:53 32:54 33:27 34:28 35:47 36:35 37:34 38:36 39:37 ]
+
+
+akkcm@cuda-15-23:~/DynamicSSSP_undir$ ./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 1795367 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1250000
+Time taken to read input changed edges: 2347124 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:8033214
+Transferring incoming edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 429162 microseconds
+reading input data completed
+***Time taken for updating SSSP: 73698 microseconds***
+Total Iterations to Converge 47
+from GPU:
+[0:0:0 1:1:0 2:231:477069 3:119:422 4:213:1103502 5:999999:6 6:2:1 7:158:262567 8:159:7 9:203:10 10:202:1930291 11:203:10 12:188:1355354 13:999999:94 14:194:1798992 15:195:14 16:196:1525347 17:999999:77 18:215:19 19:214:1112381 20:312:1308537 21:999999:20 22:999999:20 23:48:1398958 24:116:644875 25:255:946553 26:187:557843 27:169:1804328 28:167:1073213 29:158:30 30:157:31 31:156:32 32:155:434525 33:124:34 34:123:765246 35:90:1199 36:201:35885 37:155:1350215 38:999999:37 39:185:1664818 ]
+from CPU:
+[0:0 1:1 2:231 3:119 4:213 5:999999 6:2 7:158 8:159 9:203 10:202 11:203 12:188 13:999999 14:194 15:195 16:196 17:999999 18:215 19:214 20:312 21:999999 22:999999 23:48 24:116 25:255 26:187 27:169 28:167 29:158 30:157 31:156 32:155 33:124 34:123 35:90 36:201 37:155 38:999999 39:185 ]
+
+
+akkcm@cuda-15-23:~/DynamicSSSP_undir$ ./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 1718333 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 1429162 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring incoming edges data to GPU
+Transferring incoming edges data to GPU before copy. size:5533214
+Transferring incoming edges tracker to GPU
+Transferring change edges data to GPU
+setting GPU advice for change edges
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 424253 microseconds
+reading input data completed
+***Time taken for updating SSSP: 38964 microseconds***
+Total Iterations to Converge 9
+from GPU:
+[0:0:0 1:1:0 2:999999:0 3:999999:2 4:999999:3 5:999999:6 6:2:1 7:999999:9 8:999999:7 9:999999:10 10:999999:11 11:999999:12 12:999999:13 13:999999:94 14:999999:13 15:999999:14 16:999999:14 17:999999:77 18:999999:17 19:999999:18 20:999999:19 21:999999:20 22:999999:20 23:999999:19 24:999999:23 25:999999:23 26:999999:25 27:999999:29 28:999999:27 29:999999:3255 30:999999:29 31:999999:30 32:999999:31 33:999999:8 34:999999:33 35:999999:1199 36:999999:35 37:999999:36 38:999999:37 39:999999:38 ]
+from CPU:
+[0:0 1:1 2:999999 3:999999 4:999999 5:999999 6:2 7:999999 8:999999 9:999999 10:999999 11:999999 12:999999 13:999999 14:999999 15:999999 16:999999 17:999999 18:999999 19:999999 20:999999 21:999999 22:999999 23:999999 24:999999 25:999999 26:999999 27:999999 28:999999 29:999999 30:999999 31:999999 32:999999 33:999999 34:999999 35:999999 36:999999 37:999999 38:999999 39:999999 ]
+
+
+
+
+
+
