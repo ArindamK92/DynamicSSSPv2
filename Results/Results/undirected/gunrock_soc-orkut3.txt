@@ -1,0 +1,775 @@
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_1M_75.mtx:
+  Parsing MARKET COO format (2997166 nodes, 107098370 directed edges)...   Done (32 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_1M_75.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 107098370 -> 214196740 edges
+  Removed 54 duplicate edges and self circles.
+  graph loaded as COO in 86.050278s.
+Converting 2997166 vertices, 214196686 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 214196686 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 38764 (1.293355 %)
+    Degree 2^1: 88988 (2.969071 %)
+    Degree 2^2: 162253 (5.413547 %)
+    Degree 2^3: 323160 (10.782186 %)
+    Degree 2^4: 571809 (19.078323 %)
+    Degree 2^5: 757291 (25.266902 %)
+    Degree 2^6: 643995 (21.486798 %)
+    Degree 2^7: 300293 (10.019232 %)
+    Degree 2^8: 83407 (2.782862 %)
+    Degree 2^9: 23921 (0.798121 %)
+    Degree 2^10: 2352 (0.078474 %)
+    Degree 2^11: 617 (0.020586 %)
+    Degree 2^12: 210 (0.007007 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1736.437988 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 89828953
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 89828953
+0	 5	 0	 queue3 	 oversize :	 89828953 ->	 132497037
+0	 5	 0	 queue3 	 oversize :	 89828953 ->	 132497037
+--------------------------
+Run 0 elapsed: 59.524059 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 59.524059 ms
+ iterations: 8
+ min. elapsed: 59.524059 ms
+ max. elapsed: 59.524059 ms
+ rate: 3598.489225 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 214196686
+ load time: 88209.8 ms
+ preprocess time: 635.000000 ms
+ postprocess time: 18.927097 ms
+ total time: 713.583946 ms
+
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_1M_50.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106848114 directed edges)...   Done (31 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_1M_50.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106848114 -> 213696228 edges
+  Removed 36 duplicate edges and self circles.
+  graph loaded as COO in 83.523843s.
+Converting 2997166 vertices, 213696192 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 213696192 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 45810 (1.528444 %)
+    Degree 2^1: 89153 (2.974577 %)
+    Degree 2^2: 161811 (5.398800 %)
+    Degree 2^3: 323010 (10.777181 %)
+    Degree 2^4: 570453 (19.033080 %)
+    Degree 2^5: 755020 (25.191131 %)
+    Degree 2^6: 641949 (21.418533 %)
+    Degree 2^7: 299488 (9.992373 %)
+    Degree 2^8: 83297 (2.779192 %)
+    Degree 2^9: 23891 (0.797120 %)
+    Degree 2^10: 2352 (0.078474 %)
+    Degree 2^11: 617 (0.020586 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1679.707031 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 81229291
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 81229291
+0	 5	 0	 queue3 	 oversize :	 81229291 ->	 134458611
+0	 5	 0	 queue3 	 oversize :	 81229291 ->	 134458611
+--------------------------
+Run 0 elapsed: 57.800055 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 57.800055 ms
+ iterations: 8
+ min. elapsed: 57.800055 ms
+ max. elapsed: 57.800055 ms
+ rate: 3697.162462 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 213696192
+ load time: 85671.3 ms
+ preprocess time: 592.800000 ms
+ postprocess time: 18.851995 ms
+ total time: 669.583082 ms
+
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_1M_25.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106598008 directed edges)...   Done (31 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_1M_25.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106598008 -> 213196016 edges
+  Removed 18 duplicate edges and self circles.
+  graph loaded as COO in 83.505942s.
+Converting 2997166 vertices, 213195998 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 213195998 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 53978 (1.800968 %)
+    Degree 2^1: 87919 (2.933404 %)
+    Degree 2^2: 161604 (5.391894 %)
+    Degree 2^3: 322974 (10.775980 %)
+    Degree 2^4: 569019 (18.985235 %)
+    Degree 2^5: 752658 (25.112323 %)
+    Degree 2^6: 640016 (21.354039 %)
+    Degree 2^7: 298702 (9.966148 %)
+    Degree 2^8: 83141 (2.773987 %)
+    Degree 2^9: 23872 (0.796486 %)
+    Degree 2^10: 2351 (0.078441 %)
+    Degree 2^11: 617 (0.020586 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1656.864868 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 79335682
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 79335682
+0	 5	 0	 queue3 	 oversize :	 79335682 ->	 132727768
+0	 5	 0	 queue3 	 oversize :	 79335682 ->	 132727768
+--------------------------
+Run 0 elapsed: 57.527065 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 57.527065 ms
+ iterations: 8
+ min. elapsed: 57.527065 ms
+ max. elapsed: 57.527065 ms
+ rate: 3706.012065 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 213195998
+ load time: 85654.6 ms
+ preprocess time: 600.316000 ms
+ postprocess time: 20.792007 ms
+ total time: 678.765059 ms
+
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_1M_0.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106347625 directed edges)...   Done (31 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_1M_0.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_1M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106347625 -> 212695250 edges
+  graph loaded as COO in 80.404124s.
+Converting 2997166 vertices, 212695250 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 212695250 edges):
+    Degree 0: 1 (0.000033 %)
+    Degree 2^0: 63854 (2.130479 %)
+    Degree 2^1: 84973 (2.835112 %)
+    Degree 2^2: 161329 (5.382718 %)
+    Degree 2^3: 323008 (10.777114 %)
+    Degree 2^4: 567617 (18.938457 %)
+    Degree 2^5: 750256 (25.032180 %)
+    Degree 2^6: 638009 (21.287076 %)
+    Degree 2^7: 297988 (9.942326 %)
+    Degree 2^8: 82997 (2.769183 %)
+    Degree 2^9: 23853 (0.795852 %)
+    Degree 2^10: 2349 (0.078374 %)
+    Degree 2^11: 617 (0.020586 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1742.003174 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73886303
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73886303
+0	 5	 0	 queue3 	 oversize :	 73886303 ->	 135104010
+0	 5	 0	 queue3 	 oversize :	 73886303 ->	 135104010
+--------------------------
+Run 0 elapsed: 55.967093 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 55.967093 ms
+ iterations: 8
+ min. elapsed: 55.967093 ms
+ max. elapsed: 55.967093 ms
+ rate: 3800.362685 MiEdges/s
+ src: 0
+ nodes_visited: 2997165
+ edges_visited: 212695250
+ load time: 82531.8 ms
+ preprocess time: 586.451000 ms
+ postprocess time: 18.851995 ms
+ total time: 661.398172 ms
+
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_10M_75.mtx:
+  Parsing MARKET COO format (2997166 nodes, 113847592 directed edges)...   Done (33 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_10M_75.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 113847592 -> 227695184 edges
+  Removed 398 duplicate edges and self circles.
+  graph loaded as COO in 90.123559s.
+Converting 2997166 vertices, 227694786 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 227694786 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 425 (0.014180 %)
+    Degree 2^1: 9514 (0.317433 %)
+    Degree 2^2: 101626 (3.390736 %)
+    Degree 2^3: 320435 (10.691266 %)
+    Degree 2^4: 604366 (20.164582 %)
+    Degree 2^5: 824083 (27.495407 %)
+    Degree 2^6: 700265 (23.364238 %)
+    Degree 2^7: 321762 (10.735542 %)
+    Degree 2^8: 86928 (2.900340 %)
+    Degree 2^9: 24449 (0.815737 %)
+    Degree 2^10: 2377 (0.079308 %)
+    Degree 2^11: 619 (0.020653 %)
+    Degree 2^12: 211 (0.007040 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1881.598022 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 170252810
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 170252810
+--------------------------
+Run 0 elapsed: 71.561813 ms, src = 0, #iterations = 10
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 71.561813 ms
+ iterations: 10
+ min. elapsed: 71.561813 ms
+ max. elapsed: 71.561813 ms
+ rate: 3181.791731 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 227694786
+ load time: 92381 ms
+ preprocess time: 632.143000 ms
+ postprocess time: 18.862009 ms
+ total time: 722.697020 ms
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_10M_50.mtx:
+  Parsing MARKET COO format (2997166 nodes, 111347432 directed edges)...   Done (32 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_10M_50.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 111347432 -> 222694864 edges
+  Removed 254 duplicate edges and self circles.
+  graph loaded as COO in 87.607966s.
+Converting 2997166 vertices, 222694610 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 222694610 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 2245 (0.074904 %)
+    Degree 2^1: 28499 (0.950865 %)
+    Degree 2^2: 144419 (4.818519 %)
+    Degree 2^3: 324372 (10.822624 %)
+    Degree 2^4: 593709 (19.809013 %)
+    Degree 2^5: 798336 (26.636362 %)
+    Degree 2^6: 678771 (22.647094 %)
+    Degree 2^7: 313648 (10.464819 %)
+    Degree 2^8: 85624 (2.856832 %)
+    Degree 2^9: 24239 (0.808731 %)
+    Degree 2^10: 2368 (0.079008 %)
+    Degree 2^11: 621 (0.020720 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1815.194092 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 152803167
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 152803167
+--------------------------
+Run 0 elapsed: 66.792011 ms, src = 0, #iterations = 10
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 66.792011 ms
+ iterations: 10
+ min. elapsed: 66.792011 ms
+ max. elapsed: 66.792011 ms
+ rate: 3334.150384 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 222694610
+ load time: 89827.8 ms
+ preprocess time: 609.609000 ms
+ postprocess time: 18.725872 ms
+ total time: 695.262909 ms
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_10M_25.mtx:
+  Parsing MARKET COO format (2997166 nodes, 108847178 directed edges)...   Done (31 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_10M_25.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 108847178 -> 217694356 edges
+  Removed 136 duplicate edges and self circles.
+  graph loaded as COO in 85.367349s.
+Converting 2997166 vertices, 217694220 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 217694220 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 12097 (0.403615 %)
+    Degree 2^1: 66783 (2.228205 %)
+    Degree 2^2: 163970 (5.470835 %)
+    Degree 2^3: 323954 (10.808677 %)
+    Degree 2^4: 581049 (19.386614 %)
+    Degree 2^5: 773932 (25.822127 %)
+    Degree 2^6: 658152 (21.959144 %)
+    Degree 2^7: 305548 (10.194564 %)
+    Degree 2^8: 84326 (2.813525 %)
+    Degree 2^9: 24060 (0.802758 %)
+    Degree 2^10: 2362 (0.078808 %)
+    Degree 2^11: 618 (0.020619 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1786.976807 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 99353203
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 99353203
+0	 5	 0	 queue3 	 oversize :	 99353203 ->	 133435604
+0	 5	 0	 queue3 	 oversize :	 99353203 ->	 133435604
+--------------------------
+Run 0 elapsed: 63.544035 ms, src = 0, #iterations = 9
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 63.544035 ms
+ iterations: 9
+ min. elapsed: 63.544035 ms
+ max. elapsed: 63.544035 ms
+ rate: 3425.879709 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 217694220
+ load time: 87543.3 ms
+ preprocess time: 602.876000 ms
+ postprocess time: 18.947124 ms
+ total time: 685.499191 ms
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_10M_0.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106345784 directed edges)...   Done (31 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_10M_0.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_10M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106345784 -> 212691568 edges
+  graph loaded as COO in 80.039874s.
+Converting 2997166 vertices, 212691568 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 212691568 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 63855 (2.130513 %)
+    Degree 2^1: 84971 (2.835045 %)
+    Degree 2^2: 161343 (5.383185 %)
+    Degree 2^3: 322998 (10.776780 %)
+    Degree 2^4: 567625 (18.938724 %)
+    Degree 2^5: 750258 (25.032247 %)
+    Degree 2^6: 638015 (21.287276 %)
+    Degree 2^7: 297972 (9.941792 %)
+    Degree 2^8: 82997 (2.769183 %)
+    Degree 2^9: 23851 (0.795785 %)
+    Degree 2^10: 2349 (0.078374 %)
+    Degree 2^11: 617 (0.020586 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1640.099976 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73886440
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73886440
+0	 5	 0	 queue3 	 oversize :	 73886440 ->	 135100166
+0	 5	 0	 queue3 	 oversize :	 73886440 ->	 135100166
+--------------------------
+Run 0 elapsed: 54.996014 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 54.996014 ms
+ iterations: 8
+ min. elapsed: 54.996014 ms
+ max. elapsed: 54.996014 ms
+ rate: 3867.399724 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 212691568
+ load time: 82163.2 ms
+ preprocess time: 595.550000 ms
+ postprocess time: 18.599987 ms
+ total time: 669.272900 ms
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_50M_75.mtx:
+  Parsing MARKET COO format (2997166 nodes, 143845792 directed edges)...   Done (43 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_50M_75.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 143845792 -> 287691584 edges
+  Removed 2084 duplicate edges and self circles.
+  graph loaded as COO in 121.528380s.
+Converting 2997166 vertices, 287689500 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 287689500 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 0 (0.000000 %)
+    Degree 2^1: 0 (0.000000 %)
+    Degree 2^2: 0 (0.000000 %)
+    Degree 2^3: 1270 (0.042373 %)
+    Degree 2^4: 276909 (9.239028 %)
+    Degree 2^5: 1120727 (37.392890 %)
+    Degree 2^6: 1020563 (34.050933 %)
+    Degree 2^7: 441839 (14.741893 %)
+    Degree 2^8: 105635 (3.524496 %)
+    Degree 2^9: 26764 (0.892977 %)
+    Degree 2^10: 2509 (0.083712 %)
+    Degree 2^11: 630 (0.021020 %)
+    Degree 2^12: 214 (0.007140 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2454.534912 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 63959530
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 63959530
+0	 4	 0	 queue3 	 oversize :	 63959530 ->	 283713604
+0	 4	 0	 queue3 	 oversize :	 63959530 ->	 283713604
+--------------------------
+Run 0 elapsed: 119.637966 ms, src = 0, #iterations = 14
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 119.637966 ms
+ iterations: 14
+ min. elapsed: 119.637966 ms
+ max. elapsed: 119.637966 ms
+ rate: 2404.667258 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 287689500
+ load time: 124293 ms
+ preprocess time: 711.921000 ms
+ postprocess time: 19.808054 ms
+ total time: 851.500988 ms
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_50M_50.mtx:
+  Parsing MARKET COO format (2997166 nodes, 131345052 directed edges)...   Done (39 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_50M_50.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 131345052 -> 262690104 edges
+  Removed 1374 duplicate edges and self circles.
+  graph loaded as COO in 110.099651s.
+Converting 2997166 vertices, 262688730 directed edges ( ordered tuples) to CSR format...Done (3s).
+Degree Histogram (2997166 vertices, 262688730 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 0 (0.000000 %)
+    Degree 2^1: 2 (0.000067 %)
+    Degree 2^2: 206 (0.006873 %)
+    Degree 2^3: 43954 (1.466519 %)
+    Degree 2^4: 559322 (18.661696 %)
+    Degree 2^5: 1009467 (33.680717 %)
+    Degree 2^6: 871271 (29.069828 %)
+    Degree 2^7: 386426 (12.893046 %)
+    Degree 2^8: 97328 (3.247334 %)
+    Degree 2^9: 25800 (0.860813 %)
+    Degree 2^10: 2446 (0.081610 %)
+    Degree 2^11: 625 (0.020853 %)
+    Degree 2^12: 213 (0.007107 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2186.377930 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 49563073
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 49563073
+0	 4	 0	 queue3 	 oversize :	 49563073 ->	 256200802
+0	 4	 0	 queue3 	 oversize :	 49563073 ->	 256200802
+--------------------------
+Run 0 elapsed: 111.194134 ms, src = 0, #iterations = 12
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 111.194134 ms
+ iterations: 12
+ min. elapsed: 111.194134 ms
+ max. elapsed: 111.194134 ms
+ rate: 2362.433351 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 262688730
+ load time: 112629 ms
+ preprocess time: 675.089000 ms
+ postprocess time: 19.612074 ms
+ total time: 806.025982 ms
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_50M_25.mtx:
+  Parsing MARKET COO format (2997166 nodes, 118842125 directed edges)...   Done (35 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_50M_25.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 118842125 -> 237684250 edges
+  Removed 640 duplicate edges and self circles.
+  graph loaded as COO in 98.098463s.
+Converting 2997166 vertices, 237683610 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 237683610 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 16 (0.000534 %)
+    Degree 2^1: 768 (0.025624 %)
+    Degree 2^2: 29049 (0.969216 %)
+    Degree 2^3: 267406 (8.921962 %)
+    Degree 2^4: 622877 (20.782199 %)
+    Degree 2^5: 875186 (29.200451 %)
+    Degree 2^6: 745199 (24.863454 %)
+    Degree 2^7: 338761 (11.302711 %)
+    Degree 2^8: 89722 (2.993561 %)
+    Degree 2^9: 24850 (0.829117 %)
+    Degree 2^10: 2394 (0.079875 %)
+    Degree 2^11: 620 (0.020686 %)
+    Degree 2^12: 212 (0.007073 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1992.862915 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 209356607
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 209356607
+--------------------------
+Run 0 elapsed: 77.971935 ms, src = 0, #iterations = 11
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 77.971935 ms
+ iterations: 11
+ min. elapsed: 77.971935 ms
+ max. elapsed: 77.971935 ms
+ rate: 3048.322569 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 237683610
+ load time: 100433 ms
+ preprocess time: 631.012000 ms
+ postprocess time: 19.493103 ms
+ total time: 728.605032 ms
+
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from /lustre/scratch/akkcm/soc-orkut_gun_50M_0.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106341308 directed edges)...   Done (32 s).
+  Writing meta data into /lustre/scratch/akkcm/soc-orkut_gun_50M_0.mtx.meta
+  Writting edge pairs in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into /lustre/scratch/akkcm/soc-orkut_gun_50M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106341308 -> 212682616 edges
+  graph loaded as COO in 83.065937s.
+Converting 2997166 vertices, 212682616 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 212682616 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 63858 (2.130613 %)
+    Degree 2^1: 84974 (2.835145 %)
+    Degree 2^2: 161345 (5.383252 %)
+    Degree 2^3: 323019 (10.777481 %)
+    Degree 2^4: 567640 (18.939225 %)
+    Degree 2^5: 750272 (25.032714 %)
+    Degree 2^6: 637978 (21.286042 %)
+    Degree 2^7: 297963 (9.941491 %)
+    Degree 2^8: 82991 (2.768982 %)
+    Degree 2^9: 23847 (0.795652 %)
+    Degree 2^10: 2347 (0.078307 %)
+    Degree 2^11: 617 (0.020586 %)
+    Degree 2^12: 209 (0.006973 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2029.552002 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73884367
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 73884367
+0	 5	 0	 queue3 	 oversize :	 73884367 ->	 135093538
+0	 5	 0	 queue3 	 oversize :	 73884367 ->	 135093538
+--------------------------
+Run 0 elapsed: 56.136131 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 56.136131 ms
+ iterations: 8
+ min. elapsed: 56.136131 ms
+ max. elapsed: 56.136131 ms
+ rate: 3788.693861 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 212682616
+ load time: 85391.4 ms
+ preprocess time: 625.114000 ms
+ postprocess time: 20.008087 ms
+ total time: 701.405048 ms
