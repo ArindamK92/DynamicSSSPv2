@@ -1,0 +1,122 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o gunR-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+
+awk '!/^%/ {print $1" "$2" "1}' /lustre/scratch/akkcm/roadNet-CA.mtx > /lustre/scratch/akkcm/roadNet-CA_w.mtx
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_5M_100.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_100 >> /lustre/scratch/akkcm/roadNet-CA_gun_5M_100.mtx
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_1M_100.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_100 >> /lustre/scratch/akkcm/roadNet-CA_gun_1M_100.mtx
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_100K_100.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_100 >> /lustre/scratch/akkcm/roadNet-CA_gun_100K_100.mtx
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_5M_75_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_75 >> /lustre/scratch/akkcm/roadNet-CA_gun_5M_75_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_75 >>/lustre/scratch/akkcm/roadNet-CA_cE_5M_75_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_5M_75_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_5M_75_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_5M_75.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_5M_75_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_5M_75_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_5M_50_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_50 >> /lustre/scratch/akkcm/roadNet-CA_gun_5M_50_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_50 >>/lustre/scratch/akkcm/roadNet-CA_cE_5M_50_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_5M_50_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_5M_50_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_5M_50.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_5M_50_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_5M_50_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_5M_25_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_25 >> /lustre/scratch/akkcm/roadNet-CA_gun_5M_25_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_25 >>/lustre/scratch/akkcm/roadNet-CA_cE_5M_25_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_5M_25_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_5M_25_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_5M_25.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_5M_25_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_5M_25_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_5M_0_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_5M_0 >>/lustre/scratch/akkcm/roadNet-CA_cE_5M_0_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_5M_0_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_5M_0_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_5M_0.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_5M_0_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_5M_0_del
+
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_1M_75_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_75 >> /lustre/scratch/akkcm/roadNet-CA_gun_1M_75_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_75 >>/lustre/scratch/akkcm/roadNet-CA_cE_1M_75_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_1M_75_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_1M_75_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_1M_75.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_1M_75_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_1M_75_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_1M_50_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_50 >> /lustre/scratch/akkcm/roadNet-CA_gun_1M_50_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_50 >>/lustre/scratch/akkcm/roadNet-CA_cE_1M_50_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_1M_50_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_1M_50_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_1M_50.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_1M_50_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_1M_50_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_1M_25_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_25 >> /lustre/scratch/akkcm/roadNet-CA_gun_1M_25_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_25 >>/lustre/scratch/akkcm/roadNet-CA_cE_1M_25_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_1M_25_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_1M_25_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_1M_25.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_1M_25_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_1M_25_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_1M_0_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_1M_0 >>/lustre/scratch/akkcm/roadNet-CA_cE_1M_0_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_1M_0_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_1M_0_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_1M_0.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_1M_0_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_1M_0_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_100K_75_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_75 >> /lustre/scratch/akkcm/roadNet-CA_gun_100K_75_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_75 >>/lustre/scratch/akkcm/roadNet-CA_cE_100K_75_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_100K_75_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_100K_75_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_100K_75.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_100K_75_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_100K_75_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_100K_50_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_50 >> /lustre/scratch/akkcm/roadNet-CA_gun_100K_50_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_50 >>/lustre/scratch/akkcm/roadNet-CA_cE_100K_50_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_100K_50_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_100K_50_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_100K_50.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_100K_50_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_100K_50_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_100K_25_meta.mtx
+awk '$4==1 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_25 >> /lustre/scratch/akkcm/roadNet-CA_gun_100K_25_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_25 >>/lustre/scratch/akkcm/roadNet-CA_cE_100K_25_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_100K_25_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_100K_25_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_100K_25.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_100K_25_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_100K_25_del
+
+
+cp /lustre/scratch/akkcm/roadNet-CA_w.mtx /lustre/scratch/akkcm/roadNet-CA_gun_100K_0_meta.mtx
+awk '$4==0 {print $1+1" "$2+1" "$3}' /home/akkcm/DataNew/gunrockGraphs/roadNet-CA_cE_100K_0 >>/lustre/scratch/akkcm/roadNet-CA_cE_100K_0_del
+diff /lustre/scratch/akkcm/roadNet-CA_gun_100K_0_meta.mtx /lustre/scratch/akkcm/roadNet-CA_cE_100K_0_del | grep "<" | sed 's/^<//g' > /lustre/scratch/akkcm/roadNet-CA_gun_100K_0.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_gun_100K_0_meta.mtx
+rm /lustre/scratch/akkcm/roadNet-CA_cE_100K_0_del
+
+
+
+echo "completed"

@@ -1,0 +1,66 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o Gsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_75.mtx --src=0 --device=0 --undirected=1" > /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_75.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_75.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_75.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_5M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_50M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_1M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+echo "./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_gun_10M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/gunrockGraphs/gunrock_soc-orkut_corrected.txt
+
+echo "completed"

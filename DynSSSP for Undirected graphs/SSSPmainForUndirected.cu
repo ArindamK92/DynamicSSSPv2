@@ -208,7 +208,7 @@ int main(int argc, char* argv[]) {
 
 
 
-	auto startTime = high_resolution_clock::now(); //Time calculation start
+	auto startTime1 = high_resolution_clock::now(); //Time calculation start
 	//initialize Edgedone array with -1
 	initializeEdgedone << <(totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (Edgedone, totalChangeEdges);
 	//process change edges
@@ -242,9 +242,13 @@ int main(int argc, char* argv[]) {
 
 	}
 	cudaFree(Edgedone); //free memory before neighbor update
+	auto stopTime1 = high_resolution_clock::now();//Time calculation ends
+	auto duration1 = duration_cast<microseconds>(stopTime1 - startTime1);// duration calculation
+	cout << "**Time taken for STEP 1: "
+		<< float(duration1.count()) / 1000 << " milliseconds**" << endl;
 
-
-	//new addition starts
+	//Step 2 starts
+	auto startTime2 = high_resolution_clock::now(); //Time calculation start
 	change[0] = 1;
 	while (change[0] == 1 /*&& its < 202*/) {
 		//printf("Iteration:%d \n", its);
@@ -272,11 +276,13 @@ int main(int argc, char* argv[]) {
 		cudaDeviceSynchronize();
 		its++;
 	}
-	auto stopTime = high_resolution_clock::now();//Time calculation ends
-	auto duration = duration_cast<microseconds>(stopTime - startTime);// duration calculation
-	cout << "***Time taken for updating SSSP: "
-		<< duration.count() << " microseconds***" << endl;
+	auto stopTime2 = high_resolution_clock::now();//Time calculation ends
+	auto duration2 = duration_cast<microseconds>(stopTime2 - startTime2);// duration calculation
+	cout << "**Time taken for STEP 2: "
+		<< float(duration2.count()) / 1000 << " milliseconds**" << endl;
 	printf("Total Iterations to Converge %d \n", its);
+	cout << "****Total Time taken for SSSP update: "
+		<< float(duration1.count() + duration2.count()) / 1000 << " milliseconds****" << endl;
 
 
 	//print output:

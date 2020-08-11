@@ -1,0 +1,7 @@
+
+
+>>change 1st line for matrix market format
+
+
+
+./bin/test_sssp_10.2_x86_64 market /lustre/scratch/akkcm/soc-orkut_n.mtx --src=0 --device=0 --undirected=1
