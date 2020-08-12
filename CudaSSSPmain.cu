@@ -79,20 +79,22 @@ int main(int argc, char* argv[]) {
 
 
 	//Transferring input graph and change edges data to GPU
-	cout << "Transferring incoming edges data to GPU" << endl;
+	cout << "Transferring graph data from CPU to GPU" << endl;
+	auto startTime_transfer = high_resolution_clock::now();
+	//cout << "Transferring incoming edges data to GPU" << endl;
 	ColWt* InEdgesListFull_device;
 	cudaStatus = cudaMallocManaged(&InEdgesListFull_device, (edges + totalInsertion) * sizeof(ColWt));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListFull structure");
 	}
-	cout << "Transferring incoming edges data to GPU before copy. size:" << InEdgesListFull.size() << endl;
+	//cout << "Transferring incoming edges data to GPU before copy. size:" << InEdgesListFull.size() << endl;
 	/*for (int i = 0; i < InEdgesListFull.size(); i++)
 	{
 		cout << InEdgesListFull.at(i).col << ":" << InEdgesListFull.at(i).wt << endl;
 	}*/
 	std::copy(InEdgesListFull.begin(), InEdgesListFull.end(), InEdgesListFull_device);
 
-	cout << "Transferring outgoing edges data to GPU" << endl;
+	//cout << "Transferring outgoing edges data to GPU" << endl;
 	ColWt* OutEdgesListFull_device;
 	cudaStatus = cudaMallocManaged(&OutEdgesListFull_device, (edges + totalInsertion) * sizeof(ColWt));
 	if (cudaStatus != cudaSuccess) {
@@ -100,7 +102,7 @@ int main(int argc, char* argv[]) {
 	}
 	std::copy(OutEdgesListFull.begin(), OutEdgesListFull.end(), OutEdgesListFull_device);
 	
-	cout << "Transferring incoming edges tracker to GPU" << endl;
+	//cout << "Transferring incoming edges tracker to GPU" << endl;
 	int* InEdgesListTracker_device;
 	cudaStatus = cudaMalloc((void**)&InEdgesListTracker_device, nodes * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
@@ -108,7 +110,7 @@ int main(int argc, char* argv[]) {
 	}
 	cudaMemcpy(InEdgesListTracker_device, InEdgesListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);
 	
-	cout << "Transferring outgoing edges tracker to GPU" << endl;
+	//cout << "Transferring outgoing edges tracker to GPU" << endl;
 	int* OutEdgesListTracker_device;
 	cudaStatus = cudaMalloc((void**)&OutEdgesListTracker_device, nodes * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
@@ -116,7 +118,7 @@ int main(int argc, char* argv[]) {
 	}
 	cudaMemcpy(OutEdgesListTracker_device, OutEdgesListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);
 	
-	cout << "Transferring change edges data to GPU" << endl;
+	//cout << "Transferring change edges data to GPU" << endl;
 	int totalChangeEdges = allChange.size();
 	changeEdge* allChange_device;
 	cudaStatus = cudaMallocManaged(&allChange_device, totalChangeEdges * sizeof(changeEdge));
@@ -124,8 +126,14 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "cudaMalloc failed at allChange structure");
 	}
 	std::copy(allChange.begin(), allChange.end(), allChange_device);
+	auto stopTime_transfer = high_resolution_clock::now();//Time calculation ends
+	auto duration_transfer = duration_cast<microseconds>(stopTime_transfer - startTime_transfer);// duration calculation
+	cout << "**Time taken to transfer graph data from CPU to GPU: "
+		<< float(duration_transfer.count()) / 1000 << " milliseconds**" << endl;
+
+
 	//set cudaMemAdviseSetReadMostly by the GPU for change edge data
-	cout << "setting GPU advice for change edges" << endl;
+	//cout << "setting GPU advice for change edges" << endl;
 	cudaMemAdvise(allChange_device, totalChangeEdges * sizeof(changeEdge), cudaMemAdviseSetReadMostly, deviceId);
 
 
