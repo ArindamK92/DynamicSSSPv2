@@ -120,6 +120,10 @@ void read_SSSP(RT_Vertex* SSSP, char* myfile, int* nodes)
 				//SSSP[i].EDGwt = 9999999;
 			}
 		}
+		if (parent == -1)
+		{
+			dist = 9999999;
+		}
 		SSSP[node].Parent = parent;
 		SSSP[node].Dist = dist;
 		prev_node = node;

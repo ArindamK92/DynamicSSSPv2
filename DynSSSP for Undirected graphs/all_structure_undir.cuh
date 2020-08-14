@@ -71,6 +71,7 @@ void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtLis
 		int n1, n2, wt, inst_status;
 		changeEdge cE;
 		sscanf(line, "%d %d %d %d", &n1, &n2, &wt, &inst_status);
+		//cout << "[" << n1 << " " << n2 << " " << wt ;
 		cE.node1 = n1;
 		cE.node2 = n2;
 		cE.edge_wt = wt;
@@ -90,6 +91,7 @@ void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtLis
 			colwt2.wt = wt;
 			AdjList.at(n1).push_back(colwt2);
 		}
+		//cout<< "]";
 	}
 	fclose(graph_file);
 	return;
@@ -118,6 +120,10 @@ void read_SSSP(RT_Vertex* SSSP, char* myfile, int* nodes)
 				SSSP[i].Parent = -1;
 				//SSSP[i].EDGwt = 9999999;
 			}
+		}
+		if (parent == -1)
+		{
+			dist = 9999999;
 		}
 		SSSP[node].Parent = parent;
 		SSSP[node].Dist = dist;

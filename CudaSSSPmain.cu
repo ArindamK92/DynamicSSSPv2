@@ -126,6 +126,7 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "cudaMalloc failed at allChange structure");
 	}
 	std::copy(allChange.begin(), allChange.end(), allChange_device);
+
 	auto stopTime_transfer = high_resolution_clock::now();//Time calculation ends
 	auto duration_transfer = duration_cast<microseconds>(stopTime_transfer - startTime_transfer);// duration calculation
 	cout << "**Time taken to transfer graph data from CPU to GPU: "
