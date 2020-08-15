@@ -1,0 +1,345 @@
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_10M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15804999 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:10000000
+Time taken to read input changed edges: 9101394 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 501.258 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 996910 microseconds
+reading input data completed
+**Time taken for STEP 1: 151.25 milliseconds**
+**Time taken for STEP 2: 96.933 milliseconds**
+Total Iterations to Converge 14 
+****Total Time taken for SSSP update: 248.183 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:16:1848452 15:51:14 16:52:14 17:58:14 18:16:127110 19:15:528052 20:18:110727 21:67:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:17:764385 28:12:146369 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:22:27 ]
+from CPU: 
+[0:0 1:33 2:9 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:16 15:51 16:52 17:58 18:16 19:15 20:18 21:67 22:14 23:23 24:13 25:13 26:13 27:17 28:12 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:22 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_10M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15795493 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:7500000
+Time taken to read input changed edges: 7719817 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 458.881 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 491666 microseconds
+reading input data completed
+**Time taken for STEP 1: 390.018 milliseconds**
+**Time taken for STEP 2: 116.262 milliseconds**
+Total Iterations to Converge 16 
+****Total Time taken for SSSP update: 506.28 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:16:1640680 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:163315 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:16:1776747 20:18:110727 21:999999:20 22:15:92152 23:23:906833 24:14:1558 25:15:31985 26:13:54967 27:23:764385 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:27823 33:12:2555 34:18:432600 35:12:667202 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:9 3:16 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:16 20:18 21:999999 22:15 23:23 24:14 25:15 26:13 27:23 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:12 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_10M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15807460 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 6355539 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 437.87 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486261 microseconds
+reading input data completed
+**Time taken for STEP 1: 625.488 milliseconds**
+**Time taken for STEP 2: 140.279 milliseconds**
+Total Iterations to Converge 15 
+****Total Time taken for SSSP update: 765.767 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:16:1640680 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:14:12203 9:11:20502 10:26:9 11:19:1147879 12:62:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:17:127110 19:16:1776747 20:23:805580 21:999999:20 22:16:10045 23:24:906833 24:15:1558 25:15:99492 26:13:54967 27:23:764385 28:14:169397 29:22:69 30:22:1664809 31:999999:336833 32:13:7011 33:12:222 34:19:432600 35:12:667202 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:9 3:16 4:10 5:46 6:15 7:42 8:14 9:11 10:26 11:19 12:62 13:13 14:17 15:52 16:53 17:59 18:17 19:16 20:23 21:999999 22:16 23:24 24:15 25:15 26:13 27:23 28:14 29:22 30:22 31:999999 32:13 33:12 34:19 35:12 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_10M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15774850 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 4796681 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 415.922 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486019 microseconds
+reading input data completed
+**Time taken for STEP 1: 757.612 milliseconds**
+**Time taken for STEP 2: 167.577 milliseconds**
+Total Iterations to Converge 14 
+****Total Time taken for SSSP update: 925.189 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:9:1342229 3:17:1352248 4:12:179454 5:48:4 6:15:168509 7:42:6 8:14:171915 9:11:20502 10:26:9 11:20:324610 12:63:11 13:13:5404 14:18:285398 15:53:14 16:999999:14 17:60:14 18:19:27826 19:18:1903419 20:24:1770288 21:999999:20 22:15:92152 23:24:906833 24:15:1558 25:15:99492 26:13:54967 27:31:336833 28:15:169397 29:23:69 30:27:1664809 31:999999:336833 32:13:181164 33:12:222 34:21:432600 35:12:667202 36:15:342447 37:24:5048 38:14:21529 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:9 3:17 4:12 5:48 6:15 7:42 8:14 9:11 10:26 11:20 12:63 13:13 14:18 15:53 16:999999 17:60 18:19 19:18 20:24 21:999999 22:15 23:24 24:15 25:15 26:13 27:31 28:15 29:23 30:27 31:999999 32:13 33:12 34:21 35:12 36:15 37:24 38:14 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_10M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15807377 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 3159759 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 400.306 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 487661 microseconds
+reading input data completed
+**Time taken for STEP 1: 914.461 milliseconds**
+**Time taken for STEP 2: 213.124 milliseconds**
+Total Iterations to Converge 16 
+****Total Time taken for SSSP update: 1127.58 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:14:43749 3:19:1352248 4:14:386985 5:999999:4 6:17:1638520 7:44:6 8:15:171915 9:12:20502 10:27:9 11:21:423341 12:64:11 13:15:5404 14:19:285398 15:54:14 16:999999:14 17:61:14 18:21:27826 19:19:1991394 20:25:1796070 21:999999:20 22:18:92152 23:24:906833 24:18:1558 25:16:48908 26:13:54967 27:34:336833 28:16:169397 29:26:69 30:28:1542311 31:999999:336833 32:15:27823 33:14:222 34:23:432600 35:15:667202 36:18:342447 37:28:336833 38:14:21529 39:28:30724 ]
+from CPU: 
+[0:0 1:33 2:14 3:19 4:14 5:999999 6:17 7:44 8:15 9:12 10:27 11:21 12:64 13:15 14:19 15:54 16:999999 17:61 18:21 19:19 20:25 21:999999 22:18 23:24 24:18 25:16 26:13 27:34 28:16 29:26 30:28 31:999999 32:15 33:14 34:23 35:15 36:18 37:28 38:14 39:28 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_1M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15817525 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1000000
+Time taken to read input changed edges: 1673251 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 307.645 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486577 microseconds
+reading input data completed
+**Time taken for STEP 1: 62.661 milliseconds**
+**Time taken for STEP 2: 7.363 milliseconds**
+Total Iterations to Converge 9 
+****Total Time taken for SSSP update: 70.024 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:67:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:12:146369 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:67 22:14 23:23 24:13 25:13 26:13 27:22 28:12 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_1M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15848566 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:750000
+Time taken to read input changed edges: 1477468 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 314.026 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486068 microseconds
+reading input data completed
+**Time taken for STEP 1: 111.957 milliseconds**
+**Time taken for STEP 2: 20.896 milliseconds**
+Total Iterations to Converge 10 
+****Total Time taken for SSSP update: 132.853 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:67:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:67 22:14 23:23 24:13 25:13 26:13 27:22 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15777894 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 1290037 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 304.605 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 485451 microseconds
+reading input data completed
+**Time taken for STEP 1: 132.289 milliseconds**
+**Time taken for STEP 2: 26.322 milliseconds**
+Total Iterations to Converge 11 
+****Total Time taken for SSSP update: 158.611 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:999999:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:999999 22:14 23:23 24:13 25:13 26:13 27:22 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_1M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15834556 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:250000
+Time taken to read input changed edges: 931415 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 314.471 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 485616 microseconds
+reading input data completed
+**Time taken for STEP 1: 144.565 milliseconds**
+**Time taken for STEP 2: 29.776 milliseconds**
+Total Iterations to Converge 11 
+****Total Time taken for SSSP update: 174.341 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:999999:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:222 34:18:432600 35:9:81270 36:15:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:999999 22:14 23:23 24:13 25:13 26:13 27:22 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:15 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_1M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15815663 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 624735 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 300.131 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486618 microseconds
+reading input data completed
+**Time taken for STEP 1: 159.264 milliseconds**
+**Time taken for STEP 2: 30.198 milliseconds**
+Total Iterations to Converge 11 
+****Total Time taken for SSSP update: 189.462 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:881344 4:10:1485319 5:999999:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:999999:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:12:146369 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:222 34:18:432600 35:9:81270 36:15:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:999999 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:999999 22:14 23:23 24:13 25:13 26:13 27:22 28:12 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:15 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_5M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15794067 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 4572352 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 381.012 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 484871 microseconds
+reading input data completed
+**Time taken for STEP 1: 78.72 milliseconds**
+**Time taken for STEP 2: 29.006 milliseconds**
+Total Iterations to Converge 13 
+****Total Time taken for SSSP update: 107.726 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:1428648 12:61:11 13:13:5404 14:16:675939 15:51:14 16:52:14 17:58:14 18:16:127110 19:15:528052 20:18:110727 21:67:20 22:14:92152 23:23:906833 24:13:1558 25:13:99492 26:13:54967 27:22:737082 28:12:146369 29:22:69 30:21:1664809 31:24:336833 32:12:9739 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:16 15:51 16:52 17:58 18:16 19:15 20:18 21:67 22:14 23:23 24:13 25:13 26:13 27:22 28:12 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_5M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15799649 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:3750000
+Time taken to read input changed edges: 3899734 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 371.086 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 485145 microseconds
+reading input data completed
+**Time taken for STEP 1: 240.316 milliseconds**
+**Time taken for STEP 2: 35.891 milliseconds**
+Total Iterations to Converge 11 
+****Total Time taken for SSSP update: 276.207 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:14:129671 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:163315 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:15:528052 20:18:110727 21:999999:20 22:14:92152 23:23:906833 24:13:1558 25:14:32782 26:13:54967 27:25:764385 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:27823 33:12:2555 34:18:432600 35:9:81270 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:14 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:15 20:18 21:999999 22:14 23:23 24:13 25:14 26:13 27:25 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:9 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_5M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15826784 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 3257008 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 368.192 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 484735 microseconds
+reading input data completed
+**Time taken for STEP 1: 347.352 milliseconds**
+**Time taken for STEP 2: 88.582 milliseconds**
+Total Iterations to Converge 13 
+****Total Time taken for SSSP update: 435.934 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:10:1482852 3:17:1352248 4:10:1485319 5:46:4 6:15:168509 7:42:6 8:13:171915 9:10:6643 10:25:9 11:18:163315 12:61:11 13:13:5404 14:17:285398 15:52:14 16:53:14 17:59:14 18:16:127110 19:16:1776747 20:18:110727 21:999999:20 22:15:92152 23:23:906833 24:14:1558 25:15:31985 26:13:54967 27:26:764385 28:14:169397 29:22:69 30:21:1664809 31:24:336833 32:12:27823 33:12:2555 34:18:432600 35:12:667202 36:14:342447 37:24:5048 38:12:50367 39:25:30724 ]
+from CPU: 
+[0:0 1:33 2:10 3:17 4:10 5:46 6:15 7:42 8:13 9:10 10:25 11:18 12:61 13:13 14:17 15:52 16:53 17:59 18:16 19:16 20:18 21:999999 22:15 23:23 24:14 25:15 26:13 27:26 28:14 29:22 30:21 31:24 32:12 33:12 34:18 35:12 36:14 37:24 38:12 39:25 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_5M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15800668 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1250000
+Time taken to read input changed edges: 2436906 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 359.542 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486470 microseconds
+reading input data completed
+**Time taken for STEP 1: 439.837 milliseconds**
+**Time taken for STEP 2: 260.005 milliseconds**
+Total Iterations to Converge 14 
+****Total Time taken for SSSP update: 699.842 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:14:43749 3:18:881344 4:13:11917 5:999999:4 6:17:1638520 7:44:6 8:14:736 9:12:20502 10:27:9 11:20:1147879 12:63:11 13:15:5404 14:19:285398 15:54:14 16:55:14 17:61:14 18:20:127110 19:17:1991394 20:20:110727 21:999999:20 22:16:92152 23:24:906833 24:16:1558 25:16:48908 26:13:54967 27:27:764385 28:16:34797 29:25:69 30:23:1664809 31:28:336833 32:14:181164 33:13:2555 34:20:432600 35:14:81270 36:18:342447 37:24:5048 38:14:18584 39:28:30724 ]
+from CPU: 
+[0:0 1:33 2:14 3:18 4:13 5:999999 6:17 7:44 8:14 9:12 10:27 11:20 12:63 13:15 14:19 15:54 16:55 17:61 18:20 19:17 20:20 21:999999 22:16 23:24 24:16 25:16 26:13 27:27 28:16 29:25 30:23 31:28 32:14 33:13 34:20 35:14 36:18 37:24 38:14 39:28 ]
+./op_main baidu100_w_sorted_f 2141301 26493629 SSSP_baidu100 cE_baidu100_5M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 15914612 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 1592150 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 345.26 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 488316 microseconds
+reading input data completed
+**Time taken for STEP 1: 491.851 milliseconds**
+**Time taken for STEP 2: 251.858 milliseconds**
+Total Iterations to Converge 15 
+****Total Time taken for SSSP update: 743.709 milliseconds****
+from GPU:
+[0:0:0 1:33:0 2:14:43749 3:18:881344 4:13:11917 5:999999:4 6:17:1638520 7:44:6 8:14:736 9:12:20502 10:27:9 11:20:324610 12:63:11 13:15:5404 14:19:285398 15:54:14 16:999999:14 17:61:14 18:20:127110 19:17:1991394 20:20:110727 21:999999:20 22:17:249584 23:24:906833 24:17:46774 25:16:48908 26:13:54967 27:34:336833 28:16:169397 29:26:69 30:24:1664809 31:28:336833 32:14:181164 33:13:2555 34:20:432600 35:14:81270 36:18:342447 37:28:336833 38:14:18584 39:28:30724 ]
+from CPU: 
+[0:0 1:33 2:14 3:18 4:13 5:999999 6:17 7:44 8:14 9:12 10:27 11:20 12:63 13:15 14:19 15:54 16:999999 17:61 18:20 19:17 20:20 21:999999 22:17 23:24 24:17 25:16 26:13 27:34 28:16 29:26 30:24 31:28 32:14 33:13 34:20 35:14 36:18 37:28 38:14 39:28 ]

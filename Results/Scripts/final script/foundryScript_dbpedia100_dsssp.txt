@@ -1,0 +1,62 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=32000M
+
+
+echo "start"
+
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_100" > /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_100 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_75" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_75 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_50" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_50 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_25" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_25 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_0" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_10M_0 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_100" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_100 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_75" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_75 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_50" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_50 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_25" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_25 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_0" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_1M_0 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_100" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_100 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_75" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_75 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_50" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_50 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_25" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_25 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_0" >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053 SSSP_dbpedia100 cE_dbpedia100_5M_0 >> /home/akkcm/DataNew/Result/resultDS2_dbpedia100_final.txt
+
+
+echo "completed"

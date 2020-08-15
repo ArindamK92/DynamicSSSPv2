@@ -1,0 +1,49 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+./op_ssspSeq ../DataNew/dbpedia100_w_sorted_f 3966925 > ../DataNew/SSSP_dbpedia100
+
+
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_100" > ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_100 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_75" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_75 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_50" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_50 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_25" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_25 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_0" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_10M_0 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_100" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_100 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_75" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_75 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_50" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_50 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_25" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_25 >> ../DataNew/resultDS2_dbpedia100.txt
+
+echo "./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_0" >> ../DataNew/resultDS2_dbpedia100.txt
+./op_main ../DataNew/dbpedia100_w_sorted_f 3966925 23422053 ../DataNew/SSSP_dbpedia100 ../DataNew/cE_dbpedia100_1M_0 >> ../DataNew/resultDS2_dbpedia100.txt
+
+
+echo "completed"

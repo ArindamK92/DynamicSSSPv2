@@ -1,0 +1,92 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+
+
+./op_changeEdge flickr100_w_sorted_f 2302926  5000000 100 > cE_flickr100_5M_100
+./op_changeEdge flickr100_w_sorted_f 2302926  5000000 75 > cE_flickr100_5M_75
+./op_changeEdge flickr100_w_sorted_f 2302926  5000000 50 > cE_flickr100_5M_50
+./op_changeEdge flickr100_w_sorted_f 2302926  5000000 25 > cE_flickr100_5M_25
+./op_changeEdge flickr100_w_sorted_f 2302926  5000000 0 > cE_flickr100_5M_0
+
+
+
+
+echo "./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_100" > /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_100 >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+
+echo "./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_75" >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_75 >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+
+echo "./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_50" >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_50 >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+
+echo "./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_25" >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_25 >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+
+echo "./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_0" >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+./op_main flickr100_w_sorted_f 2302926  40989574  SSSP_flickr100 cE_flickr100_5M_0 >> /home/akkcm/DataNew/resultDS2_flickr100_2.txt
+
+
+
+./op_changeEdge dbpedia100_w_sorted_f 3966925 5000000 100 > cE_dbpedia100_5M_100
+./op_changeEdge dbpedia100_w_sorted_f 3966925 5000000 75 > cE_dbpedia100_5M_75
+./op_changeEdge dbpedia100_w_sorted_f 3966925 5000000 50 > cE_dbpedia100_5M_50
+./op_changeEdge dbpedia100_w_sorted_f 3966925 5000000 25 > cE_dbpedia100_5M_25
+./op_changeEdge dbpedia100_w_sorted_f 3966925 5000000 0 > cE_dbpedia100_5M_0
+
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_100" > /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_100 >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_75" >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_75 >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_50" >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_50 >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_25" >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_25 >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+
+echo "./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_0" >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+./op_main dbpedia100_w_sorted_f 3966925 23422053  SSSP_dbpedia100 cE_dbpedia100_5M_0 >> /home/akkcm/DataNew/resultDS2_dbpedia100_2.txt
+
+
+
+
+./op_changeEdge baidu100_w_sorted_f 2141301 5000000 100 > cE_baidu100_5M_100
+./op_changeEdge baidu100_w_sorted_f 2141301 5000000 75 > cE_baidu100_5M_75
+./op_changeEdge baidu100_w_sorted_f 2141301 5000000 50 > cE_baidu100_5M_50
+./op_changeEdge baidu100_w_sorted_f 2141301 5000000 25 > cE_baidu100_5M_25
+./op_changeEdge baidu100_w_sorted_f 2141301 5000000 0 > cE_baidu100_5M_0
+
+
+
+
+echo "./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_100" > /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_100 >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+
+echo "./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_75" >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_75 >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+
+echo "./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_50" >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_50 >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+
+echo "./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_25" >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_25 >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+
+echo "./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_0" >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+./op_main baidu100_w_sorted_f 2141301 26493629  SSSP_baidu100 cE_baidu100_5M_0 >> /home/akkcm/DataNew/resultDS2_baidu100_2.txt
+
+
+echo "completed"

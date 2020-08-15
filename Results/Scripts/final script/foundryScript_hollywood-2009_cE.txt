@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+./op_changeEdge hollywood-2009_wp_sor 1069112 5000000 100 > hollywood-2009_cE_5M_100
+./op_changeEdge hollywood-2009_wp_sor 1069112 5000000 75 > hollywood-2009_cE_5M_75
+./op_changeEdge hollywood-2009_wp_sor 1069112 5000000 50 > hollywood-2009_cE_5M_50
+./op_changeEdge hollywood-2009_wp_sor 1069112 5000000 25 > hollywood-2009_cE_5M_25
+./op_changeEdge hollywood-2009_wp_sor 1069112 5000000 0 > hollywood-2009_cE_5M_0
+
+./op_changeEdge hollywood-2009_wp_sor 1069112 1000000 100 > hollywood-2009_cE_1M_100
+./op_changeEdge hollywood-2009_wp_sor 1069112 1000000 75 > hollywood-2009_cE_1M_75
+./op_changeEdge hollywood-2009_wp_sor 1069112 1000000 50 > hollywood-2009_cE_1M_50
+./op_changeEdge hollywood-2009_wp_sor 1069112 1000000 25 > hollywood-2009_cE_1M_25
+./op_changeEdge hollywood-2009_wp_sor 1069112 1000000 0 > hollywood-2009_cE_1M_0
+
+./op_changeEdge hollywood-2009_wp_sor 1069112 10000000 100 > hollywood-2009_cE_10M_100
+./op_changeEdge hollywood-2009_wp_sor 1069112 10000000 75 > hollywood-2009_cE_10M_75
+./op_changeEdge hollywood-2009_wp_sor 1069112 10000000 50 > hollywood-2009_cE_10M_50
+./op_changeEdge hollywood-2009_wp_sor 1069112 10000000 25 > hollywood-2009_cE_10M_25
+./op_changeEdge hollywood-2009_wp_sor 1069112 10000000 0 > hollywood-2009_cE_10M_0
+
+echo "completed"

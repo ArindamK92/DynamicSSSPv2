@@ -1,0 +1,63 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 50000000 100 > ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_100
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 50000000 75 > ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_75
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 50000000 50 > ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_50
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 50000000 25 > ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_25
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 50000000 0 > ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_0
+
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 5000000 100 > ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_100
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 5000000 75 > ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_75
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 5000000 50 > ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_50
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 5000000 25 > ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_25
+./op_changeEdge ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 5000000 0 > ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_0
+
+
+
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_100" > ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_100 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_75" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_75 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_50" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_50 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_25" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_25 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_0" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_50M_0 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_100" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_100 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_75" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_75 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_50" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_50 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_25" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_25 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+echo "./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_0" >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+./op_main ../DataNew/gunrockGraphs/roadNet-CA_wp_sor 1971281 2766607 ../DataNew/gunrockGraphs/SSSProadNet-CA ../DataNew/gunrockGraphs/roadNet-CA_cE_5M_0 >> ../DataNew/gunrockGraphs/resultDS_roadNet-CA.txt
+
+
+
+echo "completed"
+
