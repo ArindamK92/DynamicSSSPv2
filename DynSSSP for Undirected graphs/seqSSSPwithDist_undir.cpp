@@ -52,18 +52,11 @@ void readin_graphU2(A_Network* X, int nodes, char* myfile)
 		//Number of nodes given in the first line
 //        if(l==0)
 //        {l++; continue;}
-		if (prev_node != n1)
-		{
-
-			X->at(prev_node).ListW = ListW;
-			X->at(prev_node).Row = prev_node;
-			ListW.clear();
-			/*cout <<"inside reading: "<< X->size() << endl;*/
-		}
-		prev_node = n1;
+	
 		dummy.first = n2;
 		dummy.second = (double)wt;
-		ListW.push_back(dummy);
+		X->at(n1).ListW.push_back(dummy);
+        X->at(n1).Row = n2;
 		
 		dummy2.first = n1;
 		dummy2.second = (double)wt;
@@ -71,8 +64,6 @@ void readin_graphU2(A_Network* X, int nodes, char* myfile)
 		X->at(n2).Row = n1;
 		
 	}//end of while
-	X->at(prev_node).ListW = ListW;
-	X->at(prev_node).Row = prev_node;
 	fclose(graph_file);
 
 
