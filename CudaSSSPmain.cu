@@ -104,19 +104,19 @@ int main(int argc, char* argv[]) {
 	
 	//cout << "Transferring incoming edges tracker to GPU" << endl;
 	int* InEdgesListTracker_device;
-	cudaStatus = cudaMalloc((void**)&InEdgesListTracker_device, nodes * sizeof(int));
+	cudaStatus = cudaMalloc((void**)&InEdgesListTracker_device, (nodes+1) * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListTracker_device");
 	}
-	cudaMemcpy(InEdgesListTracker_device, InEdgesListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);
+	cudaMemcpy(InEdgesListTracker_device, InEdgesListTracker, (nodes+1) * sizeof(int), cudaMemcpyHostToDevice);
 	
 	//cout << "Transferring outgoing edges tracker to GPU" << endl;
 	int* OutEdgesListTracker_device;
-	cudaStatus = cudaMalloc((void**)&OutEdgesListTracker_device, nodes * sizeof(int));
+	cudaStatus = cudaMalloc((void**)&OutEdgesListTracker_device, (nodes+1) * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at OutEdgesListTracker_device");
 	}
-	cudaMemcpy(OutEdgesListTracker_device, OutEdgesListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);
+	cudaMemcpy(OutEdgesListTracker_device, OutEdgesListTracker, (nodes+1) * sizeof(int), cudaMemcpyHostToDevice);
 	
 	//cout << "Transferring change edges data to GPU" << endl;
 	int totalChangeEdges = allChange.size();

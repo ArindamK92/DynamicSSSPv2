@@ -104,11 +104,11 @@ int main(int argc, char* argv[]) {
 
 	//cout << "Transferring incoming edges tracker to GPU" << endl;
 	int* AdjListTracker_device;
-	cudaStatus = cudaMalloc((void**)&AdjListTracker_device, nodes * sizeof(int));
+	cudaStatus = cudaMalloc((void**)&AdjListTracker_device, (nodes+1) * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListTracker_device");
 	}
-	cudaMemcpy(AdjListTracker_device, AdjListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);
+	cudaMemcpy(AdjListTracker_device, AdjListTracker, (nodes+1) * sizeof(int), cudaMemcpyHostToDevice);
 
 	/*cout << "Transferring outgoing edges tracker to GPU" << endl;
 	int* OutEdgesListTracker_device;
