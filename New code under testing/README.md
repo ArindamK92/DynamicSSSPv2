@@ -1,10 +1,16 @@
-"# DynSSSP for undirected graph"  
-Here all edges are considered as undirected edges.
- 
+"# Code under testing"   
+
+This code consists of Dynamic parallelism. To run this code modern gpu (which supports Dynamic parallelism) is required.
+
 **compile:**
 _____________
+for small gpu:
 ```shell
-nvcc -o op_main SSSPmainForUndirected.cu
+nvcc -arch=sm_35 -rdc=true SSSPmainForUndirected_v1.cu -lcudadevrt -o op_main
+```
+for cluster(e.g. foundry) gpu:
+```shell
+nvcc -arch=sm_70 -rdc=true SSSPmainForUndirected_v1.cu -lcudadevrt -o op_main
 ```
 
 **run:**
@@ -24,15 +30,12 @@ _____________
 
 Original graph (3 col):
 node1 node2 edge_weight
-graph should be undirected. If 'a b W' is part of the graph file, then 'b a W' should not be included in the graph file.
-
 
 SSSP (3 col):
 node parent distance
 
 change edges file (4 col):
 node1 node2 edge_weight inst_status
-edges are considered as undirected edges.
 
 inst_status can be 0(for deletion) or 1(for insertion)
 
@@ -40,7 +43,7 @@ inst_status can be 0(for deletion) or 1(for insertion)
 ___________________________________________________
 Use below command to generate input SSSP tree:
 ```shell
-nvcc -o op_ssspSeq seqSSSPwithDist_undir.cpp
+nvcc -o op_ssspSeq seqSSSPwithDist.cpp
 ./op_ssspSeq original_graph_file_name number_of_nodes
 ```
 example:  
