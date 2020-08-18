@@ -1,0 +1,345 @@
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_10M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 19018887 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:10000000
+Time taken to read input changed edges: 8121893 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 584.886 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 1006287 microseconds
+reading input data completed
+**Time taken for STEP 1: 139.881 milliseconds**
+**Time taken for STEP 2: 77.88 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 217.761 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:2:1 5:2:1 6:2:1 7:2:1 8:2:1 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_10M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18873228 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:7500000
+Time taken to read input changed edges: 6907257 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 563.588 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 483462 microseconds
+reading input data completed
+**Time taken for STEP 1: 364.093 milliseconds**
+**Time taken for STEP 2: 57.023 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 421.116 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:6 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_10M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18531200 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 5690873 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 545.521 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486239 microseconds
+reading input data completed
+**Time taken for STEP 1: 574.486 milliseconds**
+**Time taken for STEP 2: 63.121 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 637.607 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:3 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:6 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:1039 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_10M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18543163 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 4311773 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 518.228 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 483086 microseconds
+reading input data completed
+**Time taken for STEP 1: 692.212 milliseconds**
+**Time taken for STEP 2: 149.285 milliseconds**
+Total Iterations to Converge 6 
+****Total Time taken for SSSP update: 841.497 milliseconds****
+from GPU:
+[0:0:0 1:4:2 2:3:3423 3:4:116513 4:4:109510 5:5:155918 6:4:65211 7:3:1039 8:4:53044 9:4:2 10:4:18180 11:5:150353 12:5:228856 13:3:6089 14:3:13321 15:4:20619 16:3:3160 17:3:3160 18:3:20159 19:3:1039 20:3:55 21:3:1039 22:3:55 23:3:1039 24:4:103558 25:4:10698 26:4:1107 27:3:1825 28:3:3423 29:3:1039 30:3:1039 31:4:152 32:3:3160 33:3:1825 34:3:3160 35:3:3160 36:3:1039 37:3:3423 38:3:3160 39:3:36030 ]
+from CPU: 
+[0:0 1:4 2:3 3:4 4:4 5:5 6:4 7:3 8:4 9:4 10:4 11:5 12:5 13:3 14:3 15:4 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:4 25:4 26:4 27:3 28:3 29:3 30:3 31:4 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_10M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18549249 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 2941201 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 512.962 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 484364 microseconds
+reading input data completed
+**Time taken for STEP 1: 829.974 milliseconds**
+**Time taken for STEP 2: 169.368 milliseconds**
+Total Iterations to Converge 6 
+****Total Time taken for SSSP update: 999.342 milliseconds****
+from GPU:
+[0:0:0 1:4:7 2:4:130 3:5:4 4:4:29 5:5:2275309 6:4:463 7:3:1039 8:5:22634 9:5:4 10:5:18180 11:5:400101 12:5:1 13:4:36936 14:4:10083 15:4:1845 16:4:23746 17:3:1825 18:4:89103 19:3:1039 20:4:36936 21:3:1039 22:4:10132 23:3:1039 24:4:103558 25:4:4045 26:4:11398 27:3:1825 28:4:64476 29:3:1039 30:3:1825 31:4:885 32:4:13068 33:3:1825 34:3:6089 35:4:1592 36:3:1039 37:4:10926 38:4:119 39:4:108229 ]
+from CPU: 
+[0:0 1:4 2:4 3:5 4:4 5:5 6:4 7:3 8:5 9:5 10:5 11:5 12:5 13:4 14:4 15:4 16:4 17:3 18:4 19:3 20:4 21:3 22:4 23:3 24:4 25:4 26:4 27:3 28:4 29:3 30:3 31:4 32:4 33:3 34:3 35:4 36:3 37:4 38:4 39:4 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_1M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18555258 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1000000
+Time taken to read input changed edges: 1358629 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 413.593 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 485084 microseconds
+reading input data completed
+**Time taken for STEP 1: 53.99 milliseconds**
+**Time taken for STEP 2: 55.731 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 109.721 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:2:1 5:2:1 6:2:1 7:2:1 8:2:1 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_1M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18717787 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:750000
+Time taken to read input changed edges: 1190886 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 415.276 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 486338 microseconds
+reading input data completed
+**Time taken for STEP 1: 132.907 milliseconds**
+**Time taken for STEP 2: 45.005 milliseconds**
+Total Iterations to Converge 6 
+****Total Time taken for SSSP update: 177.912 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18725251 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 1036711 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 409.174 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 484440 microseconds
+reading input data completed
+**Time taken for STEP 1: 158.613 milliseconds**
+**Time taken for STEP 2: 49.712 milliseconds**
+Total Iterations to Converge 6 
+****Total Time taken for SSSP update: 208.325 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_1M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18684486 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:250000
+Time taken to read input changed edges: 817339 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 410.073 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 478470 microseconds
+reading input data completed
+**Time taken for STEP 1: 183.091 milliseconds**
+**Time taken for STEP 2: 50.183 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 233.274 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_1M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18554415 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 570211 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 403.434 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 482352 microseconds
+reading input data completed
+**Time taken for STEP 1: 179.104 milliseconds**
+**Time taken for STEP 2: 48.177 milliseconds**
+Total Iterations to Converge 6 
+****Total Time taken for SSSP update: 227.281 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_5M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18587312 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 4045266 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 483.794 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 481701 microseconds
+reading input data completed
+**Time taken for STEP 1: 75.476 milliseconds**
+**Time taken for STEP 2: 70.15 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 145.626 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:2:1 5:2:1 6:2:1 7:2:1 8:2:1 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_5M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18557188 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:3750000
+Time taken to read input changed edges: 3411771 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 471.183 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 480360 microseconds
+reading input data completed
+**Time taken for STEP 1: 239.684 milliseconds**
+**Time taken for STEP 2: 49.701 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 289.385 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:2 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_5M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18570060 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 2839830 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 466.886 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 478446 microseconds
+reading input data completed
+**Time taken for STEP 1: 347.616 milliseconds**
+**Time taken for STEP 2: 56.44 milliseconds**
+Total Iterations to Converge 6 
+****Total Time taken for SSSP update: 404.056 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:6 16:3:2 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_5M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18562120 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1250000
+Time taken to read input changed edges: 2165813 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 451.439 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 485586 microseconds
+reading input data completed
+**Time taken for STEP 1: 404.584 milliseconds**
+**Time taken for STEP 2: 55.08 milliseconds**
+Total Iterations to Converge 5 
+****Total Time taken for SSSP update: 459.664 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:2:1 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:6 16:3:3160 17:3:2 18:3:2 19:3:2 20:3:55 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+./op_main flickr100_w_sorted_f 2302926 40989574 SSSP_flickr100 cE_flickr100_5M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 18541594 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 1480460 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 444.528 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 480483 microseconds
+reading input data completed
+**Time taken for STEP 1: 478.499 milliseconds**
+**Time taken for STEP 2: 95.103 milliseconds**
+Total Iterations to Converge 6 
+****Total Time taken for SSSP update: 573.602 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:2:1 3:2:1 4:3:2 5:3:10 6:2:1 7:2:1 8:3:10 9:2:1 10:2:1 11:2:1 12:2:1 13:3:2 14:3:2 15:3:6 16:3:1988947 17:3:2 18:3:2 19:3:2 20:3:84246 21:3:2 22:3:2 23:3:7 24:3:2 25:3:2 26:3:2 27:3:2 28:3:2 29:3:2 30:3:2 31:3:2 32:3:2 33:3:2 34:3:2 35:3:2 36:3:2 37:3:2 38:3:2 39:3:2 ]
+from CPU: 
+[0:0 1:1 2:2 3:2 4:3 5:3 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
