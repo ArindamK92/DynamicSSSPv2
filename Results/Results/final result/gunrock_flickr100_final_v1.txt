@@ -1,0 +1,953 @@
+./test_sssp_10.2_x86_64 market flickr100_1M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from flickr100_1M_100.mtx.meta
+  Reading edge lists from flickr100_1M_100.mtx.coo_edge_pairs
+Reading from flickr100_1M_100.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 41989482
+  Reading edge values from flickr100_1M_100.mtx.coo_edge_values
+Reading from flickr100_1M_100.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 41989482
+  Substracting 1 from node Ids...
+  Edge doubleing: 41989482 -> 83978964 edges
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1023.571045 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        3       0       queue3          oversize :      13817556 ->     25771872
+0        3       0       queue3          oversize :      13817556 ->     25771872
+0        4       0       queue3          oversize :      25771872 ->     26582143
+0        4       0       queue3          oversize :      25771872 ->     26582143
+--------------------------
+Run 0 elapsed: 17.678022 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 17.678022 ms
+ iterations: 7
+ min. elapsed: 17.678022 ms
+ max. elapsed: 17.678022 ms
+ rate: 3698.349769 MiEdges/s
+ src: 0
+ nodes_visited: 2302926
+ edges_visited: 65379510
+ load time: 22360.4 ms
+ preprocess time: 355.744000 ms
+ postprocess time: 14.645100 ms
+ total time: 388.229132 ms
+
+./test_sssp_10.2_x86_64 market flickr100_1M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_1M_75.mtx:
+  Parsing MARKET COO format (2302926 nodes, 41490193 directed edges)...   Done (12 s).
+  Writing meta data into flickr100_1M_75.mtx.meta
+  Writting edge pairs in binary into flickr100_1M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_1M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 41490193 -> 82980386 edges
+  Removed 18373026 duplicate edges and self circles.
+  graph loaded as COO in 37.603254s.
+Converting 2302926 vertices, 64607360 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 64607360 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 189 (0.008207 %)
+    Degree 2^1: 8741 (0.379561 %)
+    Degree 2^2: 301695 (13.100508 %)
+    Degree 2^3: 1432493 (62.203171 %)
+    Degree 2^4: 359771 (15.622343 %)
+    Degree 2^5: 91525 (3.974292 %)
+    Degree 2^6: 46201 (2.006187 %)
+    Degree 2^7: 27918 (1.212284 %)
+    Degree 2^8: 17525 (0.760988 %)
+    Degree 2^9: 9949 (0.432016 %)
+    Degree 2^10: 4942 (0.214597 %)
+    Degree 2^11: 1694 (0.073559 %)
+    Degree 2^12: 246 (0.010682 %)
+    Degree 2^13: 33 (0.001433 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1060.372070 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 16245492
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 16245492
+0	 4	 0	 queue3 	 oversize :	 16245492 ->	 33731088
+0	 4	 0	 queue3 	 oversize :	 16245492 ->	 33731088
+--------------------------
+Run 0 elapsed: 16.998053 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 16.998053 ms
+ iterations: 8
+ min. elapsed: 16.998053 ms
+ max. elapsed: 16.998053 ms
+ rate: 3800.868342 MiEdges/s
+ src: 0
+ nodes_visited: 2302926
+ edges_visited: 64607360
+ load time: 38509.1 ms
+ preprocess time: 314.626000 ms
+ postprocess time: 17.169952 ms
+ total time: 348.929882 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_1M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_1M_50.mtx:
+  Parsing MARKET COO format (2302926 nodes, 40992474 directed edges)...   Done (12 s).
+  Writing meta data into flickr100_1M_50.mtx.meta
+  Writting edge pairs in binary into flickr100_1M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_1M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 40992474 -> 81984948 edges
+  Removed 18150102 duplicate edges and self circles.
+  graph loaded as COO in 37.187175s.
+Converting 2302926 vertices, 63834846 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 63834846 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 244 (0.010595 %)
+    Degree 2^1: 10860 (0.471574 %)
+    Degree 2^2: 338816 (14.712414 %)
+    Degree 2^3: 1419319 (61.631116 %)
+    Degree 2^4: 335768 (14.580060 %)
+    Degree 2^5: 90036 (3.909635 %)
+    Degree 2^6: 45847 (1.990815 %)
+    Degree 2^7: 27800 (1.207160 %)
+    Degree 2^8: 17460 (0.758166 %)
+    Degree 2^9: 9900 (0.429888 %)
+    Degree 2^10: 4917 (0.213511 %)
+    Degree 2^11: 1678 (0.072864 %)
+    Degree 2^12: 245 (0.010639 %)
+    Degree 2^13: 32 (0.001390 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1074.142944 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14490798
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14490798
+0	 4	 0	 queue3 	 oversize :	 14490798 ->	 34420845
+0	 4	 0	 queue3 	 oversize :	 14490798 ->	 34420845
+--------------------------
+Run 0 elapsed: 16.572952 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 16.572952 ms
+ iterations: 8
+ min. elapsed: 16.572952 ms
+ max. elapsed: 16.572952 ms
+ rate: 3851.748618 MiEdges/s
+ src: 0
+ nodes_visited: 2302926
+ edges_visited: 63834846
+ load time: 38143.9 ms
+ preprocess time: 354.626000 ms
+ postprocess time: 14.043093 ms
+ total time: 385.381937 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_1M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_1M_25.mtx:
+  Parsing MARKET COO format (2302926 nodes, 40496239 directed edges)...   Done (11 s).
+  Writing meta data into flickr100_1M_25.mtx.meta
+  Writting edge pairs in binary into flickr100_1M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_1M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 40496239 -> 80992478 edges
+  Removed 17928848 duplicate edges and self circles.
+  graph loaded as COO in 36.744540s.
+Converting 2302926 vertices, 63063630 directed edges ( ordered tuples) to CSR format...Done (0s).
+Degree Histogram (2302926 vertices, 63063630 edges):
+    Degree 0: 1 (0.000043 %)
+    Degree 2^0: 327 (0.014199 %)
+    Degree 2^1: 13469 (0.584865 %)
+    Degree 2^2: 379217 (16.466747 %)
+    Degree 2^3: 1399832 (60.784932 %)
+    Degree 2^4: 314305 (13.648072 %)
+    Degree 2^5: 88520 (3.843806 %)
+    Degree 2^6: 45496 (1.975574 %)
+    Degree 2^7: 27644 (1.200386 %)
+    Degree 2^8: 17433 (0.756993 %)
+    Degree 2^9: 9849 (0.427673 %)
+    Degree 2^10: 4891 (0.212382 %)
+    Degree 2^11: 1668 (0.072430 %)
+    Degree 2^12: 239 (0.010378 %)
+    Degree 2^13: 31 (0.001346 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 943.655029 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14391170
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14391170
+0	 4	 0	 queue3 	 oversize :	 14391170 ->	 34026999
+0	 4	 0	 queue3 	 oversize :	 14391170 ->	 34026999
+--------------------------
+Run 0 elapsed: 16.289949 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 16.289949 ms
+ iterations: 8
+ min. elapsed: 16.289949 ms
+ max. elapsed: 16.289949 ms
+ rate: 3871.321413 MiEdges/s
+ src: 0
+ nodes_visited: 2302925
+ edges_visited: 63063630
+ load time: 37611.7 ms
+ preprocess time: 344.523000 ms
+ postprocess time: 13.930798 ms
+ total time: 374.881029 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_1M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_1M_0.mtx:
+  Parsing MARKET COO format (2302926 nodes, 40001397 directed edges)...   Done (11 s).
+  Writing meta data into flickr100_1M_0.mtx.meta
+  Writting edge pairs in binary into flickr100_1M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_1M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 40001397 -> 80002794 edges
+  Removed 17710632 duplicate edges and self circles.
+  graph loaded as COO in 35.363554s.
+Converting 2302926 vertices, 62292162 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 62292162 edges):
+    Degree 0: 3 (0.000130 %)
+    Degree 2^0: 412 (0.017890 %)
+    Degree 2^1: 16608 (0.721170 %)
+    Degree 2^2: 423333 (18.382397 %)
+    Degree 2^3: 1374186 (59.671305 %)
+    Degree 2^4: 294613 (12.792986 %)
+    Degree 2^5: 87197 (3.786357 %)
+    Degree 2^6: 45063 (1.956772 %)
+    Degree 2^7: 27557 (1.196608 %)
+    Degree 2^8: 17354 (0.753563 %)
+    Degree 2^9: 9800 (0.425546 %)
+    Degree 2^10: 4868 (0.211383 %)
+    Degree 2^11: 1664 (0.072256 %)
+    Degree 2^12: 233 (0.010118 %)
+    Degree 2^13: 31 (0.001346 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 943.952087 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14302444
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14302444
+0	 4	 0	 queue3 	 oversize :	 14302444 ->	 33628411
+0	 4	 0	 queue3 	 oversize :	 14302444 ->	 33628411
+--------------------------
+Run 0 elapsed: 15.399933 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 15.399933 ms
+ iterations: 8
+ min. elapsed: 15.399933 ms
+ max. elapsed: 15.399933 ms
+ rate: 4044.963219 MiEdges/s
+ src: 0
+ nodes_visited: 2302923
+ edges_visited: 62292162
+ load time: 36187.9 ms
+ preprocess time: 336.948000 ms
+ postprocess time: 13.816833 ms
+ total time: 366.298914 ms
+
+./test_sssp_10.2_x86_64 market flickr100_5M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_5M_100.mtx:
+  Parsing MARKET COO format (2302926 nodes, 45989449 directed edges)...   Done (13 s).
+  Writing meta data into flickr100_5M_100.mtx.meta
+  Writting edge pairs in binary into flickr100_5M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_5M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 45989449 -> 91978898 edges
+  Removed 18599470 duplicate edges and self circles.
+  graph loaded as COO in 40.572350s.
+Converting 2302926 vertices, 73379428 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 73379428 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 5 (0.000217 %)
+    Degree 2^1: 404 (0.017543 %)
+    Degree 2^2: 43611 (1.893721 %)
+    Degree 2^3: 1133834 (49.234496 %)
+    Degree 2^4: 894735 (38.852095 %)
+    Degree 2^5: 115795 (5.028169 %)
+    Degree 2^6: 50524 (2.193905 %)
+    Degree 2^7: 29073 (1.262437 %)
+    Degree 2^8: 17874 (0.776143 %)
+    Degree 2^9: 10061 (0.436879 %)
+    Degree 2^10: 5003 (0.217245 %)
+    Degree 2^11: 1717 (0.074557 %)
+    Degree 2^12: 253 (0.010986 %)
+    Degree 2^13: 33 (0.001433 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1006.802063 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 26259710
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 26259710
+0	 4	 0	 queue3 	 oversize :	 26259710 ->	 33150467
+0	 4	 0	 queue3 	 oversize :	 26259710 ->	 33150467
+--------------------------
+Run 0 elapsed: 20.235062 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 20.235062 ms
+ iterations: 7
+ min. elapsed: 20.235062 ms
+ max. elapsed: 20.235062 ms
+ rate: 3626.350603 MiEdges/s
+ src: 0
+ nodes_visited: 2302926
+ edges_visited: 73379428
+ load time: 41503.9 ms
+ preprocess time: 363.021000 ms
+ postprocess time: 14.415979 ms
+ total time: 397.817135 ms
+
+./test_sssp_10.2_x86_64 market flickr100_5M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_5M_75.mtx:
+  Parsing MARKET COO format (2302926 nodes, 43508127 directed edges)...   Done (13 s).
+  Writing meta data into flickr100_5M_75.mtx.meta
+  Writting edge pairs in binary into flickr100_5M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_5M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 43508127 -> 87016254 edges
+  Removed 17494964 duplicate edges and self circles.
+  graph loaded as COO in 38.324067s.
+Converting 2302926 vertices, 69521290 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 69521290 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 20 (0.000868 %)
+    Degree 2^1: 1233 (0.053541 %)
+    Degree 2^2: 93007 (4.038645 %)
+    Degree 2^3: 1329053 (57.711494 %)
+    Degree 2^4: 663594 (28.815255 %)
+    Degree 2^5: 105030 (4.560720 %)
+    Degree 2^6: 48358 (2.099850 %)
+    Degree 2^7: 28405 (1.233431 %)
+    Degree 2^8: 17567 (0.762812 %)
+    Degree 2^9: 9872 (0.428672 %)
+    Degree 2^10: 4862 (0.211123 %)
+    Degree 2^11: 1659 (0.072039 %)
+    Degree 2^12: 231 (0.010031 %)
+    Degree 2^13: 31 (0.001346 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1009.730103 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14459376
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14459376
+0	 4	 0	 queue3 	 oversize :	 14459376 ->	 37387381
+0	 4	 0	 queue3 	 oversize :	 14459376 ->	 37387381
+--------------------------
+Run 0 elapsed: 18.347979 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 18.347979 ms
+ iterations: 7
+ min. elapsed: 18.347979 ms
+ max. elapsed: 18.347979 ms
+ rate: 3789.043553 MiEdges/s
+ src: 0
+ nodes_visited: 2302926
+ edges_visited: 69521290
+ load time: 39215.5 ms
+ preprocess time: 354.740000 ms
+ postprocess time: 13.917923 ms
+ total time: 387.141943 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_5M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_5M_50.mtx:
+  Parsing MARKET COO format (2302926 nodes, 41063627 directed edges)...   Done (12 s).
+  Writing meta data into flickr100_5M_50.mtx.meta
+  Writting edge pairs in binary into flickr100_5M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_5M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 41063627 -> 82127254 edges
+  Removed 16459746 duplicate edges and self circles.
+  graph loaded as COO in 36.625847s.
+Converting 2302926 vertices, 65667508 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 65667508 edges):
+    Degree 0: 2 (0.000087 %)
+    Degree 2^0: 73 (0.003170 %)
+    Degree 2^1: 3873 (0.168177 %)
+    Degree 2^2: 185750 (8.065826 %)
+    Degree 2^3: 1438570 (62.467053 %)
+    Degree 2^4: 471210 (20.461361 %)
+    Degree 2^5: 95714 (4.156191 %)
+    Degree 2^6: 46512 (2.019691 %)
+    Degree 2^7: 27737 (1.204424 %)
+    Degree 2^8: 17256 (0.749308 %)
+    Degree 2^9: 9657 (0.419336 %)
+    Degree 2^10: 4751 (0.206303 %)
+    Degree 2^11: 1579 (0.068565 %)
+    Degree 2^12: 207 (0.008989 %)
+    Degree 2^13: 31 (0.001346 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 972.938049 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 13948761
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 13948761
+0	 4	 0	 queue3 	 oversize :	 13948761 ->	 35236817
+0	 4	 0	 queue3 	 oversize :	 13948761 ->	 35236817
+--------------------------
+Run 0 elapsed: 17.101049 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 17.101049 ms
+ iterations: 7
+ min. elapsed: 17.101049 ms
+ max. elapsed: 17.101049 ms
+ rate: 3839.969488 MiEdges/s
+ src: 0
+ nodes_visited: 2302924
+ edges_visited: 65667508
+ load time: 37512.6 ms
+ preprocess time: 348.984000 ms
+ postprocess time: 14.033079 ms
+ total time: 380.256891 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_5M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_5M_25.mtx:
+  Parsing MARKET COO format (2302926 nodes, 38655919 directed edges)...   Done (11 s).
+  Writing meta data into flickr100_5M_25.mtx.meta
+  Writting edge pairs in binary into flickr100_5M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_5M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 38655919 -> 77311838 edges
+  Removed 15485662 duplicate edges and self circles.
+  graph loaded as COO in 34.485382s.
+Converting 2302926 vertices, 61826176 directed edges ( ordered tuples) to CSR format...Done (0s).
+Degree Histogram (2302926 vertices, 61826176 edges):
+    Degree 0: 7 (0.000304 %)
+    Degree 2^0: 294 (0.012766 %)
+    Degree 2^1: 11350 (0.492851 %)
+    Degree 2^2: 341987 (14.850108 %)
+    Degree 2^3: 1424712 (61.865297 %)
+    Degree 2^4: 332145 (14.422739 %)
+    Degree 2^5: 87760 (3.810804 %)
+    Degree 2^6: 44827 (1.946524 %)
+    Degree 2^7: 27177 (1.180107 %)
+    Degree 2^8: 16853 (0.731808 %)
+    Degree 2^9: 9445 (0.410130 %)
+    Degree 2^10: 4623 (0.200745 %)
+    Degree 2^11: 1514 (0.065742 %)
+    Degree 2^12: 202 (0.008771 %)
+    Degree 2^13: 26 (0.001129 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 958.647034 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 33153520
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 33153520
+--------------------------
+Run 0 elapsed: 13.930082 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 13.930082 ms
+ iterations: 8
+ min. elapsed: 13.930082 ms
+ max. elapsed: 13.930082 ms
+ rate: 4438.320936 MiEdges/s
+ src: 0
+ nodes_visited: 2302919
+ edges_visited: 61826176
+ load time: 35291.7 ms
+ preprocess time: 341.015000 ms
+ postprocess time: 14.110088 ms
+ total time: 369.193077 ms
+
+./test_sssp_10.2_x86_64 market flickr100_5M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_5M_0.mtx:
+  Parsing MARKET COO format (2302926 nodes, 36282207 directed edges)...   Done (10 s).
+  Writing meta data into flickr100_5M_0.mtx.meta
+  Writting edge pairs in binary into flickr100_5M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_5M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 36282207 -> 72564414 edges
+  Removed 14567286 duplicate edges and self circles.
+  graph loaded as COO in 32.470584s.
+Converting 2302926 vertices, 57997128 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 57997128 edges):
+    Degree 0: 39 (0.001693 %)
+    Degree 2^0: 1087 (0.047201 %)
+    Degree 2^1: 31971 (1.388277 %)
+    Degree 2^2: 573035 (24.882910 %)
+    Degree 2^3: 1271003 (55.190788 %)
+    Degree 2^4: 243186 (10.559870 %)
+    Degree 2^5: 80992 (3.516917 %)
+    Degree 2^6: 43117 (1.872270 %)
+    Degree 2^7: 26534 (1.152186 %)
+    Degree 2^8: 16579 (0.719910 %)
+    Degree 2^9: 9204 (0.399665 %)
+    Degree 2^10: 4512 (0.195925 %)
+    Degree 2^11: 1454 (0.063137 %)
+    Degree 2^12: 184 (0.007990 %)
+    Degree 2^13: 25 (0.001086 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 941.012878 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 35050859
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 35050859
+--------------------------
+Run 0 elapsed: 12.789011 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:3 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:3 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 12.789011 ms
+ iterations: 8
+ min. elapsed: 12.789011 ms
+ max. elapsed: 12.789011 ms
+ rate: 4534.918923 MiEdges/s
+ src: 0
+ nodes_visited: 2302887
+ edges_visited: 57997128
+ load time: 33300.1 ms
+ preprocess time: 332.610000 ms
+ postprocess time: 13.929844 ms
+ total time: 359.472990 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_10M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_10M_100.mtx:
+  Parsing MARKET COO format (2302926 nodes, 50989405 directed edges)...   Done (15 s).
+  Writing meta data into flickr100_10M_100.mtx.meta
+  Writting edge pairs in binary into flickr100_10M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_10M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 50989405 -> 101978810 edges
+  Removed 18599504 duplicate edges and self circles.
+  graph loaded as COO in 42.742565s.
+Converting 2302926 vertices, 83379306 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 83379306 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 0 (0.000000 %)
+    Degree 2^1: 5 (0.000217 %)
+    Degree 2^2: 2817 (0.122323 %)
+    Degree 2^3: 430463 (18.692003 %)
+    Degree 2^4: 1580481 (68.629257 %)
+    Degree 2^5: 167321 (7.265583 %)
+    Degree 2^6: 55934 (2.428823 %)
+    Degree 2^7: 30350 (1.317889 %)
+    Degree 2^8: 18302 (0.794728 %)
+    Degree 2^9: 10203 (0.443045 %)
+    Degree 2^10: 5036 (0.218678 %)
+    Degree 2^11: 1724 (0.074861 %)
+    Degree 2^12: 253 (0.010986 %)
+    Degree 2^13: 33 (0.001433 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1070.928833 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 28044532
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 28044532
+0	 4	 0	 queue3 	 oversize :	 28044532 ->	 42164961
+0	 4	 0	 queue3 	 oversize :	 28044532 ->	 42164961
+--------------------------
+Run 0 elapsed: 23.276091 ms, src = 0, #iterations = 6
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:2 5:2 6:2 7:2 8:2 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 23.276091 ms
+ iterations: 6
+ min. elapsed: 23.276091 ms
+ max. elapsed: 23.276091 ms
+ rate: 3582.186861 MiEdges/s
+ src: 0
+ nodes_visited: 2302926
+ edges_visited: 83379306
+ load time: 43751.8 ms
+ preprocess time: 379.530000 ms
+ postprocess time: 14.343977 ms
+ total time: 417.298079 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_10M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_10M_75.mtx:
+  Parsing MARKET COO format (2302926 nodes, 46063609 directed edges)...   Done (13 s).
+  Writing meta data into flickr100_10M_75.mtx.meta
+  Writting edge pairs in binary into flickr100_10M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_10M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 46063609 -> 92127218 edges
+  Removed 16459740 duplicate edges and self circles.
+  graph loaded as COO in 40.370669s.
+Converting 2302926 vertices, 75667478 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 75667478 edges):
+    Degree 0: 1 (0.000043 %)
+    Degree 2^0: 2 (0.000087 %)
+    Degree 2^1: 104 (0.004516 %)
+    Degree 2^2: 16529 (0.717739 %)
+    Degree 2^3: 850030 (36.910869 %)
+    Degree 2^4: 1193213 (51.812911 %)
+    Degree 2^5: 128551 (5.582073 %)
+    Degree 2^6: 51486 (2.235678 %)
+    Degree 2^7: 28991 (1.258877 %)
+    Degree 2^8: 17631 (0.765591 %)
+    Degree 2^9: 9773 (0.424373 %)
+    Degree 2^10: 4789 (0.207953 %)
+    Degree 2^11: 1583 (0.068739 %)
+    Degree 2^12: 208 (0.009032 %)
+    Degree 2^13: 31 (0.001346 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 950.583923 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14374847
+0	 3	 0	 queue3 	 oversize :	 13817556 ->	 14374847
+0	 4	 0	 queue3 	 oversize :	 14374847 ->	 40986457
+0	 4	 0	 queue3 	 oversize :	 14374847 ->	 40986457
+--------------------------
+Run 0 elapsed: 20.023823 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 20.023823 ms
+ iterations: 7
+ min. elapsed: 20.023823 ms
+ max. elapsed: 20.023823 ms
+ rate: 3778.872736 MiEdges/s
+ src: 0
+ nodes_visited: 2302925
+ edges_visited: 75667478
+ load time: 41314 ms
+ preprocess time: 357.265000 ms
+ postprocess time: 14.069080 ms
+ total time: 391.495943 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_10M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_10M_50.mtx:
+  Parsing MARKET COO format (2302926 nodes, 41282323 directed edges)...   Done (12 s).
+  Writing meta data into flickr100_10M_50.mtx.meta
+  Writting edge pairs in binary into flickr100_10M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_10M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 41282323 -> 82564646 edges
+  Removed 14564682 duplicate edges and self circles.
+  graph loaded as COO in 36.891649s.
+Converting 2302926 vertices, 67999964 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 67999964 edges):
+    Degree 0: 1 (0.000043 %)
+    Degree 2^0: 17 (0.000738 %)
+    Degree 2^1: 1023 (0.044422 %)
+    Degree 2^2: 78663 (3.415785 %)
+    Degree 2^3: 1293363 (56.161726 %)
+    Degree 2^4: 718023 (31.178727 %)
+    Degree 2^5: 104382 (4.532582 %)
+    Degree 2^6: 47272 (2.052693 %)
+    Degree 2^7: 27734 (1.204294 %)
+    Degree 2^8: 16925 (0.734935 %)
+    Degree 2^9: 9305 (0.404051 %)
+    Degree 2^10: 4540 (0.197141 %)
+    Degree 2^11: 1463 (0.063528 %)
+    Degree 2^12: 186 (0.008077 %)
+    Degree 2^13: 25 (0.001086 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 920.813110 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 36381765
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 36381765
+--------------------------
+Run 0 elapsed: 15.885830 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:3 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 15.885830 ms
+ iterations: 7
+ min. elapsed: 15.885830 ms
+ max. elapsed: 15.885830 ms
+ rate: 4280.542113 MiEdges/s
+ src: 0
+ nodes_visited: 2302925
+ edges_visited: 67999964
+ load time: 37790.9 ms
+ preprocess time: 354.959000 ms
+ postprocess time: 13.885975 ms
+ total time: 384.868860 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_10M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_10M_25.mtx:
+  Parsing MARKET COO format (2302926 nodes, 36635714 directed edges)...   Done (10 s).
+  Writing meta data into flickr100_10M_25.mtx.meta
+  Writting edge pairs in binary into flickr100_10M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_10M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 36635714 -> 73271428 edges
+  Removed 12891264 duplicate edges and self circles.
+  graph loaded as COO in 33.308768s.
+Converting 2302926 vertices, 60380164 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 60380164 edges):
+    Degree 0: 18 (0.000782 %)
+    Degree 2^0: 213 (0.009249 %)
+    Degree 2^1: 8961 (0.389114 %)
+    Degree 2^2: 293374 (12.739185 %)
+    Degree 2^3: 1450046 (62.965375 %)
+    Degree 2^4: 362048 (15.721217 %)
+    Degree 2^5: 87163 (3.784881 %)
+    Degree 2^6: 43732 (1.898975 %)
+    Degree 2^7: 26411 (1.146845 %)
+    Degree 2^8: 16267 (0.706362 %)
+    Degree 2^9: 8908 (0.386812 %)
+    Degree 2^10: 4280 (0.185851 %)
+    Degree 2^11: 1320 (0.057318 %)
+    Degree 2^12: 159 (0.006904 %)
+    Degree 2^13: 22 (0.000955 %)
+    Degree 2^14: 4 (0.000174 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 909.934998 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 32253206
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 32253206
+--------------------------
+Run 0 elapsed: 13.886929 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:4 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:2 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:3 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:4 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 13.886929 ms
+ iterations: 7
+ min. elapsed: 13.886929 ms
+ max. elapsed: 13.886929 ms
+ rate: 4347.985499 MiEdges/s
+ src: 0
+ nodes_visited: 2302908
+ edges_visited: 60380164
+ load time: 34114.2 ms
+ preprocess time: 340.243000 ms
+ postprocess time: 13.895988 ms
+ total time: 368.162870 ms
+
+
+./test_sssp_10.2_x86_64 market flickr100_10M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from flickr100_10M_0.mtx:
+  Parsing MARKET COO format (2302926 nodes, 32115749 directed edges)...   Done (9 s).
+  Writing meta data into flickr100_10M_0.mtx.meta
+  Writting edge pairs in binary into flickr100_10M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into flickr100_10M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 32115749 -> 64231498 edges
+  Removed 11409156 duplicate edges and self circles.
+  graph loaded as COO in 28.916215s.
+Converting 2302926 vertices, 52822342 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2302926 vertices, 52822342 edges):
+    Degree 0: 220 (0.009553 %)
+    Degree 2^0: 3025 (0.131355 %)
+    Degree 2^1: 64879 (2.817242 %)
+    Degree 2^2: 766851 (33.298986 %)
+    Degree 2^3: 1100663 (47.794111 %)
+    Degree 2^4: 198152 (8.604358 %)
+    Degree 2^5: 74054 (3.215648 %)
+    Degree 2^6: 40611 (1.763452 %)
+    Degree 2^7: 25059 (1.088137 %)
+    Degree 2^8: 15542 (0.674881 %)
+    Degree 2^9: 8499 (0.369052 %)
+    Degree 2^10: 4015 (0.174343 %)
+    Degree 2^11: 1198 (0.052021 %)
+    Degree 2^12: 137 (0.005949 %)
+    Degree 2^13: 19 (0.000825 %)
+    Degree 2^14: 2 (0.000087 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1004.151123 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 31730964
+0	 4	 0	 queue3 	 oversize :	 13817556 ->	 31730964
+--------------------------
+Run 0 elapsed: 12.089968 ms, src = 0, #iterations = 9
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:2 3:2 4:3 5:3 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:4 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:4 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:2 3:2 4:3 5:3 6:2 7:2 8:3 9:2 10:2 11:2 12:2 13:3 14:3 15:3 16:3 17:3 18:3 19:3 20:4 21:3 22:3 23:3 24:3 25:3 26:3 27:3 28:3 29:3 30:3 31:4 32:3 33:3 34:3 35:3 36:3 37:3 38:3 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 12.089968 ms
+ iterations: 9
+ min. elapsed: 12.089968 ms
+ max. elapsed: 12.089968 ms
+ rate: 4369.105294 MiEdges/s
+ src: 0
+ nodes_visited: 2302706
+ edges_visited: 52822342
+ load time: 29739.9 ms
+ preprocess time: 332.116000 ms
+ postprocess time: 17.191172 ms
+ total time: 361.533165 ms

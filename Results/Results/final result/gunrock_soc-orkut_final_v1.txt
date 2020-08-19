@@ -1,0 +1,1239 @@
+./test_sssp_10.2_x86_64 market soc-orkut_1M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from soc-orkut_1M_100.mtx.meta
+  Reading edge lists from soc-orkut_1M_100.mtx.coo_edge_pairs
+Reading from soc-orkut_1M_100.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 107349209
+  Reading edge values from soc-orkut_1M_100.mtx.coo_edge_values
+Reading from soc-orkut_1M_100.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 107349209
+  Substracting 1 from node Ids...
+  Edge doubleing: 107349209 -> 214698418 edges
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2335.423096 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        4       0       queue3          oversize :      17982996 ->     122763710
+0        4       0       queue3          oversize :      17982996 ->     122763710
+--------------------------
+Run 0 elapsed: 53.063154 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 53.063154 ms
+ iterations: 8
+ min. elapsed: 53.063154 ms
+ max. elapsed: 53.063154 ms
+ rate: 4046.090873 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 214698344
+ load time: 56370.3 ms
+ preprocess time: 618.785000 ms
+ postprocess time: 19.832134 ms
+ total time: 691.846132 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_1M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_1M_75.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106849508 directed edges)...   Done (31 s).
+  Writing meta data into soc-orkut_1M_75.mtx.meta
+  Writting edge pairs in binary into soc-orkut_1M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_1M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106849508 -> 213699016 edges
+  Removed 54 duplicate edges and self circles.
+  graph loaded as COO in 85.027695s.
+Converting 2997166 vertices, 213698962 directed edges ( ordered tuples) to CSR format...Done (3s).
+Degree Histogram (2997166 vertices, 213698962 edges):
+    Degree 0: 82 (0.002736 %)
+    Degree 2^0: 38876 (1.297092 %)
+    Degree 2^1: 89126 (2.973676 %)
+    Degree 2^2: 162643 (5.426560 %)
+    Degree 2^3: 323856 (10.805408 %)
+    Degree 2^4: 572663 (19.106816 %)
+    Degree 2^5: 757587 (25.276778 %)
+    Degree 2^6: 643099 (21.456903 %)
+    Degree 2^7: 299166 (9.981629 %)
+    Degree 2^8: 82994 (2.769083 %)
+    Degree 2^9: 23800 (0.794083 %)
+    Degree 2^10: 2349 (0.078374 %)
+    Degree 2^11: 611 (0.020386 %)
+    Degree 2^12: 210 (0.007007 %)
+    Degree 2^13: 80 (0.002669 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2231.647949 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        4       0       queue3          oversize :      17982996 ->     89166757
+0        4       0       queue3          oversize :      17982996 ->     89166757
+0        5       0       queue3          oversize :      89166757 ->     120865256
+0        5       0       queue3          oversize :      89166757 ->     120865256
+--------------------------
+Run 0 elapsed: 59.269905 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 59.269905 ms
+ iterations: 8
+ min. elapsed: 59.269905 ms
+ max. elapsed: 59.269905 ms
+ rate: 3605.522257 MiEdges/s
+ src: 0
+ nodes_visited: 2997084
+ edges_visited: 213698962
+ load time: 55860.4 ms
+ preprocess time: 617.946000 ms
+ postprocess time: 20.060062 ms
+ total time: 697.431087 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_1M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_1M_50.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106350369 directed edges)...   Done (31 s).
+  Writing meta data into soc-orkut_1M_50.mtx.meta
+  Writting edge pairs in binary into soc-orkut_1M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_1M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106350369 -> 212700738 edges
+  Removed 36 duplicate edges and self circles.
+  graph loaded as COO in 84.247684s.
+Converting 2997166 vertices, 212700702 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 212700702 edges):
+    Degree 0: 194 (0.006473 %)
+    Degree 2^0: 45986 (1.534316 %)
+    Degree 2^1: 89455 (2.984653 %)
+    Degree 2^2: 162593 (5.424891 %)
+    Degree 2^3: 324497 (10.826794 %)
+    Degree 2^4: 572032 (19.085763 %)
+    Degree 2^5: 755492 (25.206879 %)
+    Degree 2^6: 640162 (21.358910 %)
+    Degree 2^7: 297326 (9.920238 %)
+    Degree 2^8: 82504 (2.752734 %)
+    Degree 2^9: 23665 (0.789579 %)
+    Degree 2^10: 2337 (0.077974 %)
+    Degree 2^11: 611 (0.020386 %)
+    Degree 2^12: 208 (0.006940 %)
+    Degree 2^13: 81 (0.002703 %)
+    Degree 2^14: 23 (0.000767 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1840.983887 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 80410274
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 80410274
+0	 5	 0	 queue3 	 oversize :	 80410274 ->	 128638866
+0	 5	 0	 queue3 	 oversize :	 80410274 ->	 128638866
+--------------------------
+Run 0 elapsed: 59.619904 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 59.619904 ms
+ iterations: 8
+ min. elapsed: 59.619904 ms
+ max. elapsed: 59.619904 ms
+ rate: 3567.612312 MiEdges/s
+ src: 0
+ nodes_visited: 2996972
+ edges_visited: 212700702
+ load time: 86456.6 ms
+ preprocess time: 602.137000 ms
+ postprocess time: 19.312143 ms
+ total time: 681.219101 ms
+
+
+akkcm@cuda-15-24:/lustre/scratch/akkcm/Dataset/set2$ ./test_sssp_10.2_x86_64 market soc-orkut_1M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from soc-orkut_1M_25.mtx.meta
+  Reading edge lists from soc-orkut_1M_25.mtx.coo_edge_pairs
+Reading from soc-orkut_1M_25.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 105851907
+  Reading edge values from soc-orkut_1M_25.mtx.coo_edge_values
+Reading from soc-orkut_1M_25.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 105851907
+  Substracting 1 from node Ids...
+  Edge doubleing: 105851907 -> 211703814 edges
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2234.088135 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        4       0       queue3          oversize :      17982996 ->     78238751
+0        4       0       queue3          oversize :      17982996 ->     78238751
+0        5       0       queue3          oversize :      78238751 ->     129796521
+0        5       0       queue3          oversize :      78238751 ->     129796521
+--------------------------
+Run 0 elapsed: 56.396008 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 56.396008 ms
+ iterations: 8
+ min. elapsed: 56.396008 ms
+ max. elapsed: 56.396008 ms
+ rate: 3753.879135 MiEdges/s
+ src: 0
+ nodes_visited: 2996832
+ edges_visited: 211703796
+ load time: 55385.5 ms
+ preprocess time: 611.962000 ms
+ postprocess time: 20.380974 ms
+ total time: 688.891888 ms
+
+
+
+akkcm@cuda-15-24:/lustre/scratch/akkcm/Dataset/set2$ ./test_sssp_10.2_x86_64 market soc-orkut_1M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from soc-orkut_1M_0.mtx.meta
+  Reading edge lists from soc-orkut_1M_0.mtx.coo_edge_pairs
+Reading from soc-orkut_1M_0.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 105353876
+  Reading edge values from soc-orkut_1M_0.mtx.coo_edge_values
+Reading from soc-orkut_1M_0.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 105353876
+  Substracting 1 from node Ids...
+  Edge doubleing: 105353876 -> 210707752 edges
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2217.626953 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        4       0       queue3          oversize :      17982996 ->     72717658
+0        4       0       queue3          oversize :      17982996 ->     72717658
+0        5       0       queue3          oversize :      72717658 ->     134288706
+0        5       0       queue3          oversize :      72717658 ->     134288706
+--------------------------
+Run 0 elapsed: 58.872938 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 58.872938 ms
+ iterations: 8
+ min. elapsed: 58.872938 ms
+ max. elapsed: 58.872938 ms
+ rate: 3579.025586 MiEdges/s
+ src: 0
+ nodes_visited: 2996635
+ edges_visited: 210707752
+ load time: 51569.2 ms
+ preprocess time: 615.041000 ms
+ postprocess time: 19.687891 ms
+ total time: 693.751097 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_5M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_5M_100.mtx:
+  Parsing MARKET COO format (2997166 nodes, 111349206 directed edges)...   Done (33 s).
+  Writing meta data into soc-orkut_5M_100.mtx.meta
+  Writting edge pairs in binary into soc-orkut_5M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_5M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 111349206 -> 222698412 edges
+  Removed 276 duplicate edges and self circles.
+  graph loaded as COO in 88.280257s.
+Converting 2997166 vertices, 222698136 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 222698136 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 2220 (0.074070 %)
+    Degree 2^1: 28601 (0.954268 %)
+    Degree 2^2: 144453 (4.819653 %)
+    Degree 2^3: 324188 (10.816485 %)
+    Degree 2^4: 593535 (19.803207 %)
+    Degree 2^5: 798567 (26.644070 %)
+    Degree 2^6: 678832 (22.649129 %)
+    Degree 2^7: 313617 (10.463785 %)
+    Degree 2^8: 85589 (2.855664 %)
+    Degree 2^9: 24260 (0.809431 %)
+    Degree 2^10: 2367 (0.078975 %)
+    Degree 2^11: 621 (0.020720 %)
+    Degree 2^12: 210 (0.007007 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2030.746948 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 163980199
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 163980199
+--------------------------
+Run 0 elapsed: 55.729866 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 55.729866 ms
+ iterations: 7
+ min. elapsed: 55.729866 ms
+ max. elapsed: 55.729866 ms
+ rate: 3996.028555 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 222698136
+ load time: 90545.1 ms
+ preprocess time: 619.689000 ms
+ postprocess time: 18.882036 ms
+ total time: 694.440126 ms
+
+
+
+akkcm@cuda-15-24:/lustre/scratch/akkcm/Dataset/set2$ ./test_sssp_10.2_x86_64 market soc-orkut_5M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from soc-orkut_5M_75.mtx.meta
+  Reading edge lists from soc-orkut_5M_75.mtx.coo_edge_pairs
+Reading from soc-orkut_5M_75.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 108856410
+  Reading edge values from soc-orkut_5M_75.mtx.coo_edge_values
+Reading from soc-orkut_5M_75.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 108856410
+  Substracting 1 from node Ids...
+  Edge doubleing: 108856410 -> 217712820 edges
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2359.265869 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        4       0       queue3          oversize :      17982996 ->     125506483
+0        4       0       queue3          oversize :      17982996 ->     125506483
+--------------------------
+Run 0 elapsed: 54.321051 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 54.321051 ms
+ iterations: 8
+ min. elapsed: 54.321051 ms
+ max. elapsed: 54.321051 ms
+ rate: 4007.887061 MiEdges/s
+ src: 0
+ nodes_visited: 2997114
+ edges_visited: 217712636
+ load time: 57067.5 ms
+ preprocess time: 632.181000 ms
+ postprocess time: 19.724131 ms
+ total time: 706.381083 ms
+
+
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_5M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_5M_50.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106378061 directed edges)...   Done (31 s).
+  Writing meta data into soc-orkut_5M_50.mtx.meta
+  Writting edge pairs in binary into soc-orkut_5M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_5M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106378061 -> 212756122 edges
+  Removed 134 duplicate edges and self circles.
+  graph loaded as COO in 85.274643s.
+Converting 2997166 vertices, 212755988 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 212755988 edges):
+    Degree 0: 281 (0.009376 %)
+    Degree 2^0: 12688 (0.423333 %)
+    Degree 2^1: 68302 (2.278886 %)
+    Degree 2^2: 167619 (5.592583 %)
+    Degree 2^3: 331362 (11.055844 %)
+    Degree 2^4: 590243 (19.693370 %)
+    Degree 2^5: 776777 (25.917050 %)
+    Degree 2^6: 648761 (21.645815 %)
+    Degree 2^7: 294579 (9.828585 %)
+    Degree 2^8: 80562 (2.687939 %)
+    Degree 2^9: 22842 (0.762120 %)
+    Degree 2^10: 2248 (0.075004 %)
+    Degree 2^11: 597 (0.019919 %)
+    Degree 2^12: 205 (0.006840 %)
+    Degree 2^13: 77 (0.002569 %)
+    Degree 2^14: 23 (0.000767 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1967.491821 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 94810199
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 94810199
+0	 5	 0	 queue3 	 oversize :	 94810199 ->	 114197269
+0	 5	 0	 queue3 	 oversize :	 94810199 ->	 114197269
+--------------------------
+Run 0 elapsed: 59.820890 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 59.820890 ms
+ iterations: 8
+ min. elapsed: 59.820890 ms
+ max. elapsed: 59.820890 ms
+ rate: 3556.550003 MiEdges/s
+ src: 0
+ nodes_visited: 2996885
+ edges_visited: 212755988
+ load time: 87841 ms
+ preprocess time: 709.345000 ms
+ postprocess time: 19.986153 ms
+ total time: 789.294004 ms
+
+
+akkcm@cuda-15-24:/lustre/scratch/akkcm/Dataset/set2$ ./test_sssp_10.2_x86_64 market soc-orkut_5M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from soc-orkut_5M_25.mtx.meta
+  Reading edge lists from soc-orkut_5M_25.mtx.coo_edge_pairs
+Reading from soc-orkut_5M_25.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 103914292
+  Reading edge values from soc-orkut_5M_25.mtx.coo_edge_values
+Reading from soc-orkut_5M_25.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 103914292
+  Substracting 1 from node Ids...
+  Edge doubleing: 103914292 -> 207828584 edges
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2224.590088 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        4       0       queue3          oversize :      17982996 ->     85600255
+0        4       0       queue3          oversize :      17982996 ->     85600255
+0        5       0       queue3          oversize :      85600255 ->     118656700
+0        5       0       queue3          oversize :      85600255 ->     118656700
+--------------------------
+Run 0 elapsed: 56.529999 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:2 11:1 12:1 13:2 14:2 15:4 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:5 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:2 11:1 12:1 13:2 14:2 15:4 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:5 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 56.529999 ms
+ iterations: 8
+ min. elapsed: 56.529999 ms
+ max. elapsed: 56.529999 ms
+ rate: 3676.428984 MiEdges/s
+ src: 0
+ nodes_visited: 2996185
+ edges_visited: 207828526
+ load time: 54561.1 ms
+ preprocess time: 615.049000 ms
+ postprocess time: 20.035982 ms
+ total time: 691.787004 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_5M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_5M_0.mtx:
+  Parsing MARKET COO format (2997166 nodes, 101464735 directed edges)...   Done (30 s).
+  Writing meta data into soc-orkut_5M_0.mtx.meta
+  Writting edge pairs in binary into soc-orkut_5M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_5M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 101464735 -> 202929470 edges
+  graph loaded as COO in 77.276034s.
+Converting 2997166 vertices, 202929470 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 202929470 edges):
+    Degree 0: 2968 (0.099027 %)
+    Degree 2^0: 65102 (2.172119 %)
+    Degree 2^1: 88527 (2.953690 %)
+    Degree 2^2: 169237 (5.646567 %)
+    Degree 2^3: 337371 (11.256333 %)
+    Degree 2^4: 584269 (19.494049 %)
+    Degree 2^5: 754228 (25.164706 %)
+    Degree 2^6: 618504 (20.636294 %)
+    Degree 2^7: 276603 (9.228818 %)
+    Degree 2^8: 75912 (2.532793 %)
+    Degree 2^9: 21475 (0.716510 %)
+    Degree 2^10: 2104 (0.070200 %)
+    Degree 2^11: 571 (0.019051 %)
+    Degree 2^12: 196 (0.006540 %)
+    Degree 2^13: 78 (0.002602 %)
+    Degree 2^14: 21 (0.000701 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1832.101074 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 67970712
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 67970712
+0	 5	 0	 queue3 	 oversize :	 67970712 ->	 131260643
+0	 5	 0	 queue3 	 oversize :	 67970712 ->	 131260643
+--------------------------
+Run 0 elapsed: 53.667068 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:2 11:1 12:2 13:2 14:2 15:4 16:2 17:2 18:2 19:2 20:3 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:5 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:2 11:1 12:2 13:2 14:2 15:4 16:2 17:2 18:2 19:2 20:3 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:5 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 53.667068 ms
+ iterations: 8
+ min. elapsed: 53.667068 ms
+ max. elapsed: 53.667068 ms
+ rate: 3781.266012 MiEdges/s
+ src: 0
+ nodes_visited: 2994190
+ edges_visited: 202929462
+ load time: 79434.4 ms
+ preprocess time: 586.265000 ms
+ postprocess time: 19.439936 ms
+ total time: 659.514904 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_10M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_10M_100.mtx:
+  Parsing MARKET COO format (2997166 nodes, 116349195 directed edges)...   Done (34 s).
+  Writing meta data into soc-orkut_10M_100.mtx.meta
+  Writting edge pairs in binary into soc-orkut_10M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_10M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 116349195 -> 232698390 edges
+  Removed 512 duplicate edges and self circles.
+  graph loaded as COO in 92.919533s.
+Converting 2997166 vertices, 232697878 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 232697878 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 72 (0.002402 %)
+    Degree 2^1: 2757 (0.091987 %)
+    Degree 2^2: 58823 (1.962621 %)
+    Degree 2^3: 303155 (10.114722 %)
+    Degree 2^4: 614205 (20.492859 %)
+    Degree 2^5: 849304 (28.336902 %)
+    Degree 2^6: 722510 (24.106439 %)
+    Degree 2^7: 330029 (11.011369 %)
+    Degree 2^8: 88353 (2.947885 %)
+    Degree 2^9: 24633 (0.821876 %)
+    Degree 2^10: 2388 (0.079675 %)
+    Degree 2^11: 620 (0.020686 %)
+    Degree 2^12: 211 (0.007040 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2101.403076 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 191340687
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 191340687
+--------------------------
+Run 0 elapsed: 59.231997 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 59.231997 ms
+ iterations: 7
+ min. elapsed: 59.231997 ms
+ max. elapsed: 59.231997 ms
+ rate: 3928.584070 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 232697878
+ load time: 95254.8 ms
+ preprocess time: 634.695000 ms
+ postprocess time: 19.308090 ms
+ total time: 713.382006 ms
+
+./test_sssp_10.2_x86_64 market soc-orkut_10M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_10M_75.mtx:
+  Parsing MARKET COO format (2997166 nodes, 111378046 directed edges)...   Done (33 s).
+  Writing meta data into soc-orkut_10M_75.mtx.meta
+  Writting edge pairs in binary into soc-orkut_10M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_10M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 111378046 -> 222756092 edges
+  Removed 374 duplicate edges and self circles.
+  graph loaded as COO in 88.607600s.
+Converting 2997166 vertices, 222755718 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 222755718 edges):
+    Degree 0: 8 (0.000267 %)
+    Degree 2^0: 478 (0.015948 %)
+    Degree 2^1: 9924 (0.331113 %)
+    Degree 2^2: 104180 (3.475950 %)
+    Degree 2^3: 327808 (10.937265 %)
+    Degree 2^4: 615352 (20.531128 %)
+    Degree 2^5: 828227 (27.633671 %)
+    Degree 2^6: 691265 (23.063954 %)
+    Degree 2^7: 310438 (10.357718 %)
+    Degree 2^8: 83106 (2.772819 %)
+    Degree 2^9: 23209 (0.774365 %)
+    Degree 2^10: 2265 (0.075571 %)
+    Degree 2^11: 601 (0.020052 %)
+    Degree 2^12: 204 (0.006806 %)
+    Degree 2^13: 78 (0.002602 %)
+    Degree 2^14: 23 (0.000767 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2047.293945 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 160403464
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 160403464
+--------------------------
+Run 0 elapsed: 56.525946 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 56.525946 ms
+ iterations: 7
+ min. elapsed: 56.525946 ms
+ max. elapsed: 56.525946 ms
+ rate: 3940.769418 MiEdges/s
+ src: 0
+ nodes_visited: 2997158
+ edges_visited: 222755718
+ load time: 90887.8 ms
+ preprocess time: 627.790000 ms
+ postprocess time: 19.006968 ms
+ total time: 703.460932 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_10M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_10M_50.mtx:
+  Parsing MARKET COO format (2997166 nodes, 106464801 directed edges)...   Done (31 s).
+  Writing meta data into soc-orkut_10M_50.mtx.meta
+  Writting edge pairs in binary into soc-orkut_10M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_10M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 106464801 -> 212929602 edges
+  Removed 240 duplicate edges and self circles.
+  graph loaded as COO in 84.833097s.
+Converting 2997166 vertices, 212929362 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 212929362 edges):
+    Degree 0: 107 (0.003570 %)
+    Degree 2^0: 2637 (0.087983 %)
+    Degree 2^1: 30493 (1.017394 %)
+    Degree 2^2: 151034 (5.039227 %)
+    Degree 2^3: 339401 (11.324064 %)
+    Degree 2^4: 613829 (20.480314 %)
+    Degree 2^5: 805130 (26.863043 %)
+    Degree 2^6: 659991 (22.020502 %)
+    Degree 2^7: 291466 (9.724720 %)
+    Degree 2^8: 78255 (2.610966 %)
+    Degree 2^9: 21827 (0.728255 %)
+    Degree 2^10: 2127 (0.070967 %)
+    Degree 2^11: 574 (0.019151 %)
+    Degree 2^12: 196 (0.006540 %)
+    Degree 2^13: 78 (0.002602 %)
+    Degree 2^14: 21 (0.000701 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1984.343994 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 139149593
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 139149593
+--------------------------
+Run 0 elapsed: 54.810047 ms, src = 0, #iterations = 7
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 54.810047 ms
+ iterations: 7
+ min. elapsed: 54.810047 ms
+ max. elapsed: 54.810047 ms
+ rate: 3884.860041 MiEdges/s
+ src: 0
+ nodes_visited: 2997059
+ edges_visited: 212929362
+ load time: 87035 ms
+ preprocess time: 612.214000 ms
+ postprocess time: 19.086123 ms
+ total time: 686.267138 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_10M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_10M_25.mtx:
+  Parsing MARKET COO format (2997166 nodes, 101608263 directed edges)...   Done (29 s).
+  Writing meta data into soc-orkut_10M_25.mtx.meta
+  Writting edge pairs in binary into soc-orkut_10M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_10M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 101608263 -> 203216526 edges
+  Removed 132 duplicate edges and self circles.
+  graph loaded as COO in 80.666298s.
+Converting 2997166 vertices, 203216394 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 203216394 edges):
+    Degree 0: 855 (0.028527 %)
+    Degree 2^0: 13916 (0.464305 %)
+    Degree 2^1: 71437 (2.383485 %)
+    Degree 2^2: 175261 (5.847557 %)
+    Degree 2^3: 346288 (11.553848 %)
+    Degree 2^4: 608768 (20.311454 %)
+    Degree 2^5: 781508 (26.074899 %)
+    Degree 2^6: 628849 (20.981454 %)
+    Degree 2^7: 273246 (9.116812 %)
+    Degree 2^8: 73694 (2.458789 %)
+    Degree 2^9: 20520 (0.684647 %)
+    Degree 2^10: 1992 (0.066463 %)
+    Degree 2^11: 545 (0.018184 %)
+    Degree 2^12: 194 (0.006473 %)
+    Degree 2^13: 72 (0.002402 %)
+    Degree 2^14: 21 (0.000701 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1960.634033 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 87264191
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 87264191
+0	 5	 0	 queue3 	 oversize :	 87264191 ->	 112514741
+0	 5	 0	 queue3 	 oversize :	 87264191 ->	 112514741
+--------------------------
+Run 0 elapsed: 57.376862 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 57.376862 ms
+ iterations: 8
+ min. elapsed: 57.376862 ms
+ max. elapsed: 57.376862 ms
+ rate: 3541.782984 MiEdges/s
+ src: 0
+ nodes_visited: 2996309
+ edges_visited: 203216392
+ load time: 82795.3 ms
+ preprocess time: 583.166000 ms
+ postprocess time: 19.171953 ms
+ total time: 659.861088 ms
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_10M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_10M_0.mtx:
+  Parsing MARKET COO format (2997166 nodes, 96805310 directed edges)...   Done (28 s).
+  Writing meta data into soc-orkut_10M_0.mtx.meta
+  Writting edge pairs in binary into soc-orkut_10M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_10M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 96805310 -> 193610620 edges
+  graph loaded as COO in 73.583523s.
+Converting 2997166 vertices, 193610620 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 193610620 edges):
+    Degree 0: 6066 (0.202391 %)
+    Degree 2^0: 66321 (2.212790 %)
+    Degree 2^1: 92332 (3.080644 %)
+    Degree 2^2: 177378 (5.918191 %)
+    Degree 2^3: 352190 (11.750767 %)
+    Degree 2^4: 600873 (20.048039 %)
+    Degree 2^5: 756297 (25.233737 %)
+    Degree 2^6: 598467 (19.967763 %)
+    Degree 2^7: 255916 (8.538599 %)
+    Degree 2^8: 69367 (2.314420 %)
+    Degree 2^9: 19264 (0.642741 %)
+    Degree 2^10: 1900 (0.063393 %)
+    Degree 2^11: 519 (0.017316 %)
+    Degree 2^12: 186 (0.006206 %)
+    Degree 2^13: 70 (0.002336 %)
+    Degree 2^14: 20 (0.000667 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1966.383911 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 62461817
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 62461817
+0	 5	 0	 queue3 	 oversize :	 62461817 ->	 127518516
+0	 5	 0	 queue3 	 oversize :	 62461817 ->	 127518516
+--------------------------
+Run 0 elapsed: 51.301003 ms, src = 0, #iterations = 9
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:2 11:1 12:2 13:2 14:2 15:4 16:2 17:2 18:2 19:2 20:3 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:5 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:2 11:1 12:2 13:2 14:2 15:4 16:2 17:2 18:2 19:2 20:3 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:5 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 51.301003 ms
+ iterations: 9
+ min. elapsed: 51.301003 ms
+ max. elapsed: 51.301003 ms
+ rate: 3774.011979 MiEdges/s
+ src: 0
+ nodes_visited: 2991078
+ edges_visited: 193610598
+ load time: 75621.7 ms
+ preprocess time: 565.175000 ms
+ postprocess time: 18.681049 ms
+ total time: 635.297060 ms
+./test_sssp_10.2_x86_64 market soc-orkut_50M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_50M_100.mtx:
+  Parsing MARKET COO format (2997166 nodes, 156348905 directed edges)...   Done (47 s).
+  Writing meta data into soc-orkut_50M_100.mtx.meta
+  Writting edge pairs in binary into soc-orkut_50M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_50M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 156348905 -> 312697810 edges
+  Removed 2400 duplicate edges and self circles.
+  graph loaded as COO in 131.988500s.
+Converting 2997166 vertices, 312695410 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 312695410 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 0 (0.000000 %)
+    Degree 2^1: 0 (0.000000 %)
+    Degree 2^2: 0 (0.000000 %)
+    Degree 2^3: 14 (0.000467 %)
+    Degree 2^4: 60387 (2.014803 %)
+    Degree 2^5: 1089413 (36.348104 %)
+    Degree 2^6: 1194224 (39.845107 %)
+    Degree 2^7: 506794 (16.909107 %)
+    Degree 2^8: 115009 (3.837258 %)
+    Degree 2^9: 27796 (0.927409 %)
+    Degree 2^10: 2577 (0.085981 %)
+    Degree 2^11: 632 (0.021087 %)
+    Degree 2^12: 214 (0.007140 %)
+    Degree 2^13: 82 (0.002736 %)
+    Degree 2^14: 24 (0.000801 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2300.714111 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 77834566
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 77834566
+0	 4	 0	 queue3 	 oversize :	 77834566 ->	 234159696
+0	 4	 0	 queue3 	 oversize :	 77834566 ->	 234159696
+--------------------------
+Run 0 elapsed: 92.685938 ms, src = 0, #iterations = 6
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:2 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 92.685938 ms
+ iterations: 6
+ min. elapsed: 92.685938 ms
+ max. elapsed: 92.685938 ms
+ rate: 3373.709293 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 312695410
+ load time: 135004 ms
+ preprocess time: 761.678000 ms
+ postprocess time: 19.931078 ms
+ total time: 874.432087 ms
+
+
+akkcm@cuda-15-24:/lustre/scratch/akkcm/Dataset/set2$ ./test_sssp_10.2_x86_64 market soc-orkut_50M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from soc-orkut_50M_75.mtx.meta
+  Reading edge lists from soc-orkut_50M_75.mtx.coo_edge_pairs
+Reading from soc-orkut_50M_75.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 132055317
+  Reading edge values from soc-orkut_50M_75.mtx.coo_edge_values
+Reading from soc-orkut_50M_75.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 132055317
+  Substracting 1 from node Ids...
+  Edge doubleing: 132055317 -> 264110634 edges
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2805.434326 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        3       0       queue3          oversize :      17982996 ->     47814457
+0        3       0       queue3          oversize :      17982996 ->     47814457
+0        4       0       queue3          oversize :      47814457 ->     214528669
+0        4       0       queue3          oversize :      47814457 ->     214528669
+--------------------------
+Run 0 elapsed: 80.769062 ms, src = 0, #iterations = 6
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:4 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:4 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 80.769062 ms
+ iterations: 6
+ min. elapsed: 80.769062 ms
+ max. elapsed: 80.769062 ms
+ rate: 3269.928625 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 264109068
+ load time: 73910.1 ms
+ preprocess time: 701.517000 ms
+ postprocess time: 20.906925 ms
+ total time: 803.349972 ms
+
+
+
+
+./test_sssp_10.2_x86_64 market soc-orkut_50M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_50M_75.mtx:
+  Parsing MARKET COO format (2997166 nodes, 132055317 directed edges)...   Done (38 s).
+  Writing meta data into soc-orkut_50M_75.mtx.meta
+  Writting edge pairs in binary into soc-orkut_50M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_50M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 132055317 -> 264110634 edges
+  Removed 1566 duplicate edges and self circles.
+  graph loaded as COO in 108.124046s.
+Converting 2997166 vertices, 264109068 directed edges ( ordered tuples) to CSR format...Done (3s).
+Degree Histogram (2997166 vertices, 264109068 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 0 (0.000000 %)
+    Degree 2^1: 0 (0.000000 %)
+    Degree 2^2: 0 (0.000000 %)
+    Degree 2^3: 1522 (0.050781 %)
+    Degree 2^4: 312469 (10.425482 %)
+    Degree 2^5: 1209028 (40.339040 %)
+    Degree 2^6: 990645 (33.052724 %)
+    Degree 2^7: 376185 (12.551357 %)
+    Degree 2^8: 83951 (2.801013 %)
+    Degree 2^9: 20668 (0.689585 %)
+    Degree 2^10: 1911 (0.063760 %)
+    Degree 2^11: 515 (0.017183 %)
+    Degree 2^12: 185 (0.006172 %)
+    Degree 2^13: 70 (0.002336 %)
+    Degree 2^14: 17 (0.000567 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 2234.818848 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 47814457
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 47814457
+0	 4	 0	 queue3 	 oversize :	 47814457 ->	 214528669
+0	 4	 0	 queue3 	 oversize :	 47814457 ->	 214528669
+--------------------------
+Run 0 elapsed: 78.404903 ms, src = 0, #iterations = 6
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:4 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:4 17:2 18:2 19:2 20:2 21:2 22:2 23:2 24:2 25:2 26:2 27:2 28:2 29:2 30:2 31:2 32:2 33:2 34:2 35:2 36:2 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 78.404903 ms
+ iterations: 6
+ min. elapsed: 78.404903 ms
+ max. elapsed: 78.404903 ms
+ rate: 3368.527433 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 264109068
+ load time: 110736 ms
+ preprocess time: 805.640000 ms
+ postprocess time: 19.624949 ms
+ total time: 903.805971 ms
+./test_sssp_10.2_x86_64 market soc-orkut_50M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_50M_50.mtx:
+  Parsing MARKET COO format (2997166 nodes, 109073087 directed edges)...   Done (32 s).
+  Writing meta data into soc-orkut_50M_50.mtx.meta
+  Writting edge pairs in binary into soc-orkut_50M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_50M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 109073087 -> 218146174 edges
+  Removed 934 duplicate edges and self circles.
+  graph loaded as COO in 86.415921s.
+Converting 2997166 vertices, 218145240 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 218145240 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 0 (0.000000 %)
+    Degree 2^1: 3 (0.000100 %)
+    Degree 2^2: 320 (0.010677 %)
+    Degree 2^3: 58425 (1.949341 %)
+    Degree 2^4: 697672 (23.277723 %)
+    Degree 2^5: 1113744 (37.159904 %)
+    Degree 2^6: 779037 (25.992454 %)
+    Degree 2^7: 268983 (8.974578 %)
+    Degree 2^8: 62449 (2.083602 %)
+    Degree 2^9: 14407 (0.480687 %)
+    Degree 2^10: 1479 (0.049347 %)
+    Degree 2^11: 431 (0.014380 %)
+    Degree 2^12: 154 (0.005138 %)
+    Degree 2^13: 50 (0.001668 %)
+    Degree 2^14: 12 (0.000400 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1844.062988 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 27721065
+0	 3	 0	 queue3 	 oversize :	 17982996 ->	 27721065
+0	 4	 0	 queue3 	 oversize :	 27721065 ->	 180526796
+0	 4	 0	 queue3 	 oversize :	 27721065 ->	 180526796
+--------------------------
+Run 0 elapsed: 64.880133 ms, src = 0, #iterations = 6
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:4 17:2 18:2 19:3 20:2 21:2 22:2 23:2 24:2 25:2 26:3 27:2 28:2 29:2 30:2 31:4 32:2 33:2 34:2 35:2 36:3 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:1 13:2 14:2 15:2 16:4 17:2 18:2 19:3 20:2 21:2 22:2 23:2 24:2 25:2 26:3 27:2 28:2 29:2 30:2 31:4 32:2 33:2 34:2 35:2 36:3 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 64.880133 ms
+ iterations: 6
+ min. elapsed: 64.880133 ms
+ max. elapsed: 64.880133 ms
+ rate: 3362.281041 MiEdges/s
+ src: 0
+ nodes_visited: 2997166
+ edges_visited: 218145240
+ load time: 88685.6 ms
+ preprocess time: 693.656000 ms
+ postprocess time: 19.154072 ms
+ total time: 777.828932 ms
+./test_sssp_10.2_x86_64 market soc-orkut_50M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_50M_25.mtx:
+  Parsing MARKET COO format (2997166 nodes, 87249618 directed edges)...   Done (25 s).
+  Writing meta data into soc-orkut_50M_25.mtx.meta
+  Writting edge pairs in binary into soc-orkut_50M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_50M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 87249618 -> 174499236 edges
+  Removed 426 duplicate edges and self circles.
+  graph loaded as COO in 68.973233s.
+Converting 2997166 vertices, 174498810 directed edges ( ordered tuples) to CSR format...Done (1s).
+Degree Histogram (2997166 vertices, 174498810 edges):
+    Degree 0: 7 (0.000234 %)
+    Degree 2^0: 69 (0.002302 %)
+    Degree 2^1: 1721 (0.057421 %)
+    Degree 2^2: 45864 (1.530246 %)
+    Degree 2^3: 379550 (12.663630 %)
+    Degree 2^4: 815731 (27.216744 %)
+    Degree 2^5: 927254 (30.937692 %)
+    Degree 2^6: 580515 (19.368797 %)
+    Degree 2^7: 188439 (6.287239 %)
+    Degree 2^8: 47098 (1.571418 %)
+    Degree 2^9: 9241 (0.308325 %)
+    Degree 2^10: 1136 (0.037902 %)
+    Degree 2^11: 358 (0.011945 %)
+    Degree 2^12: 132 (0.004404 %)
+    Degree 2^13: 47 (0.001568 %)
+    Degree 2^14: 4 (0.000133 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1739.960938 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 120706846
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 120706846
+--------------------------
+Run 0 elapsed: 48.216820 ms, src = 0, #iterations = 8
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:2 13:2 14:2 15:4 16:4 17:2 18:3 19:3 20:2 21:2 22:2 23:2 24:2 25:2 26:3 27:2 28:2 29:2 30:2 31:4 32:2 33:2 34:2 35:3 36:3 37:2 38:2 39:3 ]
+First 40 distances of the reference CPU result.
+[0:0 1:2 2:1 3:2 4:1 5:1 6:1 7:1 8:2 9:1 10:1 11:1 12:2 13:2 14:2 15:4 16:4 17:2 18:3 19:3 20:2 21:2 22:2 23:2 24:2 25:2 26:3 27:2 28:2 29:2 30:2 31:4 32:2 33:2 34:2 35:3 36:3 37:2 38:2 39:3 ]
+
+[sssp] finished.
+ avg. elapsed: 48.216820 ms
+ iterations: 8
+ min. elapsed: 48.216820 ms
+ max. elapsed: 48.216820 ms
+ rate: 3619.044368 MiEdges/s
+ src: 0
+ nodes_visited: 2997159
+ edges_visited: 174498810
+ load time: 70877.2 ms
+ preprocess time: 531.786000 ms
+ postprocess time: 18.288851 ms
+ total time: 598.425865 ms
+./test_sssp_10.2_x86_64 market soc-orkut_50M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from soc-orkut_50M_0.mtx:
+  Parsing MARKET COO format (2997166 nodes, 66461078 directed edges)...   Done (19 s).
+  Writing meta data into soc-orkut_50M_0.mtx.meta
+  Writting edge pairs in binary into soc-orkut_50M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into soc-orkut_50M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 66461078 -> 132922156 edges
+  graph loaded as COO in 50.092670s.
+Converting 2997166 vertices, 132922156 directed edges ( ordered tuples) to CSR format...Done (2s).
+Degree Histogram (2997166 vertices, 132922156 edges):
+    Degree 0: 33660 (1.123061 %)
+    Degree 2^0: 80987 (2.702119 %)
+    Degree 2^1: 130246 (4.345639 %)
+    Degree 2^2: 258911 (8.638527 %)
+    Degree 2^3: 480566 (16.034013 %)
+    Degree 2^4: 712664 (23.777929 %)
+    Degree 2^5: 716040 (23.890569 %)
+    Degree 2^6: 410972 (13.712020 %)
+    Degree 2^7: 129915 (4.334595 %)
+    Degree 2^8: 36681 (1.223856 %)
+    Degree 2^9: 5176 (0.172696 %)
+    Degree 2^10: 896 (0.029895 %)
+    Degree 2^11: 302 (0.010076 %)
+    Degree 2^12: 114 (0.003804 %)
+    Degree 2^13: 35 (0.001168 %)
+    Degree 2^14: 1 (0.000033 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 1320.919067 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 19914032
+0	 4	 0	 queue3 	 oversize :	 17982996 ->	 19914032
+0	 5	 0	 queue3 	 oversize :	 19914032 ->	 103858791
+0	 5	 0	 queue3 	 oversize :	 19914032 ->	 103858791
+--------------------------
+Run 0 elapsed: 39.479971 ms, src = 0, #iterations = 11
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:2 2:1 3:3 4:1 5:1 6:1 7:3 8:2 9:1 10:2 11:1 12:2 13:2 14:2 15:4 16:4 17:2 18:3 19:3 20:3 21:2 22:2 23:2 24:2 25:2 26:3 27:2 28:2 29:2 30:2 31:5 32:2 33:3 34:3 35:3 36:3 37:2 38:2 39:2 ]
+First 40 distances of the reference CPU result.
+[0:0 1:2 2:1 3:3 4:1 5:1 6:1 7:3 8:2 9:1 10:2 11:1 12:2 13:2 14:2 15:4 16:4 17:2 18:3 19:3 20:3 21:2 22:2 23:2 24:2 25:2 26:3 27:2 28:2 29:2 30:2 31:5 32:2 33:3 34:3 35:3 36:3 37:2 38:2 39:2 ]
+
+[sssp] finished.
+ avg. elapsed: 39.479971 ms
+ iterations: 11
+ min. elapsed: 39.479971 ms
+ max. elapsed: 39.479971 ms
+ rate: 3366.818436 MiEdges/s
+ src: 0
+ nodes_visited: 2963264
+ edges_visited: 132921894
+ load time: 51611.5 ms
+ preprocess time: 467.633000 ms
+ postprocess time: 18.178940 ms
+ total time: 525.430918 ms
