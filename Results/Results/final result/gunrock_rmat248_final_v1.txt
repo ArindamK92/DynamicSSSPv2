@@ -1,0 +1,1187 @@
+./test_sssp_10.2_x86_64 market rmat248_1M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading meta data from rmat248_1M_100.mtx.meta
+  Reading edge lists from rmat248_1M_100.mtx.coo_edge_pairs
+Reading from rmat248_1M_100.mtx.coo_edge_pairs, typeId = 262, targetId = 262, length = 270022766
+  Reading edge values from rmat248_1M_100.mtx.coo_edge_values
+Reading from rmat248_1M_100.mtx.coo_edge_values, typeId = 5, targetId = 5, length = 270022766
+  Substracting 1 from node Ids...
+  Edge doubleing: 270022766 -> 540045532 edges
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15534.348633 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0        5       0       queue3          oversize :      100663290 ->    248007268
+0        5       0       queue3          oversize :      100663290 ->    248007268
+0        6       0       queue3          oversize :      248007268 ->    254408564
+0        6       0       queue3          oversize :      248007268 ->    254408564
+--------------------------
+Run 0 elapsed: 871.389866 ms, src = 0, #iterations = 48
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:60 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:61 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:60 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:61 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 871.389866 ms
+ iterations: 48
+ min. elapsed: 871.389866 ms
+ max. elapsed: 871.389866 ms
+ rate: 310.994434 MiEdges/s
+ src: 0
+ nodes_visited: 16777215
+ edges_visited: 270997398
+ load time: 148959 ms
+ preprocess time: 1001.730000 ms
+ postprocess time: 115.089178 ms
+ total time: 1988.492012 ms
+
+
+
+./test_sssp_10.2_x86_64 market rmat248_1M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_1M_75.mtx:
+  Parsing MARKET COO format (16777215 nodes, 269522885 directed edges)...   Done (83 s).
+  Writing meta data into rmat248_1M_75.mtx.meta
+  Writting edge pairs in binary into rmat248_1M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_1M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 269522885 -> 539045770 edges
+  Removed 268548614 duplicate edges and self circles.
+  graph loaded as COO in 230.168520s.
+Converting 16777215 vertices, 270497156 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 270497156 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 861729 (5.136305 %)
+    Degree 2^1: 1875602 (11.179460 %)
+    Degree 2^2: 3818826 (22.761978 %)
+    Degree 2^3: 4730826 (28.197922 %)
+    Degree 2^4: 3440353 (20.506103 %)
+    Degree 2^5: 1530802 (9.124291 %)
+    Degree 2^6: 448130 (2.671063 %)
+    Degree 2^7: 59979 (0.357503 %)
+    Degree 2^8: 10665 (0.063568 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15396.018555 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 247527199
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 247527199
+0	 6	 0	 queue3 	 oversize :	 247527199 ->	 253844422
+0	 6	 0	 queue3 	 oversize :	 247527199 ->	 253844422
+--------------------------
+Run 0 elapsed: 866.383791 ms, src = 0, #iterations = 49
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 866.383791 ms
+ iterations: 49
+ min. elapsed: 866.383791 ms
+ max. elapsed: 866.383791 ms
+ rate: 312.214008 MiEdges/s
+ src: 0
+ nodes_visited: 16777215
+ edges_visited: 270497156
+ load time: 235119 ms
+ preprocess time: 969.386000 ms
+ postprocess time: 96.596003 ms
+ total time: 1932.642937 ms
+./test_sssp_10.2_x86_64 market rmat248_1M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_1M_50.mtx:
+  Parsing MARKET COO format (16777215 nodes, 269023226 directed edges)...   Done (82 s).
+  Writing meta data into rmat248_1M_50.mtx.meta
+  Writting edge pairs in binary into rmat248_1M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_1M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 269023226 -> 538046452 edges
+  Removed 268050002 duplicate edges and self circles.
+  graph loaded as COO in 230.124755s.
+Converting 16777215 vertices, 269996450 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 269996450 edges):
+    Degree 0: 1 (0.000006 %)
+    Degree 2^0: 887938 (5.292523 %)
+    Degree 2^1: 1878981 (11.199600 %)
+    Degree 2^2: 3815195 (22.740336 %)
+    Degree 2^3: 4717317 (28.117402 %)
+    Degree 2^4: 3431309 (20.452197 %)
+    Degree 2^5: 1527749 (9.106094 %)
+    Degree 2^6: 447851 (2.669400 %)
+    Degree 2^7: 59912 (0.357103 %)
+    Degree 2^8: 10659 (0.063533 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15461.884766 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 247324150
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 247324150
+0	 6	 0	 queue3 	 oversize :	 247324150 ->	 251989069
+0	 6	 0	 queue3 	 oversize :	 247324150 ->	 251989069
+--------------------------
+Run 0 elapsed: 857.074976 ms, src = 0, #iterations = 44
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 857.074976 ms
+ iterations: 44
+ min. elapsed: 857.074976 ms
+ max. elapsed: 857.074976 ms
+ rate: 315.020806 MiEdges/s
+ src: 0
+ nodes_visited: 16777214
+ edges_visited: 269996450
+ load time: 235077 ms
+ preprocess time: 960.307000 ms
+ postprocess time: 96.675158 ms
+ total time: 1914.333105 ms
+./test_sssp_10.2_x86_64 market rmat248_1M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_1M_25.mtx:
+  Parsing MARKET COO format (16777215 nodes, 268523813 directed edges)...   Done (82 s).
+  Writing meta data into rmat248_1M_25.mtx.meta
+  Writting edge pairs in binary into rmat248_1M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_1M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 268523813 -> 537047626 edges
+  Removed 267552384 duplicate edges and self circles.
+  graph loaded as COO in 229.673586s.
+Converting 16777215 vertices, 269495242 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 269495242 edges):
+    Degree 0: 4 (0.000024 %)
+    Degree 2^0: 914613 (5.451519 %)
+    Degree 2^1: 1881932 (11.217190 %)
+    Degree 2^2: 3811768 (22.719909 %)
+    Degree 2^3: 4703327 (28.034015 %)
+    Degree 2^4: 3422528 (20.399858 %)
+    Degree 2^5: 1524771 (9.088344 %)
+    Degree 2^6: 447450 (2.667010 %)
+    Degree 2^7: 59866 (0.356829 %)
+    Degree 2^8: 10653 (0.063497 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15416.959961 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 246966835
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 246966835
+0	 6	 0	 queue3 	 oversize :	 246966835 ->	 251521185
+0	 6	 0	 queue3 	 oversize :	 246966835 ->	 251521185
+--------------------------
+Run 0 elapsed: 849.237919 ms, src = 0, #iterations = 45
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 849.237919 ms
+ iterations: 45
+ min. elapsed: 849.237919 ms
+ max. elapsed: 849.237919 ms
+ rate: 317.337738 MiEdges/s
+ src: 0
+ nodes_visited: 16777209
+ edges_visited: 269495240
+ load time: 234704 ms
+ preprocess time: 956.249000 ms
+ postprocess time: 96.781969 ms
+ total time: 1902.544022 ms
+./test_sssp_10.2_x86_64 market rmat248_1M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_1M_0.mtx:
+  Parsing MARKET COO format (16777215 nodes, 268024608 directed edges)...   Done (82 s).
+  Writing meta data into rmat248_1M_0.mtx.meta
+  Writting edge pairs in binary into rmat248_1M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_1M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 268024608 -> 536049216 edges
+  Removed 267055648 duplicate edges and self circles.
+  graph loaded as COO in 229.672184s.
+Converting 16777215 vertices, 268993568 directed edges ( ordered tuples) to CSR format...Done (4s).
+Degree Histogram (16777215 vertices, 268993568 edges):
+    Degree 0: 13 (0.000077 %)
+    Degree 2^0: 942316 (5.616641 %)
+    Degree 2^1: 1883612 (11.227203 %)
+    Degree 2^2: 3808217 (22.698744 %)
+    Degree 2^3: 4689934 (27.954187 %)
+    Degree 2^4: 3413583 (20.346541 %)
+    Degree 2^5: 1521663 (9.069819 %)
+    Degree 2^6: 447135 (2.665132 %)
+    Degree 2^7: 59791 (0.356382 %)
+    Degree 2^8: 10648 (0.063467 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15357.810547 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 246482499
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 246482499
+0	 6	 0	 queue3 	 oversize :	 246482499 ->	 250294791
+0	 6	 0	 queue3 	 oversize :	 246482499 ->	 250294791
+--------------------------
+Run 0 elapsed: 844.462156 ms, src = 0, #iterations = 46
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 844.462156 ms
+ iterations: 46
+ min. elapsed: 844.462156 ms
+ max. elapsed: 844.462156 ms
+ rate: 318.538331 MiEdges/s
+ src: 0
+ nodes_visited: 16777200
+ edges_visited: 268993566
+ load time: 234711 ms
+ preprocess time: 969.020000 ms
+ postprocess time: 97.250938 ms
+ total time: 1911.008120 ms
+./test_sssp_10.2_x86_64 market rmat248_5M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_5M_100.mtx:
+  Parsing MARKET COO format (16777215 nodes, 274022766 directed edges)...   Done (84 s).
+  Writing meta data into rmat248_5M_100.mtx.meta
+  Writting edge pairs in binary into rmat248_5M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_5M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 274022766 -> 548045532 edges
+  Removed 269048144 duplicate edges and self circles.
+  graph loaded as COO in 234.477801s.
+Converting 16777215 vertices, 278997388 directed edges ( ordered tuples) to CSR format...Done (4s).
+Degree Histogram (16777215 vertices, 278997388 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 519283 (3.095168 %)
+    Degree 2^1: 1731100 (10.318161 %)
+    Degree 2^2: 3855271 (22.979207 %)
+    Degree 2^3: 4965419 (29.596205 %)
+    Degree 2^4: 3596876 (21.439053 %)
+    Degree 2^5: 1583497 (9.438378 %)
+    Degree 2^6: 453635 (2.703875 %)
+    Degree 2^7: 61077 (0.364047 %)
+    Degree 2^8: 10754 (0.064099 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15668.875977 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 255370210
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 255370210
+0	 6	 0	 queue3 	 oversize :	 255370210 ->	 261388772
+0	 6	 0	 queue3 	 oversize :	 255370210 ->	 261388772
+--------------------------
+Run 0 elapsed: 893.388987 ms, src = 0, #iterations = 48
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:63 5:42 6:34 7:45 8:38 9:53 10:41 11:61 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:60 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:61 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:63 5:42 6:34 7:45 8:38 9:53 10:41 11:61 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:60 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:61 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 893.388987 ms
+ iterations: 48
+ min. elapsed: 893.388987 ms
+ max. elapsed: 893.388987 ms
+ rate: 312.291054 MiEdges/s
+ src: 0
+ nodes_visited: 16777215
+ edges_visited: 278997388
+ load time: 239449 ms
+ preprocess time: 972.040000 ms
+ postprocess time: 96.946955 ms
+ total time: 1962.653875 ms
+./test_sssp_10.2_x86_64 market rmat248_5M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_5M_75.mtx:
+  Parsing MARKET COO format (16777215 nodes, 271525621 directed edges)...   Done (84 s).
+  Writing meta data into rmat248_5M_75.mtx.meta
+  Writting edge pairs in binary into rmat248_5M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_5M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 271525621 -> 543051242 edges
+  Removed 266559886 duplicate edges and self circles.
+  graph loaded as COO in 232.645610s.
+Converting 16777215 vertices, 276491356 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 276491356 edges):
+    Degree 0: 15 (0.000089 %)
+    Degree 2^0: 603037 (3.594381 %)
+    Degree 2^1: 1788369 (10.659511 %)
+    Degree 2^2: 3848220 (22.937180 %)
+    Degree 2^3: 4896461 (29.185184 %)
+    Degree 2^4: 3549459 (21.156426 %)
+    Degree 2^5: 1567890 (9.345353 %)
+    Degree 2^6: 451995 (2.694100 %)
+    Degree 2^7: 60746 (0.362074 %)
+    Degree 2^8: 10720 (0.063896 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15614.288086 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 252989144
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 252989144
+0	 6	 0	 queue3 	 oversize :	 252989144 ->	 259194845
+0	 6	 0	 queue3 	 oversize :	 252989144 ->	 259194845
+--------------------------
+Run 0 elapsed: 888.386965 ms, src = 0, #iterations = 46
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:34 7:45 8:38 9:53 10:41 11:61 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:34 7:45 8:38 9:53 10:41 11:61 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 888.386965 ms
+ iterations: 46
+ min. elapsed: 888.386965 ms
+ max. elapsed: 888.386965 ms
+ rate: 311.228515 MiEdges/s
+ src: 0
+ nodes_visited: 16777200
+ edges_visited: 276491356
+ load time: 237576 ms
+ preprocess time: 968.610000 ms
+ postprocess time: 114.186049 ms
+ total time: 1971.458912 ms
+./test_sssp_10.2_x86_64 market rmat248_5M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_5M_50.mtx:
+  Parsing MARKET COO format (16777215 nodes, 269034270 directed edges)...   Done (82 s).
+  Writing meta data into rmat248_5M_50.mtx.meta
+  Writting edge pairs in binary into rmat248_5M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_5M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 269034270 -> 538068540 edges
+  Removed 264094490 duplicate edges and self circles.
+  graph loaded as COO in 229.987481s.
+Converting 16777215 vertices, 273974050 directed edges ( ordered tuples) to CSR format...Done (4s).
+Degree Histogram (16777215 vertices, 273974050 edges):
+    Degree 0: 60 (0.000358 %)
+    Degree 2^0: 699909 (4.171783 %)
+    Degree 2^1: 1834367 (10.933680 %)
+    Degree 2^2: 3838793 (22.880991 %)
+    Degree 2^3: 4826940 (28.770806 %)
+    Degree 2^4: 3503200 (20.880700 %)
+    Degree 2^5: 1552139 (9.251470 %)
+    Degree 2^6: 450385 (2.684504 %)
+    Degree 2^7: 60423 (0.360149 %)
+    Degree 2^8: 10696 (0.063753 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15537.706055 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 250702522
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 250702522
+0	 6	 0	 queue3 	 oversize :	 250702522 ->	 256616583
+0	 6	 0	 queue3 	 oversize :	 250702522 ->	 256616583
+--------------------------
+Run 0 elapsed: 870.140076 ms, src = 0, #iterations = 46
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 870.140076 ms
+ iterations: 46
+ min. elapsed: 870.140076 ms
+ max. elapsed: 870.140076 ms
+ rate: 314.861999 MiEdges/s
+ src: 0
+ nodes_visited: 16777150
+ edges_visited: 273974044
+ load time: 234930 ms
+ preprocess time: 962.100000 ms
+ postprocess time: 96.868992 ms
+ total time: 1929.384947 ms
+./test_sssp_10.2_x86_64 market rmat248_5M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_5M_25.mtx:
+  Parsing MARKET COO format (16777215 nodes, 266548655 directed edges)...   Done (82 s).
+  Writing meta data into rmat248_5M_25.mtx.meta
+  Writting edge pairs in binary into rmat248_5M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_5M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 266548655 -> 533097310 edges
+  Removed 261651486 duplicate edges and self circles.
+  graph loaded as COO in 227.990571s.
+Converting 16777215 vertices, 271445824 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 271445824 edges):
+    Degree 0: 162 (0.000966 %)
+    Degree 2^0: 812244 (4.841352 %)
+    Degree 2^1: 1867350 (11.130274 %)
+    Degree 2^2: 3825518 (22.801866 %)
+    Degree 2^3: 4758187 (28.361006 %)
+    Degree 2^4: 3457516 (20.608403 %)
+    Degree 2^5: 1536480 (9.158135 %)
+    Degree 2^6: 448731 (2.674645 %)
+    Degree 2^7: 60052 (0.357938 %)
+    Degree 2^8: 10672 (0.063610 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15407.090820 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 248557680
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 248557680
+0	 6	 0	 queue3 	 oversize :	 248557680 ->	 253924844
+0	 6	 0	 queue3 	 oversize :	 248557680 ->	 253924844
+--------------------------
+Run 0 elapsed: 865.950108 ms, src = 0, #iterations = 48
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 865.950108 ms
+ iterations: 48
+ min. elapsed: 865.950108 ms
+ max. elapsed: 865.950108 ms
+ rate: 313.465879 MiEdges/s
+ src: 0
+ nodes_visited: 16777042
+ edges_visited: 271445812
+ load time: 232899 ms
+ preprocess time: 1014.030000 ms
+ postprocess time: 116.944075 ms
+ total time: 1997.206926 ms
+./test_sssp_10.2_x86_64 market rmat248_5M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_5M_0.mtx:
+  Parsing MARKET COO format (16777215 nodes, 264068842 directed edges)...   Done (81 s).
+  Writing meta data into rmat248_5M_0.mtx.meta
+  Writting edge pairs in binary into rmat248_5M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_5M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 264068842 -> 528137684 edges
+  Removed 259231112 duplicate edges and self circles.
+  graph loaded as COO in 225.845455s.
+Converting 16777215 vertices, 268906572 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 268906572 edges):
+    Degree 0: 305 (0.001818 %)
+    Degree 2^0: 942586 (5.618251 %)
+    Degree 2^1: 1884353 (11.231620 %)
+    Degree 2^2: 3809032 (22.703601 %)
+    Degree 2^3: 4689747 (27.953072 %)
+    Degree 2^4: 3412807 (20.341916 %)
+    Degree 2^5: 1520754 (9.064401 %)
+    Degree 2^6: 446980 (2.664209 %)
+    Degree 2^7: 59714 (0.355923 %)
+    Degree 2^8: 10634 (0.063384 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15364.045898 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 246224217
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 246224217
+0	 6	 0	 queue3 	 oversize :	 246224217 ->	 252082140
+0	 6	 0	 queue3 	 oversize :	 246224217 ->	 252082140
+--------------------------
+Run 0 elapsed: 860.473156 ms, src = 0, #iterations = 45
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 860.473156 ms
+ iterations: 45
+ min. elapsed: 860.473156 ms
+ max. elapsed: 860.473156 ms
+ rate: 312.510091 MiEdges/s
+ src: 0
+ nodes_visited: 16776883
+ edges_visited: 268906544
+ load time: 230868 ms
+ preprocess time: 959.767000 ms
+ postprocess time: 116.392851 ms
+ total time: 1936.910868 ms
+./test_sssp_10.2_x86_64 market rmat248_10M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_10M_100.mtx:
+  Parsing MARKET COO format (16777215 nodes, 279022766 directed edges)...   Done (86 s).
+  Writing meta data into rmat248_10M_100.mtx.meta
+  Writting edge pairs in binary into rmat248_10M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_10M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 279022766 -> 558045532 edges
+  Removed 269048154 duplicate edges and self circles.
+  graph loaded as COO in 239.464638s.
+Converting 16777215 vertices, 288997378 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 288997378 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 286068 (1.705098 %)
+    Degree 2^1: 1439069 (8.577520 %)
+    Degree 2^2: 3830966 (22.834338 %)
+    Degree 2^3: 5248221 (31.281837 %)
+    Degree 2^4: 3791250 (22.597612 %)
+    Degree 2^5: 1647764 (9.821439 %)
+    Degree 2^6: 460219 (2.743119 %)
+    Degree 2^7: 62512 (0.372601 %)
+    Degree 2^8: 10843 (0.064629 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 16010.756836 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 264519582
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 264519582
+0	 6	 0	 queue3 	 oversize :	 264519582 ->	 271161340
+0	 6	 0	 queue3 	 oversize :	 264519582 ->	 271161340
+--------------------------
+Run 0 elapsed: 947.420835 ms, src = 0, #iterations = 50
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:63 5:42 6:34 7:45 8:38 9:53 10:41 11:50 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:60 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:61 38:42 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:63 5:42 6:34 7:45 8:38 9:53 10:41 11:50 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:60 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:50 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:61 38:42 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 947.420835 ms
+ iterations: 50
+ min. elapsed: 947.420835 ms
+ max. elapsed: 947.420835 ms
+ rate: 305.035911 MiEdges/s
+ src: 0
+ nodes_visited: 16777215
+ edges_visited: 288997378
+ load time: 244568 ms
+ preprocess time: 1045.530000 ms
+ postprocess time: 116.453171 ms
+ total time: 2112.953186 ms
+./test_sssp_10.2_x86_64 market rmat248_10M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_10M_75.mtx:
+  Parsing MARKET COO format (16777215 nodes, 274034265 directed edges)...   Done (84 s).
+  Writing meta data into rmat248_10M_75.mtx.meta
+  Writting edge pairs in binary into rmat248_10M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_10M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 274034265 -> 548068530 edges
+  Removed 264094492 duplicate edges and self circles.
+  graph loaded as COO in 234.523226s.
+Converting 16777215 vertices, 283974038 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 283974038 edges):
+    Degree 0: 29 (0.000173 %)
+    Degree 2^0: 385598 (2.298343 %)
+    Degree 2^1: 1594901 (9.506351 %)
+    Degree 2^2: 3852802 (22.964491 %)
+    Degree 2^3: 5107045 (30.440362 %)
+    Degree 2^4: 3691939 (22.005673 %)
+    Degree 2^5: 1615122 (9.626878 %)
+    Degree 2^6: 456844 (2.723003 %)
+    Degree 2^7: 61828 (0.368524 %)
+    Degree 2^8: 10804 (0.064397 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15814.845703 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 259863373
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 259863373
+0	 6	 0	 queue3 	 oversize :	 259863373 ->	 266284562
+0	 6	 0	 queue3 	 oversize :	 259863373 ->	 266284562
+--------------------------
+Run 0 elapsed: 892.203093 ms, src = 0, #iterations = 47
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:34 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:48 38:42 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:34 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:58 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:48 38:42 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 892.203093 ms
+ iterations: 47
+ min. elapsed: 892.203093 ms
+ max. elapsed: 892.203093 ms
+ rate: 318.284075 MiEdges/s
+ src: 0
+ nodes_visited: 16777184
+ edges_visited: 283974036
+ load time: 239551 ms
+ preprocess time: 998.033000 ms
+ postprocess time: 106.513977 ms
+ total time: 1997.027874 ms
+./test_sssp_10.2_x86_64 market rmat248_10M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_10M_50.mtx:
+  Parsing MARKET COO format (16777215 nodes, 269068847 directed edges)...   Done (83 s).
+  Writing meta data into rmat248_10M_50.mtx.meta
+  Writting edge pairs in binary into rmat248_10M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_10M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 269068847 -> 538137694 edges
+  Removed 259231598 duplicate edges and self circles.
+  graph loaded as COO in 230.488106s.
+Converting 16777215 vertices, 278906096 directed edges ( ordered tuples) to CSR format...Done (4s).
+Degree Histogram (16777215 vertices, 278906096 edges):
+    Degree 0: 169 (0.001007 %)
+    Degree 2^0: 519785 (3.098160 %)
+    Degree 2^1: 1731834 (10.322536 %)
+    Degree 2^2: 3855552 (22.980882 %)
+    Degree 2^3: 4966288 (29.601385 %)
+    Degree 2^4: 3595339 (21.429892 %)
+    Degree 2^5: 1582666 (9.433425 %)
+    Degree 2^6: 453518 (2.703178 %)
+    Degree 2^7: 61035 (0.363797 %)
+    Degree 2^8: 10726 (0.063932 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15686.012695 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 255202108
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 255202108
+0	 6	 0	 queue3 	 oversize :	 255202108 ->	 261188795
+0	 6	 0	 queue3 	 oversize :	 255202108 ->	 261188795
+--------------------------
+Run 0 elapsed: 889.198065 ms, src = 0, #iterations = 49
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:71 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 889.198065 ms
+ iterations: 49
+ min. elapsed: 889.198065 ms
+ max. elapsed: 889.198065 ms
+ rate: 313.660253 MiEdges/s
+ src: 0
+ nodes_visited: 16777040
+ edges_visited: 278906090
+ load time: 235520 ms
+ preprocess time: 976.888000 ms
+ postprocess time: 96.606016 ms
+ total time: 1962.966204 ms
+./test_sssp_10.2_x86_64 market rmat248_10M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_10M_25.mtx:
+  Parsing MARKET COO format (16777215 nodes, 264127068 directed edges)...   Done (81 s).
+  Writing meta data into rmat248_10M_25.mtx.meta
+  Writting edge pairs in binary into rmat248_10M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_10M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 264127068 -> 528254136 edges
+  Removed 254460124 duplicate edges and self circles.
+  graph loaded as COO in 226.688802s.
+Converting 16777215 vertices, 273794012 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 273794012 edges):
+    Degree 0: 512 (0.003052 %)
+    Degree 2^0: 700456 (4.175043 %)
+    Degree 2^1: 1835855 (10.942549 %)
+    Degree 2^2: 3840599 (22.891755 %)
+    Degree 2^3: 4826731 (28.769560 %)
+    Degree 2^4: 3501473 (20.870407 %)
+    Degree 2^5: 1550319 (9.240622 %)
+    Degree 2^6: 450026 (2.682364 %)
+    Degree 2^7: 60273 (0.359255 %)
+    Degree 2^8: 10668 (0.063586 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 18 (0.000107 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15536.314453 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 250741691
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 250741691
+0	 6	 0	 queue3 	 oversize :	 250741691 ->	 254631799
+0	 6	 0	 queue3 	 oversize :	 250741691 ->	 254631799
+--------------------------
+Run 0 elapsed: 851.967096 ms, src = 0, #iterations = 46
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:40 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:48 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 851.967096 ms
+ iterations: 46
+ min. elapsed: 851.967096 ms
+ max. elapsed: 851.967096 ms
+ rate: 321.366855 MiEdges/s
+ src: 0
+ nodes_visited: 16776678
+ edges_visited: 273793986
+ load time: 231606 ms
+ preprocess time: 985.134000 ms
+ postprocess time: 116.762877 ms
+ total time: 1954.141855 ms
+./test_sssp_10.2_x86_64 market rmat248_10M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_10M_0.mtx:
+  Parsing MARKET COO format (16777215 nodes, 259206704 directed edges)...   Done (80 s).
+  Writing meta data into rmat248_10M_0.mtx.meta
+  Writting edge pairs in binary into rmat248_10M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_10M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 259206704 -> 518413408 edges
+  Removed 249773340 duplicate edges and self circles.
+  graph loaded as COO in 222.193690s.
+Converting 16777215 vertices, 268640068 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 268640068 edges):
+    Degree 0: 1240 (0.007391 %)
+    Degree 2^0: 943376 (5.622959 %)
+    Degree 2^1: 1886708 (11.245657 %)
+    Degree 2^2: 3811453 (22.718032 %)
+    Degree 2^3: 4689201 (27.949818 %)
+    Degree 2^4: 3410335 (20.327182 %)
+    Degree 2^5: 1518050 (9.048284 %)
+    Degree 2^6: 446480 (2.661228 %)
+    Degree 2^7: 59478 (0.354517 %)
+    Degree 2^8: 10591 (0.063127 %)
+    Degree 2^9: 286 (0.001705 %)
+    Degree 2^10: 17 (0.000101 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15391.039062 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 245931122
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 245931122
+0	 6	 0	 queue3 	 oversize :	 245931122 ->	 251190114
+0	 6	 0	 queue3 	 oversize :	 245931122 ->	 251190114
+--------------------------
+Run 0 elapsed: 849.343061 ms, src = 0, #iterations = 47
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:27 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:78 24:42 25:60 26:29 27:51 28:25 29:62 30:35 31:41 32:38 33:93 34:46 35:41 36:73 37:71 38:48 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 849.343061 ms
+ iterations: 47
+ min. elapsed: 849.343061 ms
+ max. elapsed: 849.343061 ms
+ rate: 316.291471 MiEdges/s
+ src: 0
+ nodes_visited: 16775876
+ edges_visited: 268639966
+ load time: 227299 ms
+ preprocess time: 954.170000 ms
+ postprocess time: 96.698046 ms
+ total time: 1900.490046 ms
+./test_sssp_10.2_x86_64 market rmat248_50M_100.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_50M_100.mtx:
+  Parsing MARKET COO format (16777215 nodes, 319022766 directed edges)...   Done (97 s).
+  Writing meta data into rmat248_50M_100.mtx.meta
+  Writting edge pairs in binary into rmat248_50M_100.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_50M_100.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 319022766 -> 638045532 edges
+  Removed 269048226 duplicate edges and self circles.
+  graph loaded as COO in 276.411410s.
+Converting 16777215 vertices, 368997306 directed edges ( ordered tuples) to CSR format...Done (6s).
+Degree Histogram (16777215 vertices, 368997306 edges):
+    Degree 0: 0 (0.000000 %)
+    Degree 2^0: 2347 (0.013989 %)
+    Degree 2^1: 75939 (0.452632 %)
+    Degree 2^2: 1428139 (8.512372 %)
+    Degree 2^3: 6493152 (38.702204 %)
+    Degree 2^4: 5896865 (35.148056 %)
+    Degree 2^5: 2260194 (13.471807 %)
+    Degree 2^6: 531618 (3.168690 %)
+    Degree 2^7: 77196 (0.460124 %)
+    Degree 2^8: 11459 (0.068301 %)
+    Degree 2^9: 286 (0.001705 %)
+    Degree 2^10: 20 (0.000119 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 18324.371094 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 345315967
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 345315967
+0	 6	 0	 queue3 	 oversize :	 345315967 ->	 347694197
+0	 6	 0	 queue3 	 oversize :	 345315967 ->	 347694197
+--------------------------
+Run 0 elapsed: 1166.809082 ms, src = 0, #iterations = 49
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:41 3:36 4:58 5:40 6:34 7:35 8:31 9:52 10:38 11:50 12:27 13:27 14:47 15:28 16:42 17:28 18:46 19:60 20:52 21:33 22:51 23:57 24:42 25:60 26:29 27:31 28:25 29:52 30:35 31:37 32:33 33:48 34:40 35:41 36:52 37:45 38:42 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:41 3:36 4:58 5:40 6:34 7:35 8:31 9:52 10:38 11:50 12:27 13:27 14:47 15:28 16:42 17:28 18:46 19:60 20:52 21:33 22:51 23:57 24:42 25:60 26:29 27:31 28:25 29:52 30:35 31:37 32:33 33:48 34:40 35:41 36:52 37:45 38:42 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 1166.809082 ms
+ iterations: 49
+ min. elapsed: 1166.809082 ms
+ max. elapsed: 1166.809082 ms
+ rate: 316.244801 MiEdges/s
+ src: 0
+ nodes_visited: 16777215
+ edges_visited: 368997306
+ load time: 282464 ms
+ preprocess time: 1151.800000 ms
+ postprocess time: 97.380161 ms
+ total time: 2416.263103 ms
+./test_sssp_10.2_x86_64 market rmat248_50M_75.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_50M_75.mtx:
+  Parsing MARKET COO format (16777215 nodes, 294308525 directed edges)...   Done (90 s).
+  Writing meta data into rmat248_50M_75.mtx.meta
+  Writting edge pairs in binary into rmat248_50M_75.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_50M_75.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 294308525 -> 588617050 edges
+  Removed 245174344 duplicate edges and self circles.
+  graph loaded as COO in 253.523523s.
+Converting 16777215 vertices, 343442706 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 343442706 edges):
+    Degree 0: 27 (0.000161 %)
+    Degree 2^0: 10820 (0.064492 %)
+    Degree 2^1: 223360 (1.331329 %)
+    Degree 2^2: 2319499 (13.825292 %)
+    Degree 2^3: 6472870 (38.581314 %)
+    Degree 2^4: 5124857 (30.546530 %)
+    Degree 2^5: 2039474 (12.156213 %)
+    Degree 2^6: 503516 (3.001189 %)
+    Degree 2^7: 71262 (0.424755 %)
+    Degree 2^8: 11226 (0.066912 %)
+    Degree 2^9: 285 (0.001699 %)
+    Degree 2^10: 19 (0.000113 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 17485.708984 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 317945840
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 317945840
+0	 6	 0	 queue3 	 oversize :	 317945840 ->	 324010712
+0	 6	 0	 queue3 	 oversize :	 317945840 ->	 324010712
+--------------------------
+Run 0 elapsed: 1111.144066 ms, src = 0, #iterations = 51
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:36 4:66 5:40 6:47 7:43 8:32 9:52 10:40 11:50 12:27 13:27 14:47 15:29 16:40 17:28 18:37 19:68 20:52 21:33 22:46 23:78 24:42 25:60 26:29 27:31 28:25 29:56 30:35 31:37 32:34 33:48 34:46 35:41 36:52 37:48 38:42 39:46 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:36 4:66 5:40 6:47 7:43 8:32 9:52 10:40 11:50 12:27 13:27 14:47 15:29 16:40 17:28 18:37 19:68 20:52 21:33 22:46 23:78 24:42 25:60 26:29 27:31 28:25 29:56 30:35 31:37 32:34 33:48 34:46 35:41 36:52 37:48 38:42 39:46 ]
+
+[sssp] finished.
+ avg. elapsed: 1111.144066 ms
+ iterations: 51
+ min. elapsed: 1111.144066 ms
+ max. elapsed: 1111.144066 ms
+ rate: 309.089268 MiEdges/s
+ src: 0
+ nodes_visited: 16777188
+ edges_visited: 343442706
+ load time: 259165 ms
+ preprocess time: 1154.890000 ms
+ postprocess time: 101.907015 ms
+ total time: 2371.448994 ms
+./test_sssp_10.2_x86_64 market rmat248_50M_50.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_50M_50.mtx:
+  Parsing MARKET COO format (16777215 nodes, 270148586 directed edges)...   Done (83 s).
+  Writing meta data into rmat248_50M_50.mtx.meta
+  Writting edge pairs in binary into rmat248_50M_50.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_50M_50.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 270148586 -> 540297172 edges
+  Removed 223416606 duplicate edges and self circles.
+  graph loaded as COO in 233.360970s.
+Converting 16777215 vertices, 316880566 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 316880566 edges):
+    Degree 0: 373 (0.002223 %)
+    Degree 2^0: 49176 (0.293112 %)
+    Degree 2^1: 593913 (3.539998 %)
+    Degree 2^2: 3254415 (19.397826 %)
+    Degree 2^3: 6051056 (36.067106 %)
+    Degree 2^4: 4442988 (26.482274 %)
+    Degree 2^5: 1831134 (10.914410 %)
+    Degree 2^6: 478076 (2.849555 %)
+    Degree 2^7: 64976 (0.387287 %)
+    Degree 2^8: 10805 (0.064403 %)
+    Degree 2^9: 287 (0.001711 %)
+    Degree 2^10: 16 (0.000095 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 16773.605469 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 290328684
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 290328684
+0	 6	 0	 queue3 	 oversize :	 290328684 ->	 298294397
+0	 6	 0	 queue3 	 oversize :	 290328684 ->	 298294397
+--------------------------
+Run 0 elapsed: 1016.652107 ms, src = 0, #iterations = 50
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:37 3:56 4:81 5:42 6:47 7:36 8:32 9:54 10:37 11:50 12:32 13:27 14:47 15:29 16:29 17:28 18:37 19:68 20:52 21:33 22:53 23:78 24:40 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:34 33:93 34:46 35:41 36:52 37:48 38:42 39:52 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:37 3:56 4:81 5:42 6:47 7:36 8:32 9:54 10:37 11:50 12:32 13:27 14:47 15:29 16:29 17:28 18:37 19:68 20:52 21:33 22:53 23:78 24:40 25:60 26:29 27:51 28:25 29:56 30:35 31:41 32:34 33:93 34:46 35:41 36:52 37:48 38:42 39:52 ]
+
+[sssp] finished.
+ avg. elapsed: 1016.652107 ms
+ iterations: 50
+ min. elapsed: 1016.652107 ms
+ max. elapsed: 1016.652107 ms
+ rate: 311.690262 MiEdges/s
+ src: 0
+ nodes_visited: 16776838
+ edges_visited: 316880562
+ load time: 238719 ms
+ preprocess time: 1049.050000 ms
+ postprocess time: 97.910881 ms
+ total time: 2163.895845 ms
+./test_sssp_10.2_x86_64 market rmat248_50M_25.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_50M_25.mtx:
+  Parsing MARKET COO format (16777215 nodes, 246519479 directed edges)...   Done (76 s).
+  Writing meta data into rmat248_50M_25.mtx.meta
+  Writting edge pairs in binary into rmat248_50M_25.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_50M_25.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 246519479 -> 493038958 edges
+  Removed 203594490 duplicate edges and self circles.
+  graph loaded as COO in 212.739481s.
+Converting 16777215 vertices, 289444468 directed edges ( ordered tuples) to CSR format...Done (5s).
+Degree Histogram (16777215 vertices, 289444468 edges):
+    Degree 0: 3604 (0.021482 %)
+    Degree 2^0: 221449 (1.319939 %)
+    Degree 2^1: 1305833 (7.783372 %)
+    Degree 2^2: 3842822 (22.905005 %)
+    Degree 2^3: 5397040 (32.168867 %)
+    Degree 2^4: 3849113 (22.942503 %)
+    Degree 2^5: 1633467 (9.736223 %)
+    Degree 2^6: 454215 (2.707333 %)
+    Degree 2^7: 59226 (0.353014 %)
+    Degree 2^8: 10144 (0.060463 %)
+    Degree 2^9: 287 (0.001711 %)
+    Degree 2^10: 15 (0.000089 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 16029.045898 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 263639528
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 263639528
+0	 6	 0	 queue3 	 oversize :	 263639528 ->	 271712990
+0	 6	 0	 queue3 	 oversize :	 263639528 ->	 271712990
+--------------------------
+Run 0 elapsed: 925.581217 ms, src = 0, #iterations = 48
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:86 5:42 6:59 7:45 8:32 9:53 10:41 11:50 12:32 13:29 14:47 15:29 16:40 17:28 18:37 19:68 20:52 21:33 22:53 23:79 24:42 25:60 26:30 27:51 28:25 29:56 30:35 31:43 32:38 33:93 34:46 35:41 36:52 37:48 38:42 39:52 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:86 5:42 6:59 7:45 8:32 9:53 10:41 11:50 12:32 13:29 14:47 15:29 16:40 17:28 18:37 19:68 20:52 21:33 22:53 23:79 24:42 25:60 26:30 27:51 28:25 29:56 30:35 31:43 32:38 33:93 34:46 35:41 36:52 37:48 38:42 39:52 ]
+
+[sssp] finished.
+ avg. elapsed: 925.581217 ms
+ iterations: 48
+ min. elapsed: 925.581217 ms
+ max. elapsed: 925.581217 ms
+ rate: 312.716372 MiEdges/s
+ src: 0
+ nodes_visited: 16773543
+ edges_visited: 289444400
+ load time: 217868 ms
+ preprocess time: 991.053000 ms
+ postprocess time: 105.774879 ms
+ total time: 2022.686958 ms
+./test_sssp_10.2_x86_64 market rmat248_50M_0.mtx --src=0 --device=0 --undirected=1
+Loading Matrix-market coordinate-formatted graph ...
+  Reading from rmat248_50M_0.mtx:
+  Parsing MARKET COO format (16777215 nodes, 223397112 directed edges)...   Done (69 s).
+  Writing meta data into rmat248_50M_0.mtx.meta
+  Writting edge pairs in binary into rmat248_50M_0.mtx.coo_edge_pairs
+  Writting edge values in binary into rmat248_50M_0.mtx.coo_edge_values
+  Substracting 1 from node Ids...
+  Edge doubleing: 223397112 -> 446794224 edges
+  Removed 185531690 duplicate edges and self circles.
+  graph loaded as COO in 192.675121s.
+Converting 16777215 vertices, 261262534 directed edges ( ordered tuples) to CSR format...Done (4s).
+Degree Histogram (16777215 vertices, 261262534 edges):
+    Degree 0: 27692 (0.165057 %)
+    Degree 2^0: 967351 (5.765862 %)
+    Degree 2^1: 1950809 (11.627728 %)
+    Degree 2^2: 3874973 (23.096640 %)
+    Degree 2^3: 4676925 (27.876647 %)
+    Degree 2^4: 3341147 (19.914789 %)
+    Degree 2^5: 1444585 (8.610398 %)
+    Degree 2^6: 429472 (2.559853 %)
+    Degree 2^7: 54718 (0.326145 %)
+    Degree 2^8: 9242 (0.055087 %)
+    Degree 2^9: 291 (0.001734 %)
+    Degree 2^10: 10 (0.000060 %)
+
+Computing reference value ...
+__________________________
+--------------------------
+Run 0 elapsed: 15113.802734 ms, src = 0
+==============================================
+64bit-VertexT=false 64bit-SizeT=false 64bit-ValueT=false undirected=true mark-pred=0 advance-mode=LB
+Using advance mode LB
+Using filter mode CULL
+__________________________
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 237212493
+0	 5	 0	 queue3 	 oversize :	 100663290 ->	 237212493
+0	 6	 0	 queue3 	 oversize :	 237212493 ->	 244610665
+0	 6	 0	 queue3 	 oversize :	 237212493 ->	 244610665
+--------------------------
+Run 0 elapsed: 830.277205 ms, src = 0, #iterations = 48
+Distance Validity: PASS
+First 40 distances of the GPU result:
+[0:0 1:30 2:42 3:56 4:91 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:29 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:79 24:42 25:60 26:30 27:51 28:25 29:62 30:35 31:44 32:38 33:93 34:46 35:41 36:73 37:73 38:48 39:52 ]
+First 40 distances of the reference CPU result.
+[0:0 1:30 2:42 3:56 4:91 5:42 6:120 7:45 8:38 9:53 10:41 11:85 12:32 13:29 14:47 15:29 16:54 17:28 18:61 19:68 20:52 21:33 22:53 23:79 24:42 25:60 26:30 27:51 28:25 29:62 30:35 31:44 32:38 33:93 34:46 35:41 36:73 37:73 38:48 39:52 ]
+
+[sssp] finished.
+ avg. elapsed: 830.277205 ms
+ iterations: 48
+ min. elapsed: 830.277205 ms
+ max. elapsed: 830.277205 ms
+ rate: 314.666204 MiEdges/s
+ src: 0
+ nodes_visited: 16747251
+ edges_visited: 261260176
+ load time: 197327 ms
+ preprocess time: 957.495000 ms
+ postprocess time: 106.089115 ms
+ total time: 1894.135952 ms
