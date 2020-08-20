@@ -4,13 +4,9 @@ This code consists of Dynamic parallelism. To run this code modern gpu (which su
 
 **compile:**
 _____________
-for small gpu:
+
 ```shell
-nvcc -arch=sm_35 -rdc=true SSSPmainForUndirected_v1.cu -lcudadevrt -o op_main
-```
-for cluster(e.g. foundry) gpu:
-```shell
-nvcc -arch=sm_70 -rdc=true SSSPmainForUndirected_v1.cu -lcudadevrt -o op_main
+nvcc -o op_main SSSPmainForUndirected_v1.cu
 ```
 
 **run:**

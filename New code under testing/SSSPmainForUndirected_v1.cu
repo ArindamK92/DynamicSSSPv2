@@ -104,11 +104,11 @@ int main(int argc, char* argv[]) {
 
 	//cout << "Transferring incoming edges tracker to GPU" << endl;
 	int* AdjListTracker_device;
-	cudaStatus = cudaMalloc((void**)&AdjListTracker_device, (nodes + 1) * sizeof(int)); //****change it in other codes
+	cudaStatus = cudaMalloc((void**)&AdjListTracker_device, (nodes + 1) * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListTracker_device");
 	}
-	cudaMemcpy(AdjListTracker_device, AdjListTracker, (nodes+1) * sizeof(int), cudaMemcpyHostToDevice); //****change it in other codes
+	cudaMemcpy(AdjListTracker_device, AdjListTracker, (nodes + 1) * sizeof(int), cudaMemcpyHostToDevice);
 
 	/*cout << "Transferring outgoing edges tracker to GPU" << endl;
 	int* OutEdgesListTracker_device;
@@ -258,16 +258,16 @@ int main(int argc, char* argv[]) {
 	//Step 2 starts
 	auto startTime2 = high_resolution_clock::now(); //Time calculation start
 	change[0] = 1;
-	//while (change[0] == 1 /*&& its < 202*/) {
-	//	//printf("Iteration:%d \n", its);
-	//	change[0] = 0;
-	//	cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
-		updateNeighbors_del << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, AdjListFull_device, AdjListTracker_device);
-		//cudaMemcpy(change, change_d, 1 * sizeof(int), cudaMemcpyDeviceToHost);
+	while (change[0] == 1 /*&& its < 202*/) {
+		//printf("Iteration:%d \n", its);
+		change[0] = 0;
+		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
+		updateNeighbors_del << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, AdjListFull_device, AdjListTracker_device, change_d);
+		cudaMemcpy(change, change_d, 1 * sizeof(int), cudaMemcpyDeviceToHost);
 		cudaDeviceSynchronize();
 		//its++;
 		//cout << "itr:" << its << " " << endl;
-	//}
+	}
 	/*its = 0;*/
 	//new addition ends
 

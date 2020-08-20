@@ -93,11 +93,11 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			//new addition ends(under testing)
 			//Check whether node1 is relaxed
 			if ((SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight) && flag == 1) {
-				//Update Parent and EdgeWt  //test v1
-				//SSSP[node_2].Parent = node_1;
-				//SSSP[node_2].EDGwt = edge_weight;
-				//SSSP[node_2].Dist = SSSP[node_1].Dist + edge_weight;
-				//SSSP[node_2].Update = true;
+				//Update Parent and EdgeWt
+				SSSP[node_2].Parent = node_1;
+				SSSP[node_2].EDGwt = edge_weight;
+				SSSP[node_2].Dist = SSSP[node_1].Dist + edge_weight;
+				SSSP[node_2].Update = true;
 				//Mark Edge to be added
 				Edgedone[index] = 1;
 				//printf("inside ins if: %d %d \n", node_2, SSSP[node_2].Dist, edge_weight);
@@ -162,27 +162,11 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 }
 
 
-__global__ void delNeighbor(int parent, RT_Vertex* SSSP, int inf, ColWt* AdjListFull_device, int* AdjListTracker_device) {
-	int j = threadIdx.x + AdjListTracker_device[parent];
-	int myn = AdjListFull_device[j].col;
-	int mywt = AdjListFull_device[j].wt;
-	int flag = 1;
-	if (mywt < 0) { flag =  0; } //if mywt = -1, that means edge was deleted
-
-	if (SSSP[myn].Parent == parent && SSSP[myn].Dist != inf && flag == 1) {
-		SSSP[myn].Dist = inf;
-		SSSP[myn].Update = true;
-		SSSP[myn].Parent = -1;
-		//printf("inside delNeighbors_del: %d", myn);
-		delNeighbor << <1, (AdjListTracker_device[myn + 1] - AdjListTracker_device[myn]) >> > (myn, SSSP, inf, AdjListFull_device, AdjListTracker_device);
-	}
-}
-
 /*
 updateNeighbors_del function makes dist value of child nodes of a disconnected node to inf
 It marks the child nodes also as disconnected nodes
 */
-__global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* AdjListFull_device, int* AdjListTracker_device) {
+__global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* AdjListFull_device, int* AdjListTracker_device, int* change_d) {
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
 	if (index < nodes && SSSP[index].Dist == inf) {
 		for (int j = AdjListTracker_device[index]; j < AdjListTracker_device[index + 1]; j++) {
@@ -193,31 +177,37 @@ __global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* 
 			if (SSSP[myn].Parent == index && SSSP[myn].Dist != inf) {
 				SSSP[myn].Dist = inf;
 				SSSP[myn].Update = true;
-				//SSSP[myn].Parent = -1;
 				//SSSP[myn].EDGwt = inf; //helps to avoid sync error. might be removed
-				delNeighbor << <1, (AdjListTracker_device[myn + 1] - AdjListTracker_device[myn]) >> > (myn, SSSP, inf, AdjListFull_device, AdjListTracker_device);
-				//change_d[0] = 1;
-				//printf("inside updateNeighbors_del: %d", myn);
+				//new addition
+				for (int k = AdjListTracker_device[myn]; k < AdjListTracker_device[myn + 1]; k++) {
+					int myn2 = AdjListFull_device[k].col;
+					int mywt2 = AdjListFull_device[k].wt;
+
+					if (mywt2 < 0) { continue; } //if mywt = -1, that means edge was deleted
+					if (SSSP[myn2].Parent == myn && SSSP[myn2].Dist != inf) {
+						SSSP[myn2].Dist = inf;
+						SSSP[myn2].Update = true;
+						for (int i = AdjListTracker_device[myn2]; i < AdjListTracker_device[myn2 + 1]; i++) {
+							int myn3 = AdjListFull_device[i].col;
+							int mywt3 = AdjListFull_device[i].wt;
+
+							if (mywt3 < 0) { continue; } //if mywt = -1, that means edge was deleted
+							if (SSSP[myn3].Parent == myn2 && SSSP[myn3].Dist != inf) {
+								SSSP[myn3].Dist = inf;
+								SSSP[myn3].Update = true;
+							}
+						}
+					}
+				}
+				//new addition ends
+				change_d[0] = 1;
 			}
 
 		}
 	}
 }
 
-__global__ void updateNextHop(int parent, RT_Vertex* SSSP, ColWt* AdjListFull_device, int* AdjListTracker_device) {
-	int j = threadIdx.x + AdjListTracker_device[parent];
-	int myn = AdjListFull_device[j].col;
-	int mywt = AdjListFull_device[j].wt;
-	int flag = 1;
-	if (mywt < 0) { flag = 0; } //if mywt = -1, that means edge was deleted
 
-	if (SSSP[myn].Parent == parent && flag == 1) {
-		SSSP[myn].Dist = SSSP[parent].Dist + mywt;
-		SSSP[myn].Update = true;
-		//change_d[0] = 1;
-		//printf("Inside updateNextHop: %d", myn);
-	}
-}
 
 //1. This method tries to connect the disconnected nodes(disconnected by deletion) with other nodes using the original graph
 //2. This method propagates the dist update till the leaf nodes
@@ -228,16 +218,12 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* AdjL
 		//If i is updated--update its neighbors as required
 		if (SSSP[index].Update) {
 			SSSP[index].Update = false;
-			/*printf("index: %d\n", index);
-			if (index == 8)
-			{
-				printf("%d :: %d", AdjListTracker_device[index], AdjListTracker_device[index + 1]);
-			}*/
+
 			//For neighbor vertices of the affected nodes
 			for (int j = AdjListTracker_device[index]; j < AdjListTracker_device[index + 1]; j++) {
 				int myn = AdjListFull_device[j].col;
 				int mywt = AdjListFull_device[j].wt;
-				
+
 				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
 
 				/*if (SSSP[index].Parent == myn && SSSP[myn].Parent == index)
@@ -245,26 +231,55 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* AdjL
 					printf("!!!!loop: %d-%d", index, myn);
 				}*/
 
-				
 
 				//update where parent of myn != index
 				if (SSSP[index].Dist > SSSP[myn].Dist + mywt) {
 					if (SSSP[myn].Parent != index) {  //avoiding type 1 loop formation
 						SSSP[index].Dist = SSSP[myn].Dist + mywt;
-						//updateNextHop << <1, (AdjListTracker_device[index + 1] - AdjListTracker_device[index]) >> > (index, SSSP, AdjListFull_device, AdjListTracker_device);
 						SSSP[index].Update = true;
 						SSSP[index].Parent = myn;
 						SSSP[index].EDGwt = mywt;
+						for (int i = AdjListTracker_device[index]; i < AdjListTracker_device[index + 1]; i++) {
+							int myn2 = AdjListFull_device[i].col;
+							int mywt2 = AdjListFull_device[i].wt;
+
+							if (mywt2 < 0) { continue; } //if mywt = -1, that means edge was deleted
+							if (SSSP[myn2].Parent == index) {
+								SSSP[myn2].Dist = SSSP[index].Dist + mywt2;
+								SSSP[myn2].Update = true;
+								//for (int k = AdjListTracker_device[myn2]; k < AdjListTracker_device[myn2 + 1]; k++) {
+								//	int myn3 = AdjListFull_device[k].col;
+								//	int mywt3 = AdjListFull_device[k].wt;
+
+								//	if (mywt3 < 0) { continue; } //if mywt = -1, that means edge was deleted
+								//	if (SSSP[myn3].Parent == myn2) {
+								//		SSSP[myn3].Dist = SSSP[myn2].Dist + mywt3;
+								//		SSSP[myn3].Update = true;
+								//	}
+								//}
+							}
+						}
 						change_d[0] = 1;
-						//printf("Inside updateNeighbor: %d", index);
 						continue;
 					}
 				}
 
-				//if index node is the parent node of myn, dist of myn is updated even if it increases the dist of myn
-				//if (SSSP[myn].Parent == index) {
+				////if index node is the parent node of myn, dist of myn is updated even if it increases the dist of myn
+				//if (SSSP[myn].Parent == index) { //1st hop search
+				//	
 				//	SSSP[myn].Dist = SSSP[index].Dist + mywt;
 				//	SSSP[myn].Update = true;
+				//	//going to 2nd hop
+				//	for (int i = AdjListTracker_device[myn]; i < AdjListTracker_device[myn + 1]; i++) {
+				//		int myn2 = AdjListFull_device[i].col;
+				//		int mywt2 = AdjListFull_device[i].wt;
+
+				//		if (mywt2 < 0) { continue; } //if mywt = -1, that means edge was deleted
+				//		if (SSSP[myn2].Parent == myn) {
+				//			SSSP[myn2].Dist = SSSP[myn].Dist + mywt2;
+				//			SSSP[myn2].Update = true;
+				//		}
+				//	}
 				//	//SSSP[myn].EDGwt = mywt; //helps to avoid sync error. might be removed
 				//	change_d[0] = 1;
 				//	continue;
@@ -273,10 +288,20 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* AdjL
 
 				if (SSSP[myn].Dist > SSSP[index].Dist + mywt) {
 					if (SSSP[index].Parent != myn) {
-						//SSSP[myn].Dist = SSSP[index].Dist + mywt; //new test v1
+						SSSP[myn].Dist = SSSP[index].Dist + mywt;
 						SSSP[myn].Update = true;
-						//SSSP[myn].Parent = index; //new test v1
-						//SSSP[myn].EDGwt = mywt; //new test v1
+						SSSP[myn].Parent = index;
+						SSSP[myn].EDGwt = mywt;
+						for (int i = AdjListTracker_device[myn]; i < AdjListTracker_device[myn + 1]; i++) {
+							int myn2 = AdjListFull_device[i].col;
+							int mywt2 = AdjListFull_device[i].wt;
+
+							if (mywt2 < 0) { continue; } //if mywt = -1, that means edge was deleted
+							if (SSSP[myn2].Parent == myn) {
+								SSSP[myn2].Dist = SSSP[myn].Dist + mywt2;
+								SSSP[myn2].Update = true;
+							}
+						}
 						change_d[0] = 1;
 					}
 
