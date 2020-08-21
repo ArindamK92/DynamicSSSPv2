@@ -46,13 +46,7 @@ void readin_graphU2(A_Network* X, int nodes, char* myfile)
 	{
 		int n1, n2;
 		int wt;
-		//Read line
-		sscanf(line, "%d %d %d", &n1, &n2, &wt);
-		//cout <<n1<<"\n";
-		//Number of nodes given in the first line
-//        if(l==0)
-//        {l++; continue;}
-	
+		sscanf(line, "%d %d %d", &n1, &n2, &wt);	
 		dummy.first = n2;
 		dummy.second = (double)wt;
 		X->at(n1).ListW.push_back(dummy);
@@ -63,20 +57,8 @@ void readin_graphU2(A_Network* X, int nodes, char* myfile)
 		X->at(n2).ListW.push_back(dummy2);
 		X->at(n2).Row = n1;
 		
-	}//end of while
+	}
 	fclose(graph_file);
-
-
-	/*for (int i = 0; i < X->size(); i++)
-	{
-
-		for (int j = 0; j < X->at(i).ListW.size(); j++)
-		{
-			cout << X->at(i).Row << " " << X->at(i).ListW.at(j).first << " " << X->at(i).ListW.at(j).second << endl;
-		}
-	}*/
-
-
 	return;
 }
 
@@ -85,9 +67,6 @@ void djk(int src, A_Network* X, A_Network* Y, int node1) {
 
 
 	int nodes = node1;
-
-	/*cout << "inside djk"<<nodes;*/
-
 	//Set Edge Weights to high values
 	double maxEdgeWeight = 1000.00;
 
@@ -141,19 +120,13 @@ void djk(int src, A_Network* X, A_Network* Y, int node1) {
 					inQ[v] = true;
 				}
 
-			}//end of if
+			}
 
-		}//end of going through neighbors
+		}
 
 
-	}//end of while
-
-	//print distance (testing purpose)
-	/*for (int i = 0; i < nodes; i++)
-	{
-		cout <<"node: "<< i << ": dist" << dist[i] << "\n";
-	}*/
-
+	}
+	
 	//===Adding the Edges to Y
 
 	   //Create rows for Y
@@ -164,7 +137,7 @@ void djk(int src, A_Network* X, A_Network* Y, int node1) {
 		AList.Row = i;
 		AList.ListW.clear();
 		Y->at(i).Row = i;
-	}//end of for
+	}
 
 	//Add edges according to Parent Relation
 	int_double myval;
@@ -180,9 +153,6 @@ void djk(int src, A_Network* X, A_Network* Y, int node1) {
 
 		j = parent[i];
 
-		//   printf("%d :%d \n",i,j);
-
-
 		myval.first = j;
 		myval.second = EdgeW[i];
 		Y->at(i).ListW.push_back(myval);
@@ -193,14 +163,12 @@ void djk(int src, A_Network* X, A_Network* Y, int node1) {
 
 
 
-	}//end of for
+	}
 
 
 
 	for (int i = 0; i < nodes; i++)
 	{
-		/*cout <<"size in Y"<< Y.at(i).ListW.size();*/
-
 		cout << i << " " <<  parent[i] << " " << dist[i] << " " << endl;
 	}
 
@@ -221,43 +189,11 @@ int main(int argc, char* argv[])
 
 	int nodes = 0;
 	nodes = atoi(argv[2]); //we pass the number of total nodes as argument
-	/*printf("Enter number of total nodes: ");
-	scanf("%d", &nodes);*/
-	/*X.reserve(nodes);
-	Y.reserve(nodes);*/
 	ADJ_Bundle adjobj;
 	X.resize(nodes, adjobj);
 	Y.resize(nodes, adjobj);
 	readin_graphU2(&X, nodes, cstr1);
-	/*for (int i = 0; i < X.size(); i++)
-	{
-
-		for (int j = 0; j < X.at(i).ListW.size(); j++)
-		{
-			cout << X.at(i).Row <<" "<< X.at(i).ListW.at(j).first << " " << X.at(i).ListW.at(j).second << endl;
-		}
-	}*/
-	//cout << "before" << X.size();
 	djk(0, &X, &Y, nodes);
-	//cout << "success"<<X.size()<<endl;
-	//for (int i = 0; i < nodes; i++)
-	//{
-	//	/*cout <<"size in Y"<< Y.at(i).ListW.size();*/
-
-	//	for (int j = 0; j < Y.at(i).ListW.size(); j++)
-	//	{
-
-	//		cout << Y.at(i).Row << " " << Y.at(i).ListW.at(j).first << " " << Y.at(i).ListW.at(j).second << endl;
-	//	}
-	//}
-	/*cout << nodes;
-	cout << "after" << Y.size();*/
-	/*int i = 259561;
-		for (int j = 0; j < Y.at(i).ListW.size(); j++)
-		{
-			cout << Y.at(i).Row << " " << Y.at(i).ListW.at(j).first << " " << Y.at(i).ListW.at(j).second << endl;
-		}*/
-
 	return 0;
 }
 

@@ -48,23 +48,17 @@ arg4: <percentage of insertion>
 
 int main(int argc, char* argv[])
 {
-
-
-	/***** Preprocessing to Graph (GUI) ***********/
-
 	//Assume Processed Input
 	//Form node node weight
-	//Nodes are numbered contiguously
-	//Starts from zero
-	//Edges are undirected (both a-->b and b-->a present)
+	//Edges are undirected
+	
 	//Check if valid input is given
 	if (argc < 3) { cout << "INPUT ERROR:: Four inputs required. First: filename. Second: no. of nodes in actual graph Third: number of changed edges. Fourth: Percentage of Inserted Edges (in values 0 to 100) \n"; return 0; }
 	//Check to see if file opening succeeded
 	ifstream the_file(argv[1]); if (!the_file.is_open()) { cout << "INPUT ERROR:: Could not open main file\n"; }
-	/*** Create DataStructure Sparsifictaion Tree **/
 
 
-		/******* Read Graph to EdgeList****************/
+	/******* Read Graph to EdgeList****************/
 
 	string file1 = argv[1];
 	char* cstr1 = &file1[0];
@@ -73,12 +67,7 @@ int main(int argc, char* argv[])
 	nodes = atoi(argv[2]);
 	readin_graphedges(&X, cstr1);
 
-
-
-	//  printf("done reading graph\n");
-	  /******* Read Graph to EdgeList****************/
-
-	  /**** Create Set of Edges to Modify ****/
+	/**** Create Set of Edges to Modify ****/
 
 	int numE = atoi(argv[3]);
 	int ins_per = atoi(argv[4]);
@@ -116,10 +105,10 @@ int main(int argc, char* argv[])
 			iI++;
 
 
-		}//end of if
+		}
 
 
-			// Edge to Delete
+		// Edge to Delete
 		if (k == 0 && iD < numD)
 		{
 			int nz = rand() % (X.size());
@@ -127,15 +116,13 @@ int main(int argc, char* argv[])
 			printf("%d %d %d 0 \n", mye.node1, mye.node2, mye.wt);
 			iD++;
 			continue;
-		} //end of if
+		}
 
 		if (iI == numI && iD == numD) { break; }
-	}//end of while
+	}
 
 	return 0;
-}//end of main
-
-	//==========================================//
+}
 
 
 

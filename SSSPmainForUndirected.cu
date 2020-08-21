@@ -43,10 +43,6 @@ int main(int argc, char* argv[]) {
 	AdjList.resize(nodes);
 	int* AdjListTracker = (int*)malloc((nodes + 1) * sizeof(int));//we take nodes +1 to store the start ptr of the first row 
 	vector<ColWt> AdjListFull;
-	//vector<ColWtList> OutEdgesList;
-	//OutEdgesList.resize(nodes);
-	//int* OutEdgesListTracker = (int*)malloc((nodes + 1) * sizeof(int));//we take nodes +1 to store the start ptr of the first row 
-	//vector<ColWt> OutEdgesListFull;
 	cout << "Reading input graph..." << endl;
 	auto readGraphstartTime = high_resolution_clock::now();//Time calculation starts
 	read_graphEdges(AdjList, argv[1], &nodes);
@@ -68,12 +64,9 @@ int main(int argc, char* argv[]) {
 	//create 1D array from 2D to fit it in GPU
 	cout << "creating 1D array from 2D to fit it in GPU" << endl;
 	AdjListTracker[0] = 0; //start pointer points to the first index of InEdgesList
-	//OutEdgesListTracker[0] = 0; //start pointer points to the first index of OutEdgesList
 	for (int i = 0; i < nodes; i++) {
 		AdjListTracker[i + 1] = AdjListTracker[i] + AdjList.at(i).size();
 		AdjListFull.insert(std::end(AdjListFull), std::begin(AdjList.at(i)), std::end(AdjList.at(i)));
-		/*OutEdgesListTracker[i + 1] = OutEdgesListTracker[i] + OutEdgesList.at(i).size();
-		OutEdgesListFull.insert(std::end(OutEdgesListFull), std::begin(OutEdgesList.at(i)), std::end(OutEdgesList.at(i)));*/
 	}
 	cout << "creating 1D array from 2D completed" << endl;
 
@@ -81,28 +74,13 @@ int main(int argc, char* argv[]) {
 	//Transferring input graph and change edges data to GPU
 	cout << "Transferring graph data from CPU to GPU" << endl;
 	auto startTime_transfer = high_resolution_clock::now();
-	//cout << "Transferring incoming edges data to GPU" << endl;
 	ColWt* AdjListFull_device;
 	cudaStatus = cudaMallocManaged(&AdjListFull_device, (2 * (edges + totalInsertion)) * sizeof(ColWt));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at InEdgesListFull structure");
 	}
-	//cout << "Transferring incoming edges data to GPU before copy. size:" << AdjListFull.size() << endl;
-	/*for (int i = 0; i < InEdgesListFull.size(); i++)
-	{
-		cout << InEdgesListFull.at(i).col << ":" << InEdgesListFull.at(i).wt << endl;
-	}*/
 	std::copy(AdjListFull.begin(), AdjListFull.end(), AdjListFull_device);
-
-	/*cout << "Transferring outgoing edges data to GPU" << endl;
-	ColWt* OutEdgesListFull_device;
-	cudaStatus = cudaMallocManaged(&OutEdgesListFull_device, (edges + totalInsertion) * sizeof(ColWt));
-	if (cudaStatus != cudaSuccess) {
-		fprintf(stderr, "cudaMalloc failed at InEdgesListFull structure");
-	}
-	std::copy(OutEdgesListFull.begin(), OutEdgesListFull.end(), OutEdgesListFull_device);*/
-
-	//cout << "Transferring incoming edges tracker to GPU" << endl;
+	
 	int* AdjListTracker_device;
 	cudaStatus = cudaMalloc((void**)&AdjListTracker_device, (nodes+1) * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
@@ -110,15 +88,6 @@ int main(int argc, char* argv[]) {
 	}
 	cudaMemcpy(AdjListTracker_device, AdjListTracker, (nodes+1) * sizeof(int), cudaMemcpyHostToDevice);
 
-	/*cout << "Transferring outgoing edges tracker to GPU" << endl;
-	int* OutEdgesListTracker_device;
-	cudaStatus = cudaMalloc((void**)&OutEdgesListTracker_device, nodes * sizeof(int));
-	if (cudaStatus != cudaSuccess) {
-		fprintf(stderr, "cudaMalloc failed at OutEdgesListTracker_device");
-	}
-	cudaMemcpy(OutEdgesListTracker_device, OutEdgesListTracker, nodes * sizeof(int), cudaMemcpyHostToDevice);*/
-
-	//cout << "Transferring change edges data to GPU" << endl;
 	int totalChangeEdges = allChange.size();
 	changeEdge* allChange_device;
 	cudaStatus = cudaMallocManaged(&allChange_device, totalChangeEdges * sizeof(changeEdge));
@@ -133,35 +102,7 @@ int main(int argc, char* argv[]) {
 
 
 	//set cudaMemAdviseSetReadMostly by the GPU for change edge data
-	//cout << "setting GPU advice for change edges" << endl;
 	cudaMemAdvise(allChange_device, totalChangeEdges * sizeof(changeEdge), cudaMemAdviseSetReadMostly, deviceId);
-
-
-	//Test start
-	/*cout << "change edges:" << endl;
-	for (int i = 0; i < totalChangeEdges; i++)
-	{
-		cout << allChange_device[i].node1 << " " << allChange_device[i].node2 << " " << allChange_device[i].edge_wt << " " << allChange_device[i].inst << endl;
-	}
-	cout << "In edges in Unified memory" << endl;
-	for (int i = 0; i < nodes; i++)
-	{
-		cout << "row: " << i << endl;
-		for (int j = InEdgesListTracker[i]; j < InEdgesListTracker[i + 1]; j++)
-		{
-			cout << InEdgesListFull_device[j].col << " : " << InEdgesListFull_device[j].wt << endl;
-		}
-	}
-	cout << "Out edges in Unified memory" << endl;
-	for (int i = 0; i < nodes; i++)
-	{
-		cout << "row: " << i << endl;
-		for (int j = OutEdgesListTracker[i]; j < OutEdgesListTracker[i + 1]; j++)
-		{
-			cout << OutEdgesListFull_device[j].col << " : " << OutEdgesListFull_device[j].wt << endl;
-		}
-	}*/
-	//Test end
 
 	//Reading SSSP Tree input and storing directly on unified memory
 	RT_Vertex* SSSP;
@@ -179,20 +120,6 @@ int main(int argc, char* argv[]) {
 	//set cudaMemAdviseSetPreferredLocation at GPU for SSSP data
 	cudaMemAdvise(SSSP, nodes * sizeof(RT_Vertex), cudaMemAdviseSetPreferredLocation, deviceId);
 
-
-
-	//test start
-	/*cout << "after reading SSSP:" << endl;
-	for (int i = 0; i < nodes; i++)
-	{
-		cout << "row: " << i << " dist: " << SSSP[i].Dist << " parent: " << SSSP[i].Parent << endl;
-
-	}*/
-	//test end
-
-
-
-	//double inf = std::numeric_limits<double>::infinity();
 	int inf = 999999;
 	int* Edgedone;
 	cudaMallocManaged(&Edgedone, (totalChangeEdges) * sizeof(int));
@@ -223,23 +150,6 @@ int main(int argc, char* argv[]) {
 	deleteEdge << < (totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChangeEdges, inf, AdjListFull_device, AdjListTracker_device);
 	insertEdge << < (totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChangeEdges, inf, AdjListFull_device, AdjListTracker_device);
 
-
-
-	//test start
-	/*cudaDeviceSynchronize();
-	cout << "\nafter insertDeleteEdge SSSP:" << endl;
-
-	for (int i = 0; i < nodes; i++)
-	{
-		cout << "row: " << i << " dist: " << SSSP[i].Dist << " parent: " << SSSP[i].Parent << endl;
-
-	}*/
-	//test end
-
-
-
-
-
 	//Go over the inserted edges to see if they need to be changed. Correct edges are connected in this stage
 	while (change[0] == 1) {
 		change[0] = 0;
@@ -258,25 +168,17 @@ int main(int argc, char* argv[]) {
 	//Step 2 starts
 	auto startTime2 = high_resolution_clock::now(); //Time calculation start
 	change[0] = 1;
-	while (change[0] == 1 /*&& its < 202*/) {
-		//printf("Iteration:%d \n", its);
+	while (change[0] == 1) {
 		change[0] = 0;
 		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
 		updateNeighbors_del << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, AdjListFull_device, AdjListTracker_device, change_d);
 		cudaMemcpy(change, change_d, 1 * sizeof(int), cudaMemcpyDeviceToHost);
 		cudaDeviceSynchronize();
-		//its++;
-		//cout << "itr:" << its << " " << endl;
 	}
-	/*its = 0;*/
-	//new addition ends
-
-
-
 
 	//update the distance of neighbors and connect the disconnected subgraphs
 	change[0] = 1;
-	while (change[0] == 1 /*&& its < 200*/) {
+	while (change[0] == 1) {
 		change[0] = 0;
 		cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
 		updateNeighbors << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, AdjListFull_device, AdjListTracker_device, change_d);
@@ -305,7 +207,6 @@ int main(int argc, char* argv[]) {
 	}
 	cout << "from CPU: \n[";
 	for (int i = 0; i < x; i++) {
-		//cout << "row: " << i << " dist: " << SSSP[i].Dist <<" parent: " << SSSP[i].Parent << endl;
 		cout << i << ":" << SSSP[i].Dist << " ";
 	}
 	cout << "]\n";

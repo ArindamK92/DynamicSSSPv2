@@ -31,7 +31,6 @@ __global__ void deleteEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 			int node_2 = allChange_device[index].node2;
 			int edge_weight = allChange_device[index].edge_wt;
 			Edgedone[index] = 3;
-			//bool iskeyedge = false;
 			//this will check if node1 is parent of node2
 			//Mark edge as deleted by making edgewt = inf
 			if (SSSP[node_2].Parent == node_1) {
@@ -85,12 +84,11 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 				node_1 = node2;
 				node_2 = node1;
 			}
-			//printf("inside ins: %d %d %d \n", node_1, node_2, edge_weight);
-			//new addition starts(under testing)
+
 			int flag = 1;
 			if (SSSP[node_1].Parent == node_2) { flag = 0; } //avoiding 1st type loop creation
 			if (SSSP[node_2].Dist == inf && SSSP[node_2].Update == true) { flag = 0; } //avoiding 2nd type loop creation
-			//new addition ends(under testing)
+
 			//Check whether node1 is relaxed
 			if ((SSSP[node_2].Dist > SSSP[node_1].Dist + edge_weight) && flag == 1) {
 				//Update Parent and EdgeWt
@@ -100,7 +98,6 @@ __global__ void insertEdge(changeEdge* allChange_device, int* Edgedone, RT_Verte
 				SSSP[node_2].Update = true;
 				//Mark Edge to be added
 				Edgedone[index] = 1;
-				//printf("inside ins if: %d %d \n", node_2, SSSP[node_2].Dist, edge_weight);
 			}
 		}
 	}
@@ -135,19 +132,17 @@ __global__ void checkInsertedEdges(changeEdge* allChange_device, int totalChange
 			}
 
 			//***Below two if logic will connect the correct edges.***
-			//Check if some other edge was added--mark edge to be added //check x
+			//Check if some other edge was added--mark edge to be added
 			if (SSSP[node_2].Dist > SSSP[node_1].Dist + edgeWeight) {
 				Edgedone[index] = 1;
 			}
 
-			//Check if correct edge wt was written--mark edge to be added //check x
+			//Check if correct edge wt was written--mark edge to be added
 			if ((SSSP[node_2].Parent == node_1) && (SSSP[node_2].EDGwt > edgeWeight)) {
 				Edgedone[index] = 1;
 			}
 
-			//new addition starts(under testing)
 			if (SSSP[node_1].Parent == node_2) { Edgedone[index] = 0; } //avoiding loop creation
-			//new addition ends(under testing)
 
 			if (Edgedone[index] == 1) {
 				//Update Parent and EdgeWt
@@ -177,7 +172,6 @@ __global__ void updateNeighbors_del(RT_Vertex* SSSP, int nodes, int inf, ColWt* 
 			if (SSSP[myn].Parent == index && SSSP[myn].Dist != inf) {
 				SSSP[myn].Dist = inf;
 				SSSP[myn].Update = true;
-				//SSSP[myn].EDGwt = inf; //helps to avoid sync error. might be removed
 				change_d[0] = 1;
 			}
 
@@ -204,12 +198,6 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* AdjL
 
 				if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
 
-				/*if (SSSP[index].Parent == myn && SSSP[myn].Parent == index)
-				{
-					printf("!!!!loop: %d-%d", index, myn);
-				}*/
-
-
 				//update where parent of myn != index
 				if (SSSP[index].Dist > SSSP[myn].Dist + mywt) {
 					if (SSSP[myn].Parent != index) {  //avoiding type 1 loop formation
@@ -221,26 +209,9 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int nodes, int inf, ColWt* AdjL
 						continue;
 					}
 				}
-			
-				//if index node is the parent node of myn, dist of myn is updated even if it increases the dist of myn
-				if (SSSP[myn].Parent == index) {
-					//in case of disconnected index node due to deletion
-					if (SSSP[index].Dist == inf) {
-						SSSP[myn].Dist = inf;
-					}
-					else { //when the dist of index increases due to reconnecting the disconnected subgraphs
-						SSSP[myn].Dist = SSSP[index].Dist + mywt;
-					}
-					SSSP[myn].Update = true;
-					//SSSP[myn].Parent = index; //parent of myn is already the index node
-					SSSP[myn].EDGwt = mywt; //helps to avoid sync error. might be removed
-					change_d[0] = 1;
-					continue;
-				}
-
 
 				if (SSSP[myn].Dist > SSSP[index].Dist + mywt) {
-					if (SSSP[index].Parent != myn) {
+					if (SSSP[index].Parent != myn) {//avoiding type 1 loop formation
 						SSSP[myn].Dist = SSSP[index].Dist + mywt;
 						SSSP[myn].Update = true;
 						SSSP[myn].Parent = index;
@@ -267,7 +238,6 @@ __global__ void printSSSP(RT_Vertex* SSSP, int nodes) {
 		}
 		printf("from GPU:\n[");
 		for (int i = 0; i < x; i++) {
-			//cout << "row: " << i << " dist: " << SSSP[i].Dist <<" parent: " << SSSP[i].Parent << endl;
 			printf("%d:%d:%d ", i, SSSP[i].Dist, SSSP[i].Parent);
 		}
 		printf("]\n");

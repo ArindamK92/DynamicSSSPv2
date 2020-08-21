@@ -39,12 +39,8 @@ typedef vector<ColWt> ColWtList;
 // Data Structure for each vertex in the rooted tree
 struct RT_Vertex
 {
-	//int Root;    //root fo the tree
 	int Parent; //mark the parent in the tree
 	int EDGwt; //mark weight of the edge
-	//int marked; //whether the vertex and the edge connecting its parent ..
-				//..exists(-1); has been deleted(-2); is marked for replacement (+ve value index of changed edge)
-
 	int Dist;  //Distance from root
 	bool Update;  //Whether the distance of this edge was updated / affected
 };
@@ -52,7 +48,7 @@ struct RT_Vertex
 
 ////functions////
 //Node starts from 0
-//reads only the edges in the edge list, does not reverse them to make undirected
+
 
 
 
@@ -71,7 +67,6 @@ void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtLis
 		int n1, n2, wt, inst_status;
 		changeEdge cE;
 		sscanf(line, "%d %d %d %d", &n1, &n2, &wt, &inst_status);
-		//cout << "[" << n1 << " " << n2 << " " << wt ;
 		cE.node1 = n1;
 		cE.node2 = n2;
 		cE.edge_wt = wt;
@@ -91,7 +86,6 @@ void readin_changes(char* myfile, vector<changeEdge>& allChange, vector<ColWtLis
 			colwt2.wt = wt;
 			AdjList.at(n1).push_back(colwt2);
 		}
-		//cout<< "]";
 	}
 	fclose(graph_file);
 	return;
@@ -133,7 +127,6 @@ void read_SSSP(RT_Vertex* SSSP, char* myfile, int* nodes)
 	{
 		SSSP[j].Dist = 9999999;
 		SSSP[j].Parent = -1;
-		//SSSP[i].EDGwt = 9999999;
 	}
 	fclose(graph_file);
 
@@ -144,14 +137,11 @@ void read_SSSP(RT_Vertex* SSSP, char* myfile, int* nodes)
 read_graphEdges reads the original graph file
 accepted data format: node1 node2 edge_weight
 we consider only undirected graph here. for edge e(a,b) with weight W represented as : a b W
-'b a W' should not be included if 'a b W' is in the graph
 */
 void read_graphEdges(vector<ColWtList>& AdjList,  char* myfile, int* nodes)
 {
 	FILE* graph_file;
 	char line[128];
-
-
 	graph_file = fopen(myfile, "r");
 	while (fgets(line, 128, graph_file) != NULL)
 	{
