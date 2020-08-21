@@ -1,8 +1,10 @@
-"# DynamicSSSPv2"   
+"# DynSSSP for undirected graph"  
+Here all edges are considered as undirected edges.
+ 
 **compile:**
 _____________
 ```shell
-nvcc -o op_main CudaSSSPmain.cu
+nvcc -o op_main SSSPmainForUndirected.cu
 ```
 
 **run:**
@@ -22,12 +24,15 @@ _____________
 
 Original graph (3 col):
 node1 node2 edge_weight
+graph should be undirected. If 'a b W' is part of the graph file, then 'b a W' should not be included in the graph file.
+
 
 SSSP (3 col):
 node parent distance
 
 change edges file (4 col):
 node1 node2 edge_weight inst_status
+edges are considered as undirected edges.
 
 inst_status can be 0(for deletion) or 1(for insertion)
 
@@ -35,7 +40,7 @@ inst_status can be 0(for deletion) or 1(for insertion)
 ___________________________________________________
 Use below command to generate input SSSP tree:
 ```shell
-nvcc -o op_ssspSeq seqSSSPwithDist.cpp
+nvcc -o op_ssspSeq seqSSSPwithDist_undir.cpp
 ./op_ssspSeq original_graph_file_name number_of_nodes
 ```
 example:  
