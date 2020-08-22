@@ -1,0 +1,460 @@
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_10M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 154377388 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:10000000
+Time taken to read input changed edges: 11889525 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2625.45 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 8060173 microseconds
+reading input data completed
+**Time taken for STEP 1: 304.005 milliseconds**
+**Time taken for STEP 2: 666.274 milliseconds**
+Total Iterations to Converge 17 
+****Total Time taken for SSSP update: 970.279 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:196902 7:5:6 8:6:7 9:6:26343947 10:4:4681116 11:5:10 12:6:11 13:5:13323759 14:4:3159426 15:5:14 16:5:1796456 17:6:16 18:4:1644356 19:5:18 20:6:19 21:7:20 22:5:12217434 23:6:22 24:6:17398658 25:4:1243702 26:4:27885181 27:5:26 28:6:27 29:6:6394900 30:5:7657706 31:6:30 32:7:31 33:6:27559844 34:7:33 35:4:4526335 36:5:35 37:5:22326868 38:6:37 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:6 10:4 11:5 12:6 13:5 14:4 15:5 16:5 17:6 18:4 19:5 20:6 21:7 22:5 23:6 24:6 25:4 26:4 27:5 28:6 29:6 30:5 31:6 32:7 33:6 34:7 35:4 36:5 37:5 38:6 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_10M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148928346 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:7500000
+Time taken to read input changed edges: 9749052 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2483.54 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7596167 microseconds
+reading input data completed
+**Time taken for STEP 1: 2463.43 milliseconds**
+**Time taken for STEP 2: 925.552 milliseconds**
+Total Iterations to Converge 19 
+****Total Time taken for SSSP update: 3388.98 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:16951986 7:5:6 8:6:7 9:7:8 10:4:4681116 11:5:10 12:6:11 13:5:13323759 14:4:25482886 15:5:14 16:5:17913984 17:6:16 18:4:1644356 19:5:18 20:6:19 21:7:20 22:5:12217434 23:6:22 24:6:17398658 25:4:16104042 26:4:27885181 27:5:26 28:6:27 29:6:1756005 30:5:7657706 31:6:30 32:7:31 33:7:15309563 34:8:33 35:4:4526335 36:5:35 37:9:11599703 38:10:37 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:7 10:4 11:5 12:6 13:5 14:4 15:5 16:5 17:6 18:4 19:5 20:6 21:7 22:5 23:6 24:6 25:4 26:4 27:5 28:6 29:6 30:5 31:6 32:7 33:7 34:8 35:4 36:5 37:9 38:10 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_10M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148933162 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 7710965 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2482.44 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7544394 microseconds
+reading input data completed
+**Time taken for STEP 1: 4188.17 milliseconds**
+**Time taken for STEP 2: 1995.57 milliseconds**
+Total Iterations to Converge 23 
+****Total Time taken for SSSP update: 6183.75 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:16951986 7:5:6 8:6:7 9:7:8 10:4:4681116 11:5:10 12:6:11 13:5:13323759 14:4:24432886 15:5:14 16:5:1796456 17:6:16 18:4:1644356 19:5:18 20:6:19 21:7:20 22:5:12217434 23:6:22 24:6:17398658 25:4:16104042 26:4:27885181 27:5:26 28:6:27 29:6:1756005 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:4:4526335 36:5:35 37:9:11599703 38:10:37 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:7 10:4 11:5 12:6 13:5 14:4 15:5 16:5 17:6 18:4 19:5 20:6 21:7 22:5 23:6 24:6 25:4 26:4 27:5 28:6 29:6 30:5 31:6 32:7 33:8 34:9 35:4 36:5 37:9 38:10 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_10M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 149127883 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 5422835 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2449.66 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7574115 microseconds
+reading input data completed
+**Time taken for STEP 1: 5427.75 milliseconds**
+**Time taken for STEP 2: 5088.02 milliseconds**
+Total Iterations to Converge 20 
+****Total Time taken for SSSP update: 10515.8 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:1796456 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:6:1756005 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:9:11599703 38:10:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:6 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:9 38:10 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_10M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148738643 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 3066649 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2414.36 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7637373 microseconds
+reading input data completed
+**Time taken for STEP 1: 6657.16 milliseconds**
+**Time taken for STEP 2: 6632.47 milliseconds**
+Total Iterations to Converge 27 
+****Total Time taken for SSSP update: 13289.6 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:22777659 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:999999:22326868 38:999999:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:999999 38:999999 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_5M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148750230 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 5983608 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2420.59 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7538458 microseconds
+reading input data completed
+**Time taken for STEP 1: 286.384 milliseconds**
+**Time taken for STEP 2: 656.336 milliseconds**
+Total Iterations to Converge 23 
+****Total Time taken for SSSP update: 942.72 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:196902 7:5:6 8:6:7 9:7:8 10:4:4681116 11:5:10 12:6:11 13:5:13323759 14:4:3159426 15:5:14 16:5:1796456 17:6:16 18:4:1644356 19:5:18 20:6:19 21:7:20 22:5:12217434 23:6:22 24:6:17398658 25:4:1243702 26:4:27885181 27:5:26 28:6:27 29:6:6394900 30:5:7657706 31:6:30 32:7:31 33:7:15309563 34:8:33 35:4:4526335 36:5:35 37:5:22326868 38:6:37 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:7 10:4 11:5 12:6 13:5 14:4 15:5 16:5 17:6 18:4 19:5 20:6 21:7 22:5 23:6 24:6 25:4 26:4 27:5 28:6 29:6 30:5 31:6 32:7 33:7 34:8 35:4 36:5 37:5 38:6 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_5M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148685100 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:3750000
+Time taken to read input changed edges: 4962562 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2395.78 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7564538 microseconds
+reading input data completed
+**Time taken for STEP 1: 1596.12 milliseconds**
+**Time taken for STEP 2: 970.131 milliseconds**
+Total Iterations to Converge 23 
+****Total Time taken for SSSP update: 2566.25 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:16951986 7:5:6 8:6:7 9:7:8 10:4:4681116 11:5:10 12:6:11 13:5:13323759 14:4:25482886 15:5:14 16:5:22777659 17:6:16 18:4:1644356 19:5:18 20:6:19 21:7:20 22:5:12217434 23:6:22 24:6:17398658 25:4:16104042 26:4:27885181 27:5:26 28:6:27 29:6:6394900 30:5:7657706 31:6:30 32:7:31 33:7:15309563 34:8:33 35:4:4526335 36:5:35 37:9:11599703 38:10:37 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:7 10:4 11:5 12:6 13:5 14:4 15:5 16:5 17:6 18:4 19:5 20:6 21:7 22:5 23:6 24:6 25:4 26:4 27:5 28:6 29:6 30:5 31:6 32:7 33:7 34:8 35:4 36:5 37:9 38:10 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_5M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 149021490 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 3884121 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2377.74 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7527720 microseconds
+reading input data completed
+**Time taken for STEP 1: 2419.61 milliseconds**
+**Time taken for STEP 2: 568.813 milliseconds**
+Total Iterations to Converge 18 
+****Total Time taken for SSSP update: 2988.42 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:1796456 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:6:1756005 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:9:11599703 38:10:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:6 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:9 38:10 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_5M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148545023 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1250000
+Time taken to read input changed edges: 2726238 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2394.95 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7565829 microseconds
+reading input data completed
+**Time taken for STEP 1: 3041.1 milliseconds**
+**Time taken for STEP 2: 728.29 milliseconds**
+Total Iterations to Converge 25 
+****Total Time taken for SSSP update: 3769.39 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:1796456 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:9:11599703 38:10:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:9 38:10 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_5M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148561536 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 1523662 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2376.39 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7569625 microseconds
+reading input data completed
+**Time taken for STEP 1: 3703.63 milliseconds**
+**Time taken for STEP 2: 2023.88 milliseconds**
+Total Iterations to Converge 25 
+****Total Time taken for SSSP update: 5727.51 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:18233192 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:999999:22326868 38:999999:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:999999 38:999999 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_50M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148810148 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:50000000
+Time taken to read input changed edges: 52894271 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 3483.82 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7522623 microseconds
+reading input data completed
+**Time taken for STEP 1: 424.49 milliseconds**
+**Time taken for STEP 2: 866.28 milliseconds**
+Total Iterations to Converge 8 
+****Total Time taken for SSSP update: 1290.77 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:196902 7:5:10329970 8:5:3146189 9:5:18598511 10:4:4681116 11:5:9012492 12:5:15471973 13:4:13323759 14:4:507904 15:5:27362726 16:5:1796456 17:6:16 18:4:19995042 19:4:28628835 20:5:19 21:5:177360 22:4:12217434 23:5:22687152 24:5:17398658 25:4:463740 26:4:14574632 27:5:26 28:5:17655614 29:5:9628125 30:4:7657706 31:5:17913862 32:5:19393339 33:6:26164636 34:7:33 35:4:1666208 36:5:12647886 37:4:22326868 38:5:9057075 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:5 9:5 10:4 11:5 12:5 13:4 14:4 15:5 16:5 17:6 18:4 19:4 20:5 21:5 22:4 23:5 24:5 25:4 26:4 27:5 28:5 29:5 30:4 31:5 32:5 33:6 34:7 35:4 36:5 37:4 38:5 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_50M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148810787 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:37500000
+Time taken to read input changed edges: 45175582 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 3256.99 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7567527 microseconds
+reading input data completed
+**Time taken for STEP 1: 9476.96 milliseconds**
+**Time taken for STEP 2: 1232.17 milliseconds**
+Total Iterations to Converge 9 
+****Total Time taken for SSSP update: 10709.1 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:31230821 7:5:6 8:6:9 9:5:18598511 10:4:4681116 11:5:9012492 12:5:15471973 13:4:13323759 14:4:32927479 15:5:14 16:5:1796456 17:6:16 18:4:19995042 19:4:28628835 20:5:19 21:5:23612154 22:4:12217434 23:5:22 24:5:17398658 25:4:620819 26:4:14574632 27:5:26 28:5:17655614 29:5:9628125 30:4:7657706 31:5:17913862 32:5:19393339 33:6:26164636 34:7:33 35:4:1666208 36:5:12647886 37:6:38 38:5:9057075 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:5 10:4 11:5 12:5 13:4 14:4 15:5 16:5 17:6 18:4 19:4 20:5 21:5 22:4 23:5 24:5 25:4 26:4 27:5 28:5 29:5 30:4 31:5 32:5 33:6 34:7 35:4 36:5 37:6 38:5 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_50M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 149295152 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:25000000
+Time taken to read input changed edges: 36793415 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 3063.4 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7562436 microseconds
+reading input data completed
+**Time taken for STEP 1: 18291.5 milliseconds**
+**Time taken for STEP 2: 1576.74 milliseconds**
+Total Iterations to Converge 15 
+****Total Time taken for SSSP update: 19868.2 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:16951986 7:5:6 8:6:11074255 9:6:26343947 10:4:4681116 11:5:9012492 12:6:15471973 13:5:13323759 14:4:24432886 15:5:28714147 16:5:22777659 17:6:16 18:5:19995042 19:6:18 20:7:19 21:6:23612154 22:5:12217434 23:6:22 24:6:17398658 25:4:16104042 26:4:27885181 27:5:26 28:6:29 29:5:30371732 30:5:7657706 31:5:17913862 32:6:22196601 33:6:27559844 34:7:33 35:4:4526335 36:5:35 37:6:14757120 38:6:30483203 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:6 10:4 11:5 12:6 13:5 14:4 15:5 16:5 17:6 18:5 19:6 20:7 21:6 22:5 23:6 24:6 25:4 26:4 27:5 28:6 29:5 30:5 31:5 32:6 33:6 34:7 35:4 36:5 37:6 38:6 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_50M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148595429 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:12500000
+Time taken to read input changed edges: 26358303 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 3001.59 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7569765 microseconds
+reading input data completed
+**Time taken for STEP 1: 24155.5 milliseconds**
+**Time taken for STEP 2: 1939.82 milliseconds**
+Total Iterations to Converge 17 
+****Total Time taken for SSSP update: 26095.4 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:4:12431074 7:5:6 8:6:7 9:6:26343947 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:4:25543458 15:5:14 16:5:18233192 17:6:16 18:4:1644356 19:5:18 20:6:19 21:6:23612154 22:5:12217434 23:6:22 24:6:17398658 25:4:16104042 26:4:27885181 27:5:26 28:6:27 29:6:1756005 30:5:32292341 31:6:30 32:7:33 33:6:27559844 34:7:33 35:4:20500458 36:5:35 37:8:11599703 38:9:37 39:5:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:4 7:5 8:6 9:6 10:5 11:6 12:7 13:5 14:4 15:5 16:5 17:6 18:4 19:5 20:6 21:6 22:5 23:6 24:6 25:4 26:4 27:5 28:6 29:6 30:5 31:6 32:7 33:6 34:7 35:4 36:5 37:8 38:9 39:5 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_50M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148626337 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 15045547 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2873.7 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7575994 microseconds
+reading input data completed
+**Time taken for STEP 1: 30391.7 milliseconds**
+**Time taken for STEP 2: 6361.17 milliseconds**
+Total Iterations to Converge 29 
+****Total Time taken for SSSP update: 36752.9 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:22777659 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:27885181 27:6:26 28:7:27 29:8:28 30:999999:7657706 31:999999:30 32:999999:31 33:999999:32 34:999999:33 35:5:1666208 36:6:35 37:999999:22326868 38:999999:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:999999 31:999999 32:999999 33:999999 34:999999 35:5 36:6 37:999999 38:999999 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_1M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 149080185 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1000000
+Time taken to read input changed edges: 1951558 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2321.6 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7545173 microseconds
+reading input data completed
+**Time taken for STEP 1: 271.678 milliseconds**
+**Time taken for STEP 2: 270.966 milliseconds**
+Total Iterations to Converge 22 
+****Total Time taken for SSSP update: 542.644 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:1796456 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:5:22326868 38:6:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:5 38:6 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_1M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148677268 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:750000
+Time taken to read input changed edges: 1619205 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2317.02 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7571786 microseconds
+reading input data completed
+**Time taken for STEP 1: 872.655 milliseconds**
+**Time taken for STEP 2: 558.841 milliseconds**
+Total Iterations to Converge 22 
+****Total Time taken for SSSP update: 1431.5 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:1796456 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:5:22326868 38:6:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:5 38:6 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148602480 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 1520583 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2312.03 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7561819 microseconds
+reading input data completed
+**Time taken for STEP 1: 1052.19 milliseconds**
+**Time taken for STEP 2: 585.067 milliseconds**
+Total Iterations to Converge 22 
+****Total Time taken for SSSP update: 1637.25 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:1796456 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:999999:22326868 38:999999:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:999999 38:999999 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_1M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148768375 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:250000
+Time taken to read input changed edges: 1101121 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2308.18 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7571201 microseconds
+reading input data completed
+**Time taken for STEP 1: 1168.17 milliseconds**
+**Time taken for STEP 2: 592.277 milliseconds**
+Total Iterations to Converge 22 
+****Total Time taken for SSSP update: 1760.44 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:1796456 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:999999:22326868 38:999999:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:999999 38:999999 39:6 ]
+./op_main RMAT25.graph50 33554431 287295061 SSSPRMAT25 changedEdges_r25_1M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 148722379 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 586787 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 2308.86 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 7768272 microseconds
+reading input data completed
+**Time taken for STEP 1: 1291 milliseconds**
+**Time taken for STEP 2: 598.252 milliseconds**
+Total Iterations to Converge 22 
+****Total Time taken for SSSP update: 1889.26 milliseconds****
+from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:2 4:3:3 5:4:4 6:5:196902 7:6:6 8:7:7 9:8:8 10:5:4681116 11:6:10 12:7:11 13:5:13323759 14:5:507904 15:6:14 16:6:18233192 17:7:16 18:5:19995042 19:6:18 20:7:19 21:8:20 22:5:12217434 23:6:22 24:6:17398658 25:5:463740 26:5:14574632 27:6:26 28:7:27 29:8:28 30:5:7657706 31:6:30 32:7:31 33:8:32 34:9:33 35:5:1666208 36:6:35 37:999999:22326868 38:999999:37 39:6:22010533 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:3 5:4 6:5 7:6 8:7 9:8 10:5 11:6 12:7 13:5 14:5 15:6 16:6 17:7 18:5 19:6 20:7 21:8 22:5 23:6 24:6 25:5 26:5 27:6 28:7 29:8 30:5 31:6 32:7 33:8 34:9 35:5 36:6 37:999999 38:999999 39:6 ]
