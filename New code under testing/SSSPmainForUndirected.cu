@@ -33,6 +33,7 @@ int main(int argc, char* argv[]) {
 	int deviceId;
 	int numberOfSMs;
 	int totalInsertion = 0;
+	bool zeroDelFlag = false, zeroInsFlag = false;
 
 	//Get gpu device id and number of SMs
 	cudaGetDevice(&deviceId);
@@ -90,32 +91,59 @@ int main(int argc, char* argv[]) {
 	cudaMemcpy(AdjListTracker_device, AdjListTracker, (nodes + 1) * sizeof(int), cudaMemcpyHostToDevice);
 
 	int totalChangeEdges_Ins = allChange_Ins.size();
-	changeEdge* allChange_Ins_device;
-	cudaStatus = cudaMallocManaged(&allChange_Ins_device, totalChangeEdges_Ins * sizeof(changeEdge));
-	if (cudaStatus != cudaSuccess) {
-		fprintf(stderr, "cudaMalloc failed at allChange_Ins structure");
+	if (totalChangeEdges_Ins == 0) {
+		zeroInsFlag = true;
 	}
-	std::copy(allChange_Ins.begin(), allChange_Ins.end(), allChange_Ins_device);
+	changeEdge* allChange_Ins_device;
+	if(zeroInsFlag != true){
+		cudaStatus = cudaMallocManaged(&allChange_Ins_device, totalChangeEdges_Ins * sizeof(changeEdge));
+		if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "cudaMalloc failed at allChange_Ins structure");
+		}
+		std::copy(allChange_Ins.begin(), allChange_Ins.end(), allChange_Ins_device);
+		//set cudaMemAdviseSetReadMostly by the GPU for change edge data
+		cudaMemAdvise(allChange_Ins_device, totalChangeEdges_Ins * sizeof(changeEdge), cudaMemAdviseSetReadMostly, deviceId);
+		//Asynchronous prefetching of data
+		cudaMemPrefetchAsync(allChange_Ins_device, totalChangeEdges_Ins * sizeof(changeEdge), deviceId);
+	}
+
+
 
 	int totalChangeEdges_Del = allChange_Del.size();
-	changeEdge* allChange_Del_device;
-	cudaStatus = cudaMallocManaged(&allChange_Del_device, totalChangeEdges_Del * sizeof(changeEdge));
-	if (cudaStatus != cudaSuccess) {
-		fprintf(stderr, "cudaMalloc failed at allChange_Del structure");
+	if (totalChangeEdges_Del == 0) {
+		zeroDelFlag = true;
 	}
-	std::copy(allChange_Del.begin(), allChange_Del.end(), allChange_Del_device);
+	changeEdge* allChange_Del_device;
+	int* counter_del;
+	int* affectedNodeList_del;
+	int* updatedAffectedNodeList_del;
+	int* updated_counter_del;
 
+	if (zeroDelFlag != true) {
+		cudaStatus = cudaMallocManaged(&allChange_Del_device, totalChangeEdges_Del * sizeof(changeEdge));
+		if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "cudaMalloc failed at allChange_Del structure");
+		}
+		std::copy(allChange_Del.begin(), allChange_Del.end(), allChange_Del_device);
+		//set cudaMemAdviseSetReadMostly by the GPU for change edge data
+		cudaMemAdvise(allChange_Del_device, totalChangeEdges_Del * sizeof(changeEdge), cudaMemAdviseSetReadMostly, deviceId);
+		//Asynchronous prefetching of data
+		cudaMemPrefetchAsync(allChange_Del_device, totalChangeEdges_Del * sizeof(changeEdge), deviceId);
+
+		counter_del = 0;
+		cudaMallocManaged(&counter_del, sizeof(int));
+		cudaMallocManaged(&affectedNodeList_del, nodes * sizeof(int));
+		cudaMallocManaged(&updatedAffectedNodeList_del, nodes * sizeof(int));
+		updated_counter_del = 0;
+		cudaMallocManaged(&updated_counter_del, sizeof(int));
+	}
 	auto stopTime_transfer = high_resolution_clock::now();//Time calculation ends
 	auto duration_transfer = duration_cast<microseconds>(stopTime_transfer - startTime_transfer);// duration calculation
 	cout << "**Time taken to transfer graph data from CPU to GPU: "
 		<< float(duration_transfer.count()) / 1000 << " milliseconds**" << endl;
 
 
-	//set cudaMemAdviseSetReadMostly by the GPU for change edge data
-	cudaMemAdvise(allChange_Ins_device, totalChangeEdges_Ins * sizeof(changeEdge), cudaMemAdviseSetReadMostly, deviceId);
-	cudaMemAdvise(allChange_Del_device, totalChangeEdges_Del * sizeof(changeEdge), cudaMemAdviseSetReadMostly, deviceId);
-
-
+	
 	//Reading SSSP Tree input and storing directly on unified memory
 	RT_Vertex* SSSP;
 	cudaStatus = cudaMallocManaged(&SSSP, nodes * sizeof(RT_Vertex));
@@ -132,175 +160,123 @@ int main(int argc, char* argv[]) {
 	//set cudaMemAdviseSetPreferredLocation at GPU for SSSP data
 	cudaMemAdvise(SSSP, nodes * sizeof(RT_Vertex), cudaMemAdviseSetPreferredLocation, deviceId);
 
-	//int inf = 999999;
-	/*int* Edgedone;
-	cudaMallocManaged(&Edgedone, (totalChangeEdges) * sizeof(int));
-	if (cudaStatus != cudaSuccess) {
-		fprintf(stderr, "cudaMalloc failed at SSSP structure");
-	}
-	//set cudaMemAdviseSetPreferredLocation at GPU for Edge Done data
-	cudaMemAdvise(Edgedone, (totalChangeEdges) * sizeof(int), cudaMemAdviseSetPreferredLocation, deviceId);
-	*/
-
 	//Asynchronous prefetching of data
-	//cudaMemPrefetchAsync(Edgedone, (totalChangeEdges) * sizeof(int), deviceId);
-	cudaMemPrefetchAsync(allChange_Ins_device, totalChangeEdges_Ins * sizeof(changeEdge), deviceId);
-	cudaMemPrefetchAsync(allChange_Del_device, totalChangeEdges_Del * sizeof(changeEdge), deviceId);
 	cudaMemPrefetchAsync(SSSP, nodes * sizeof(RT_Vertex), deviceId);
 	cudaMemPrefetchAsync(AdjListFull_device, edges * sizeof(ColWt), deviceId);
-	//cudaMemPrefetchAsync(OutEdgesListFull_device, edges * sizeof(ColWt), deviceId);
-	//int* change_d = new int[1];
+
 	int* change = 0;
 	cudaStatus = cudaMallocManaged(&change, sizeof(int));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at change structure");
 	}
-	//cudaMalloc((void**)&change_d, 1 * sizeof(int));
-	int its = 0;
 	cout << "reading input data completed" << endl;
+
+
+
 	int* affectedNodeList;
 	cudaStatus = cudaMallocManaged(&affectedNodeList, nodes * sizeof(int));
 	if (cudaStatus != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed at affectedNodeList structure");
 	}
-
 	int* counter = 0;
 	cudaStatus = cudaMallocManaged(&counter, sizeof(int));
 	if (cudaStatus != cudaSuccess) {
-		fprintf(stderr, "cudaMalloc failed at affectedNodeList structure");
+		fprintf(stderr, "cudaMalloc failed at counter structure");
 	}
-	auto startTime1 = high_resolution_clock::now(); //Time calculation start
-
-	//initialize Edgedone array with -1
-	//initializeEdgedone << <(totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (Edgedone, totalChangeEdges);
-	//process changed edges
-
-	//processChangedEdges << <(totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChangeEdges, inf, AdjListFull_device, AdjListTracker_device, affectedNodeList, counter);
-	//    cudaDeviceSynchronize();
-
-	auto startTime2 = high_resolution_clock::now();
-	cout << "check a";
-	//process change edges
-	deleteEdge << < (totalChangeEdges_Del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_Del_device, SSSP, totalChangeEdges_Del, AdjListFull_device, AdjListTracker_device);
-	insertEdge << < (totalChangeEdges_Ins / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_Ins_device, SSSP, totalChangeEdges_Ins, AdjListFull_device, AdjListTracker_device);
-	cout << "check b";
-
-
-
-
-	int* counter_del = 0;
-	cudaMallocManaged(&counter_del, sizeof(int));
-	int* affectedNodeList_del;
-	cudaMallocManaged(&affectedNodeList_del, nodes * sizeof(int));
-	int* updatedAffectedNodeList_del;
-	cudaMallocManaged(&updatedAffectedNodeList_del, nodes * sizeof(int));
-	int* updated_counter_del = 0;
-	cudaMallocManaged(&updated_counter_del, sizeof(int));
 	int* updatedAffectedNodeList_all;
 	cudaMallocManaged(&updatedAffectedNodeList_all, nodes * sizeof(int));
 	int* updated_counter_all = 0;
 	cudaMallocManaged(&updated_counter_all, sizeof(int));
 
-	cout << "check c";
-	filterAffectedNodes << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, affectedNodeList, counter, nodes, affectedNodeList_del, counter_del);
-	cudaDeviceSynchronize();
 
-	*change = 1;
 
-	while (*change == 1) {
-		*change = 0;
+	//processChangedEdges << <(totalChangeEdges / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_device, Edgedone, SSSP, totalChangeEdges, inf, AdjListFull_device, AdjListTracker_device, affectedNodeList, counter);
+	//    cudaDeviceSynchronize();
 
-		//		cout << "Only for Deletion=";
-		//		for (int i = 0; i < *counter_del; i++)
-		//		{
-		//			cout << affectedNodeList_del[i];
-		//		}
-		//		cout << endl;
-
-		cout << "check d";
-		updateNeighbors_del << <(*counter_del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> >
-			(SSSP, updated_counter_del, updatedAffectedNodeList_del, affectedNodeList_del, counter_del, AdjListFull_device, AdjListTracker_device, change);
-		cudaDeviceSynchronize();
-		*counter_del = *updated_counter_del;
-		cout << "check e";
-		copyArray << <(*counter_del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (updatedAffectedNodeList_del, counter_del, affectedNodeList_del);
-		cudaDeviceSynchronize();
-		*updated_counter_del = 0;
-
+	//STEP1
+	auto startTime1 = high_resolution_clock::now(); //Time calculation start
+	//process change edges
+	if (zeroDelFlag != true) {
+		deleteEdge << < (totalChangeEdges_Del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_Del_device, SSSP, totalChangeEdges_Del, AdjListFull_device, AdjListTracker_device);
 	}
-	cout << "check f";
+	if (zeroInsFlag != true) {
+		insertEdge << < (totalChangeEdges_Ins / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (allChange_Ins_device, SSSP, totalChangeEdges_Ins, AdjListFull_device, AdjListTracker_device);
+	}
+	//cout << "check b";
+
+	auto stopTime1 = high_resolution_clock::now();//Time calculation ends
+	auto duration1 = duration_cast<microseconds>(stopTime1 - startTime1);// duration calculation
+	cout << "**Time taken for SSSP update STEP1: "
+		<< float(duration1.count()) / 1000 << " milliseconds**" << endl;
+
+
+	
+	
+	//STEP2
+	auto startTime2 = high_resolution_clock::now();
+
+	if (zeroDelFlag != true) {
+		//filter out the nodes affected by edge deletion
+		filterAffectedNodes << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, affectedNodeList, counter, nodes, affectedNodeList_del, counter_del);
+		cudaDeviceSynchronize();
+
+		*change = 1;
+		while (*change == 1) {
+			*change = 0;
+			//cout << "check d";
+			updateNeighbors_del << <(*counter_del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> >
+				(SSSP, updated_counter_del, updatedAffectedNodeList_del, affectedNodeList_del, counter_del, AdjListFull_device, AdjListTracker_device, change);
+			cudaDeviceSynchronize();
+			*counter_del = *updated_counter_del;
+			//cout << "check e";
+			copyArray << <(*counter_del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (updatedAffectedNodeList_del, counter_del, affectedNodeList_del);
+			cudaDeviceSynchronize();
+			*updated_counter_del = 0;
+		}
+	}
+
+	auto stopTime2A = high_resolution_clock::now();//Time calculation ends
+	auto duration2A = duration_cast<microseconds>(stopTime2A - startTime2);// duration calculation
+	cout << "**Time taken for updateNeighbors_del: "
+		<< float(duration2A.count()) / 1000 << " milliseconds**" << endl;
+	auto startTime2B = high_resolution_clock::now();//Time calculation ends
+
+
 	filterAllAffected << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, affectedNodeList, counter, nodes);
 	cudaDeviceSynchronize();
+	int totalAffectedNodes = 0;
 
-	cout << "check1";
-	//	cout << "affected node list: ";
-	//	for (int i = 0; i < *counter; i++)
-	//	{
-	//		cout << affectedNodeList[i] << endl;
-	//	}
 
 	*change = 1;
 	while (*change == 1) {
 		*change = 0;
-		cout << "check2";
+		//cout << "check2";
 		updateNeighbors << <(*counter / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, counter, affectedNodeList, AdjListFull_device, AdjListTracker_device, change);
 		//copyArray << <(*counter / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (updatedAffectedNodeList_all, counter, affectedNodeList);
-		cout << "check3";
+		//cout << "check3";
 		filterAllAffected << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, affectedNodeList, counter, nodes);
 		cudaDeviceSynchronize();
+		totalAffectedNodes += *counter;
 	}
-
+	
 	auto stopTime2 = high_resolution_clock::now();//Time calculation ends
+	auto duration2B = duration_cast<microseconds>(stopTime2 - startTime2B);// duration calculation
+	cout << "**Time taken for updateNeighbors: "
+		<< float(duration2B.count()) / 1000 << " milliseconds**" << endl;
+
 	auto duration2 = duration_cast<microseconds>(stopTime2 - startTime2);// duration calculation
+	cout << "**Time taken for SSSP update STEP2: "
+		<< float(duration2.count()) / 1000 << " milliseconds**" << endl;
 	cout << "****Total Time taken for SSSP update: "
-		<< float(duration2.count()) / 1000 << " milliseconds****" << endl;
-
-
-	/*for (int i = 0; i < *counter_del; i++)
-	{
-		cout << "Only for Deletion=" << affectedNodeList_del[i] << endl;
-	}*/
+		<< (float(duration2.count()) + float(duration1.count())) / 1000 << " milliseconds****" << endl;
 
 
 
-	//    auto stopTime1 = high_resolution_clock::now();//Time calculation ends
-	//    auto duration1 = duration_cast<microseconds>(stopTime1 - startTime1);// duration calculation
-	//    cout << "**Time taken for STEP 1: "
-	//         << float(duration1.count()) / 1000 << " milliseconds**" << endl;
-	//
-	//    //Step 2 starts
-	//    auto startTime2 = high_resolution_clock::now(); //Time calculation start
-	//    change[0] = 1;
-	//    while (change[0] == 1) {
-	//        change[0] = 0;
-	//        cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
-	//        updateNeighbors_del << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, AdjListFull_device, AdjListTracker_device, change_d);
-	//        cudaMemcpy(change, change_d, 1 * sizeof(int), cudaMemcpyDeviceToHost);
-	//        cudaDeviceSynchronize();
-	//    }
-	//
-	//    //update the distance of neighbors and connect the disconnected subgraphs
-	//    change[0] = 1;
-	//    while (change[0] == 1) {
-	//        change[0] = 0;
-	//        cudaMemcpy(change_d, change, 1 * sizeof(int), cudaMemcpyHostToDevice);
-	//        updateNeighbors << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, inf, AdjListFull_device, AdjListTracker_device, change_d);
-	//        cudaMemcpy(change, change_d, 1 * sizeof(int), cudaMemcpyDeviceToHost);
-	//        cudaDeviceSynchronize();
-	//        its++;
-	//    }
-	//    auto stopTime2 = high_resolution_clock::now();//Time calculation ends
-	//    auto duration2 = duration_cast<microseconds>(stopTime2 - startTime2);// duration calculation
-	//    cout << "**Time taken for STEP 2: "
-	//         << float(duration2.count()) / 1000 << " milliseconds**" << endl;
-	//    printf("Total Iterations to Converge %d \n", its);
-	//    cout << "****Total Time taken for SSSP update: "
-	//         << float(duration1.count() + duration2.count()) / 1000 << " milliseconds****" << endl;
-	//
-	//
-	//    //print output:
-	//    printSSSP << <1, 1 >> > (SSSP, nodes);
-	//    cudaDeviceSynchronize();
+	cout << "Total affected nodes: " << totalAffectedNodes;
+
+	cout << "from GPU: \n[";
+	printSSSP << <1, 1 >> > (SSSP, nodes);
+	cudaDeviceSynchronize();
 	int x;
 	if (nodes < 40) {
 		x = nodes;
@@ -312,23 +288,28 @@ int main(int argc, char* argv[]) {
 	for (int i = 0; i < x; i++) {
 		cout << i << ":" << SSSP[i].Dist << " ";
 	}
-	//    cout << "]\n";
+	cout << "]\n";
 		//print output ends
 
 
 
-	//cudaFree(change_d);
+	if (zeroDelFlag != true) {
+		cudaFree(affectedNodeList_del);
+		cudaFree(updatedAffectedNodeList_del);
+		cudaFree(counter_del);
+		cudaFree(updated_counter_del);
+		cudaFree(allChange_Del_device);
+		
+	}
+	if (zeroInsFlag != true) {
+		cudaFree(allChange_Ins_device);
+	}
 	cudaFree(change);
 	cudaFree(affectedNodeList);
-	cudaFree(affectedNodeList_del);
-	cudaFree(updatedAffectedNodeList_del);
 	cudaFree(counter);
-	cudaFree(counter_del);
-	cudaFree(updated_counter_del);
 	cudaFree(AdjListTracker_device);
 	cudaFree(AdjListTracker_device);
-	cudaFree(allChange_Del_device);
-	cudaFree(allChange_Ins_device);
+
 	cudaFree(SSSP);
 	return 0;
 }

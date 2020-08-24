@@ -306,6 +306,20 @@ __global__ void updateNeighbors_del(RT_Vertex* SSSP, int* updated_counter_del, i
 				SSSP[myn].Dist = 999999;
 				SSSP[myn].Update = 1;
 
+				//Asynchrony code starts
+				//for (int k = AdjListTracker_device[myn]; k < AdjListTracker_device[myn + 1]; k++) {
+				//	int myn2 = AdjListFull_device[k].col;
+				//	int mywt2 = AdjListFull_device[k].wt;
+
+				//	if (mywt2 < 0) { continue; } //if mywt = -1, that means edge was deleted
+				//	if (SSSP[myn2].Parent == myn && SSSP[myn2].Dist != 999999) {
+				//		SSSP[myn2].Dist = 999999;
+				//		SSSP[myn2].Update = 1;
+				//		updatedEdgesList_del[atomicAdd(updated_counter_del, 1)] = myn2;
+				//	}
+				//}
+				//Asynchrony code stops
+
 				updatedEdgesList_del[atomicAdd(updated_counter_del, 1)] = myn;
 				//				changedEdgesList[atomicAdd(counter, 1)] = myn;
 				*change = 1;
