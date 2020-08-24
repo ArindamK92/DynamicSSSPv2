@@ -100,7 +100,7 @@ void readin_changes(char* myfile, vector<changeEdge>& allChange_Ins, vector<chan
 		cE.node2 = n2;
 		cE.edge_wt = wt;
 		cE.inst = inst_status;
-		
+
 
 		//add change edges with inst status = 1 to Adjlist
 		if (inst_status == 1)
