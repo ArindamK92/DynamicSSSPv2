@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
 		zeroInsFlag = true;
 	}
 	changeEdge* allChange_Ins_device;
-	if(zeroInsFlag != true){
+	if (zeroInsFlag != true) {
 		cudaStatus = cudaMallocManaged(&allChange_Ins_device, totalChangeEdges_Ins * sizeof(changeEdge));
 		if (cudaStatus != cudaSuccess) {
 			fprintf(stderr, "cudaMalloc failed at allChange_Ins structure");
@@ -143,7 +143,7 @@ int main(int argc, char* argv[]) {
 		<< float(duration_transfer.count()) / 1000 << " milliseconds**" << endl;
 
 
-	
+
 	//Reading SSSP Tree input and storing directly on unified memory
 	RT_Vertex* SSSP;
 	cudaStatus = cudaMallocManaged(&SSSP, nodes * sizeof(RT_Vertex));
@@ -210,30 +210,48 @@ int main(int argc, char* argv[]) {
 		<< float(duration1.count()) / 1000 << " milliseconds**" << endl;
 
 
-	
-	
+
+
 	//STEP2
 	auto startTime2 = high_resolution_clock::now();
+	int totalAffectedNodes_del = 0;
 
 	if (zeroDelFlag != true) {
 		//filter out the nodes affected by edge deletion
-		filterAffectedNodes << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, affectedNodeList, counter, nodes, affectedNodeList_del, counter_del);
+		filterAffectedNodes << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, affectedNodeList_del, counter_del);
 		cudaDeviceSynchronize();
 
+		//totalAffectedNodes_del = *counter_del;
 		*change = 1;
-		while (*change == 1) {
+		while (*change > 0) {
 			*change = 0;
 			//cout << "check d";
 			updateNeighbors_del << <(*counter_del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> >
 				(SSSP, updated_counter_del, updatedAffectedNodeList_del, affectedNodeList_del, counter_del, AdjListFull_device, AdjListTracker_device, change);
+			/*cudaDeviceSynchronize();
+			*counter_del = 0;*/
+			resetCounter << <1, 1 >> > (counter_del);
+			filterAffectedNodes << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, affectedNodeList_del, counter_del);
 			cudaDeviceSynchronize();
-			*counter_del = *updated_counter_del;
-			//cout << "check e";
-			copyArray << <(*counter_del / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (updatedAffectedNodeList_del, counter_del, affectedNodeList_del);
-			cudaDeviceSynchronize();
-			*updated_counter_del = 0;
+			//totalAffectedNodes_del += *counter_del;
+
 		}
 	}
+
+	////new addition
+	//if (zeroDelFlag != true) {
+	//	cudaDeviceSynchronize();
+	//	*change = 1;
+	//	while (*change > 0) {
+	//		*change = 0;
+	//		delX << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, nodes, change);
+	//		cudaDeviceSynchronize();
+
+	//	}
+	//}
+
+
+
 
 	auto stopTime2A = high_resolution_clock::now();//Time calculation ends
 	auto duration2A = duration_cast<microseconds>(stopTime2A - startTime2);// duration calculation
@@ -244,7 +262,7 @@ int main(int argc, char* argv[]) {
 
 	filterAllAffected << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, affectedNodeList, counter, nodes);
 	cudaDeviceSynchronize();
-	int totalAffectedNodes = 0;
+	//int totalAffectedNodes = 0;
 
 
 	*change = 1;
@@ -254,11 +272,14 @@ int main(int argc, char* argv[]) {
 		updateNeighbors << <(*counter / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, counter, affectedNodeList, AdjListFull_device, AdjListTracker_device, change);
 		//copyArray << <(*counter / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (updatedAffectedNodeList_all, counter, affectedNodeList);
 		//cout << "check3";
+		/*cudaDeviceSynchronize();
+		*counter = 0;*/
+		resetCounter << <1, 1 >> > (counter);
 		filterAllAffected << <(nodes / THREADS_PER_BLOCK) + 1, THREADS_PER_BLOCK >> > (SSSP, affectedNodeList, counter, nodes);
 		cudaDeviceSynchronize();
-		totalAffectedNodes += *counter;
+		//totalAffectedNodes += *counter;
 	}
-	
+
 	auto stopTime2 = high_resolution_clock::now();//Time calculation ends
 	auto duration2B = duration_cast<microseconds>(stopTime2 - startTime2B);// duration calculation
 	cout << "**Time taken for updateNeighbors: "
@@ -272,7 +293,7 @@ int main(int argc, char* argv[]) {
 
 
 
-	cout << "Total affected nodes: " << totalAffectedNodes;
+	cout << "Total affected nodes by Delete edge only: " << totalAffectedNodes_del<<endl;
 
 	cout << "from GPU: \n[";
 	printSSSP << <1, 1 >> > (SSSP, nodes);
@@ -289,7 +310,7 @@ int main(int argc, char* argv[]) {
 		cout << i << ":" << SSSP[i].Dist << " ";
 	}
 	cout << "]\n";
-		//print output ends
+	//print output ends
 
 
 
@@ -299,7 +320,7 @@ int main(int argc, char* argv[]) {
 		cudaFree(counter_del);
 		cudaFree(updated_counter_del);
 		cudaFree(allChange_Del_device);
-		
+
 	}
 	if (zeroInsFlag != true) {
 		cudaFree(allChange_Ins_device);

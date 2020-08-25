@@ -1,0 +1,67 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o Gsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=06:00:00
+#SBATCH --mem=32000M
+
+
+echo "start"
+
+
+echo "./test_sssp_10.2_x86_64 market rmat25_1M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_1M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_1M_75.mtx --src=0 --device=0 --undirected=1" > /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_1M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_1M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_1M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_1M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_1M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_1M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_1M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+
+echo "./test_sssp_10.2_x86_64 market rmat25_5M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_5M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_5M_75.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_5M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_5M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_5M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_5M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_5M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_5M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_5M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+
+
+echo "./test_sssp_10.2_x86_64 market rmat25_10M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_10M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_10M_75.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_10M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_10M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_10M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_10M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_10M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_10M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_10M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+
+echo "./test_sssp_10.2_x86_64 market rmat25_50M_100.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_50M_100.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_50M_75.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_50M_75.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_50M_50.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_50M_50.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_50M_25.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_50M_25.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+echo "./test_sssp_10.2_x86_64 market rmat25_50M_0.mtx --src=0 --device=0 --undirected=1" >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+./test_sssp_10.2_x86_64 market rmat25_50M_0.mtx --src=0 --device=0 --undirected=1 >> /home/akkcm/DataNew/Result/gunrock_rmat25_final_v1.txt
+
+
+
+
+
+
+
+echo "completed"
+

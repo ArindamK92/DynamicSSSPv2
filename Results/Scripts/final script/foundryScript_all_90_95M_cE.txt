@@ -1,0 +1,57 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o Gsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=04:00:00
+#SBATCH --mem=32000M
+
+
+echo "start"
+
+./op_changeEdge baidu100_w_sorted_f 2141301 5000000 90 > cE_baidu100_5M_90
+./op_changeEdge baidu100_w_sorted_f 2141301 5000000 95 > cE_baidu100_5M_95
+./op_changeEdge baidu100_w_sorted_f 2141301 1000000 90 > cE_baidu100_1M_90
+./op_changeEdge baidu100_w_sorted_f 2141301 1000000 95 > cE_baidu100_1M_95
+
+./op_changeEdge flickr100_w_sorted_f 2302926  5000000 90 > cE_flickr100_5M_90
+./op_changeEdge flickr100_w_sorted_f 2302926  5000000 95 > cE_flickr100_5M_95
+./op_changeEdge flickr100_w_sorted_f 2302926  1000000 90 > cE_flickr100_1M_90
+./op_changeEdge flickr100_w_sorted_f 2302926  1000000 95 > cE_flickr100_1M_95
+
+./op_changeEdge hollywood-2009_wp_sor 1069112 5000000 90 > hollywood-2009_cE_5M_90
+./op_changeEdge hollywood-2009_wp_sor 1069112 5000000 95 > hollywood-2009_cE_5M_95
+./op_changeEdge hollywood-2009_wp_sor 1069112 1000000 90 > hollywood-2009_cE_1M_90
+./op_changeEdge hollywood-2009_wp_sor 1069112 1000000 95 > hollywood-2009_cE_1M_95
+
+./op_changeEdge soc-orkut_wp_sor 2997166 5000000 90 > soc-orkut_cE_5M_90
+./op_changeEdge soc-orkut_wp_sor 2997166 5000000 95 > soc-orkut_cE_5M_95
+./op_changeEdge soc-orkut_wp_sor 2997166 1000000 90 > soc-orkut_cE_1M_90
+./op_changeEdge soc-orkut_wp_sor 2997166 1000000 95 > soc-orkut_cE_1M_95
+
+
+./op_changeEdge baidu100_w_sorted_f 2141301 10000000 90 > cE_baidu100_10M_90
+./op_changeEdge baidu100_w_sorted_f 2141301 10000000 95 > cE_baidu100_10M_95
+
+
+./op_changeEdge flickr100_w_sorted_f 2302926  10000000 90 > cE_flickr100_10M_90
+./op_changeEdge flickr100_w_sorted_f 2302926  10000000 95 > cE_flickr100_10M_95
+
+
+./op_changeEdge hollywood-2009_wp_sor 1069112 10000000 90 > hollywood-2009_cE_10M_90
+./op_changeEdge hollywood-2009_wp_sor 1069112 10000000 95 > hollywood-2009_cE_10M_95
+
+
+./op_changeEdge soc-orkut_wp_sor 2997166 10000000 90 > soc-orkut_cE_10M_90
+./op_changeEdge soc-orkut_wp_sor 2997166 10000000 95 > soc-orkut_cE_10M_95
+
+./op_changeEdge ../R24/rmat248_sorted_ext 16777215 10000000 90 > ../R24/changedEdges_r24_10M_90
+./op_changeEdge ../R24/rmat248_sorted_ext 16777215 10000000 95 > ../R24/changedEdges_r24_10M_95
+./op_changeEdge ../R24/rmat248_sorted_ext 16777215 5000000 90 > ../R24/changedEdges_r24_5M_90
+./op_changeEdge ../R24/rmat248_sorted_ext 16777215 5000000 95 > ../R24/changedEdges_r24_5M_95
+./op_changeEdge ../R24/rmat248_sorted_ext 16777215 1000000 90 > ../R24/changedEdges_r24_1M_90
+./op_changeEdge ../R24/rmat248_sorted_ext 16777215 1000000 95 > ../R24/changedEdges_r24_1M_95
+
+echo "completed"

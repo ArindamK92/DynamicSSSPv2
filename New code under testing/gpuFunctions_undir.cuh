@@ -122,23 +122,40 @@ __global__ void processChangedEdges(changeEdge* allChange_device, int* Edgedone,
 }
 
 
-__global__ void filterAffectedNodes(RT_Vertex* SSSP, int* changedEdgesList, int* counter, int nodes, int* changedEdgesList_del, int* counter_del)
+__global__ void filterAffectedNodes(RT_Vertex* SSSP, int nodes, int* affectedNodeList_del, int* counter_del)
 {
 	int i = threadIdx.x + blockIdx.x * blockDim.x;
 	if (i < nodes) {
-		//		if (SSSP[i].Update == 2) {
-		////			printf("counter %d=\n", *counter);
-		//			changedEdgesList[atomicAdd(counter, 1)] = i;
-		//		}
+		
 		if (SSSP[i].Update == 1) {
 			//			printf("counter %d=\n", *counter);
-			changedEdgesList_del[atomicAdd(counter_del, 1)] = i;
+			affectedNodeList_del[atomicAdd(counter_del, 1)] = i;
 			//			changedEdgesList[atomicAdd(counter, 1)] = i;
 		}
+		//new addition
+		/*if (SSSP[i].Update != 1 && SSSP[SSSP[i].Parent].Dist == 999999) {
+			SSSP[i].Update = 1;
+			SSSP[i].Dist = 999999;
+			affectedNodeList_del[atomicAdd(counter_del, 1)] = i;
+		}*/
 
 	}
 
 }
+
+//__global__ void delX(RT_Vertex* SSSP, int nodes, int* change)
+//{
+//	int i = threadIdx.x + blockIdx.x * blockDim.x;
+//	if (i < nodes) {
+//		if (SSSP[i].Update != 1 && SSSP[SSSP[i].Parent].Dist == 999999) {
+//			SSSP[i].Update = 1;
+//			SSSP[i].Dist = 999999;
+//			*change = 1;
+//		}
+//
+//	}
+//
+//}
 
 
 
@@ -294,19 +311,21 @@ It marks the child nodes also as disconnected nodes
 
 __global__ void updateNeighbors_del(RT_Vertex* SSSP, int* updated_counter_del, int* updatedEdgesList_del, int* changedEdgesList_del, int* counter_del, ColWt* AdjListFull_device, int* AdjListTracker_device, int* change) {
 	int index = threadIdx.x + blockIdx.x * blockDim.x;
+	int tmpValueforIndex = changedEdgesList_del[index];
 
-
-	if (index < *counter_del && SSSP[changedEdgesList_del[index]].Dist == 999999) {
-		for (int j = AdjListTracker_device[changedEdgesList_del[index]]; j < AdjListTracker_device[changedEdgesList_del[index] + 1]; j++) {
+	if (index < *counter_del /*&& SSSP[tmpValueforIndex].Dist == 999999*/) {
+		SSSP[tmpValueforIndex].Update = 2; 
+		for (int j = AdjListTracker_device[tmpValueforIndex]; j < AdjListTracker_device[tmpValueforIndex + 1]; j++) {
 			int myn = AdjListFull_device[j].col;
 			int mywt = AdjListFull_device[j].wt;
 			if (mywt < 0) { continue; } //if mywt = -1, that means edge was deleted
 
 			if (SSSP[myn].Parent == changedEdgesList_del[index] && SSSP[myn].Dist != 999999) {
 				SSSP[myn].Dist = 999999;
-				SSSP[myn].Update = 1;
+				SSSP[myn].Update = 1;  //uncomment this if not using asynchrony
 
 				//Asynchrony code starts
+				//SSSP[myn].Update = 2;
 				//for (int k = AdjListTracker_device[myn]; k < AdjListTracker_device[myn + 1]; k++) {
 				//	int myn2 = AdjListFull_device[k].col;
 				//	int mywt2 = AdjListFull_device[k].wt;
@@ -315,14 +334,14 @@ __global__ void updateNeighbors_del(RT_Vertex* SSSP, int* updated_counter_del, i
 				//	if (SSSP[myn2].Parent == myn && SSSP[myn2].Dist != 999999) {
 				//		SSSP[myn2].Dist = 999999;
 				//		SSSP[myn2].Update = 1;
-				//		updatedEdgesList_del[atomicAdd(updated_counter_del, 1)] = myn2;
+				//		//updatedEdgesList_del[atomicAdd(updated_counter_del, 1)] = myn2;
 				//	}
 				//}
 				//Asynchrony code stops
 
-				updatedEdgesList_del[atomicAdd(updated_counter_del, 1)] = myn;
+				//updatedEdgesList_del[atomicAdd(updated_counter_del, 1)] = myn;
 				//				changedEdgesList[atomicAdd(counter, 1)] = myn;
-				*change = 1;
+				* change = 1;
 			}
 
 		}
@@ -333,6 +352,13 @@ __global__ void copyArray(int* updatedEdgesList_del, int* counter_del, int* chan
 	if (index < *counter_del) {
 		changedEdgesList_del[index] = updatedEdgesList_del[index];
 
+	}
+}
+
+__global__ void resetCounter(int* counter) {
+	int index = threadIdx.x + blockIdx.x * blockDim.x;
+	if (index == 0) {
+		*counter = 0;
 	}
 }
 
@@ -363,7 +389,19 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int* counter, int* affectedNode
 					SSSP[tmpValueforIndex].Dist = SSSP[myn].Dist + mywt;
 					SSSP[tmpValueforIndex].Update = 2;
 					SSSP[tmpValueforIndex].Parent = myn;
-					*change = 1;
+					//Asynchrony code starts
+						//for (int i = AdjListTracker_device[tmpValueforIndex]; i < AdjListTracker_device[tmpValueforIndex + 1]; i++) {
+						//	int myn2 = AdjListFull_device[i].col;
+						//	int mywt2 = AdjListFull_device[i].wt;
+
+						//	if (mywt2 < 0) { continue; } //if mywt = -1, that means edge was deleted
+						//	if (SSSP[myn2].Parent == tmpValueforIndex) {
+						//		SSSP[myn2].Dist = SSSP[tmpValueforIndex].Dist + mywt2;
+						//		SSSP[myn2].Update = 2;
+						//	}
+						//}
+						//Asynchrony code ends
+					* change = 1;
 					continue;
 				}
 			}
@@ -373,7 +411,19 @@ __global__ void updateNeighbors(RT_Vertex* SSSP, int* counter, int* affectedNode
 					SSSP[myn].Dist = SSSP[tmpValueforIndex].Dist + mywt;
 					SSSP[myn].Update = 2;
 					SSSP[myn].Parent = tmpValueforIndex;
-					*change = 1;
+					//Asynchrony code starts
+						//for (int i = AdjListTracker_device[myn]; i < AdjListTracker_device[myn + 1]; i++) {
+						//	int myn2 = AdjListFull_device[i].col;
+						//	int mywt2 = AdjListFull_device[i].wt;
+
+						//	if (mywt2 < 0) { continue; } //if mywt = -1, that means edge was deleted
+						//	if (SSSP[myn2].Parent == myn) {
+						//		SSSP[myn2].Dist = SSSP[myn].Dist + mywt2;
+						//		SSSP[myn2].Update = true;
+						//	}
+						//}
+					//Asynchrony code ends
+					* change = 1;
 				}
 
 			}

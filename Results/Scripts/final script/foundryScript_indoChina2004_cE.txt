@@ -1,0 +1,46 @@
+#!/bin/bash
+#SBATCH -J Cuda_Job
+#SBATCH -p cuda
+#SBATCH -o dsssp-%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=02:00:00
+#SBATCH --mem=24000M
+
+
+echo "start"
+
+
+./op_changeEdge indochina-2004 7414866 5000000 100 > indochina-2004_cE_5M_100
+./op_changeEdge indochina-2004 7414866 5000000 75 > indochina-2004_cE_5M_75
+./op_changeEdge indochina-2004 7414866 5000000 50 > indochina-2004_cE_5M_50
+./op_changeEdge indochina-2004 7414866 5000000 25 > indochina-2004_cE_5M_25
+./op_changeEdge indochina-2004 7414866 5000000 0 > indochina-2004_cE_5M_0
+
+./op_changeEdge indochina-2004 7414866 50000000 100 > indochina-2004_cE_50M_100
+./op_changeEdge indochina-2004 7414866 50000000 75 > indochina-2004_cE_50M_75
+./op_changeEdge indochina-2004 7414866 50000000 50 > indochina-2004_cE_50M_50
+./op_changeEdge indochina-2004 7414866 50000000 25 > indochina-2004_cE_50M_25
+./op_changeEdge indochina-2004 7414866 50000000 0 > indochina-2004_cE_50M_0
+
+./op_changeEdge indochina-2004 7414866 1000000 100 > indochina-2004_cE_1M_100
+./op_changeEdge indochina-2004 7414866 1000000 75 > indochina-2004_cE_1M_75
+./op_changeEdge indochina-2004 7414866 1000000 50 > indochina-2004_cE_1M_50
+./op_changeEdge indochina-2004 7414866 1000000 25 > indochina-2004_cE_1M_25
+./op_changeEdge indochina-2004 7414866 1000000 0 > indochina-2004_cE_1M_0
+
+./op_changeEdge indochina-2004 7414866 10000000 100 > indochina-2004_cE_10M_100
+./op_changeEdge indochina-2004 7414866 10000000 75 > indochina-2004_cE_10M_75
+./op_changeEdge indochina-2004 7414866 10000000 50 > indochina-2004_cE_10M_50
+./op_changeEdge indochina-2004 7414866 10000000 25 > indochina-2004_cE_10M_25
+./op_changeEdge indochina-2004 7414866 10000000 0 > indochina-2004_cE_10M_0
+
+./op_changeEdge indochina-2004 7414866 25000000 100 > indochina-2004_cE_25M_100
+./op_changeEdge indochina-2004 7414866 25000000 75 > indochina-2004_cE_25M_75
+./op_changeEdge indochina-2004 7414866 25000000 50 > indochina-2004_cE_25M_50
+./op_changeEdge indochina-2004 7414866 25000000 25 > indochina-2004_cE_25M_25
+./op_changeEdge indochina-2004 7414866 25000000 0 > indochina-2004_cE_25M_0
+
+
+echo "completed"
