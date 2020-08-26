@@ -1,0 +1,390 @@
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_5M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9231059 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 3362687 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 404.441 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 216972 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.03 milliseconds**
+**Time taken for updateNeighbors_del: 0 milliseconds**
+**Time taken for updateNeighbors: 111.015 milliseconds**
+**Time taken for SSSP update STEP2: 111.017 milliseconds**
+****Total Time taken for SSSP update: 111.047 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:4:5155 5:5:153641 6:5:153641 7:5:153641 8:5:207215 9:5:214343 10:5:18 11:5:358405 12:5:285919 13:5:406944 14:5:600589 15:5:583157 16:5:18 17:5:487305 18:4:365480 19:5:18 20:4:295150 21:4:303997 22:5:487870 23:5:18 24:4:306763 25:4:204694 26:4:788932 27:4:49 28:4:49 29:4:49 30:4:49 31:4:49 32:4:49 33:4:49 34:4:49 35:4:49 36:4:49 37:4:191223 38:4:49 39:4:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:4 5:5 6:5 7:5 8:5 9:5 10:5 11:5 12:5 13:5 14:5 15:5 16:5 17:5 18:4 19:5 20:4 21:4 22:5 23:5 24:4 25:4 26:4 27:4 28:4 29:4 30:4 31:4 32:4 33:4 34:4 35:4 36:4 37:4 38:4 39:4 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_5M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9222307 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:3750000
+Time taken to read input changed edges: 2937164 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 384.964 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 216464 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.031 milliseconds**
+**Time taken for updateNeighbors_del: 155.362 milliseconds**
+**Time taken for updateNeighbors: 22.612 milliseconds**
+**Time taken for SSSP update STEP2: 177.987 milliseconds**
+****Total Time taken for SSSP update: 178.018 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:5:153641 5:5:153641 6:5:153641 7:5:153641 8:5:207215 9:5:214343 10:5:108712 11:5:108712 12:4:285919 13:5:406944 14:5:600589 15:5:583157 16:5:108712 17:5:487305 18:5:365480 19:5:108712 20:4:295150 21:4:86109 22:5:108712 23:5:108712 24:4:306763 25:5:108712 26:4:788436 27:4:49 28:4:49 29:4:49 30:4:49 31:4:49 32:4:49 33:4:49 34:4:49 35:4:49 36:4:49 37:4:49 38:4:49 39:4:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:5 5:5 6:5 7:5 8:5 9:5 10:5 11:5 12:4 13:5 14:5 15:5 16:5 17:5 18:5 19:5 20:4 21:4 22:5 23:5 24:4 25:5 26:4 27:4 28:4 29:4 30:4 31:4 32:4 33:4 34:4 35:4 36:4 37:4 38:4 39:4 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_5M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9222107 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 2568202 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 373.042 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 216670 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.034 milliseconds**
+**Time taken for updateNeighbors_del: 195.492 milliseconds**
+**Time taken for updateNeighbors: 23.865 milliseconds**
+**Time taken for SSSP update STEP2: 219.37 milliseconds**
+****Total Time taken for SSSP update: 219.404 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:4:584809 5:5:153641 6:5:153641 7:5:153641 8:4:108712 9:4:108712 10:4:108712 11:4:108712 12:4:285919 13:4:108712 14:4:108712 15:4:108712 16:4:108712 17:4:108712 18:4:108712 19:5:12081 20:4:108712 21:4:812258 22:4:108712 23:4:108712 24:4:108712 25:4:170017 26:4:788932 27:4:707219 28:4:707219 29:4:707219 30:4:707219 31:4:707219 32:4:707219 33:5:785139 34:5:40 35:5:40 36:5:40 37:5:49 38:5:40 39:5:40 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:4 5:5 6:5 7:5 8:4 9:4 10:4 11:4 12:4 13:4 14:4 15:4 16:4 17:4 18:4 19:5 20:4 21:4 22:4 23:4 24:4 25:4 26:4 27:4 28:4 29:4 30:4 31:4 32:4 33:5 34:5 35:5 36:5 37:5 38:5 39:5 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_5M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9238021 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1250000
+Time taken to read input changed edges: 1976727 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 370.554 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 216188 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.033 milliseconds**
+**Time taken for updateNeighbors_del: 235.415 milliseconds**
+**Time taken for updateNeighbors: 19.077 milliseconds**
+**Time taken for SSSP update STEP2: 254.504 milliseconds**
+****Total Time taken for SSSP update: 254.537 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:5:153641 5:5:153641 6:5:160467 7:5:153641 8:5:108712 9:5:108712 10:5:92246 11:5:108712 12:4:285919 13:5:108712 14:5:108712 15:5:12 16:5:335786 17:5:487305 18:5:108712 19:5:108712 20:5:108712 21:5:108712 22:5:108712 23:5:108712 24:5:108712 25:5:108712 26:5:788436 27:5:653564 28:5:339707 29:5:653564 30:5:310659 31:5:1042715 32:5:710959 33:5:565590 34:5:388969 35:6:722604 36:5:495051 37:5:770670 38:6:653537 39:6:608320 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:5 5:5 6:5 7:5 8:5 9:5 10:5 11:5 12:4 13:5 14:5 15:5 16:5 17:5 18:5 19:5 20:5 21:5 22:5 23:5 24:5 25:5 26:5 27:5 28:5 29:5 30:5 31:5 32:5 33:5 34:5 35:6 36:5 37:5 38:6 39:6 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_5M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9212254 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 1421176 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 360.142 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 216355 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.026 milliseconds**
+**Time taken for updateNeighbors_del: 281.488 milliseconds**
+**Time taken for updateNeighbors: 13.905 milliseconds**
+**Time taken for SSSP update STEP2: 295.407 milliseconds**
+****Total Time taken for SSSP update: 295.433 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:1 4:5:153641 5:5:153641 6:6:4 7:5:153641 8:6:26 9:6:26 10:6:26 11:6:26 12:6:26 13:6:26 14:6:26 15:6:26 16:6:26 17:6:26 18:6:26 19:6:26 20:6:26 21:6:26 22:6:26 23:6:26 24:6:26 25:6:26 26:5:788436 27:6:653564 28:6:653564 29:6:653564 30:6:653564 31:7:389644 32:6:653564 33:7:653537 34:7:653537 35:7:49 36:7:653537 37:7:653537 38:7:653537 39:7:653537 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:5 5:5 6:6 7:5 8:6 9:6 10:6 11:6 12:6 13:6 14:6 15:6 16:6 17:6 18:6 19:6 20:6 21:6 22:6 23:6 24:6 25:6 26:5 27:6 28:6 29:6 30:6 31:7 32:6 33:7 34:7 35:7 36:7 37:7 38:7 39:7 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_1M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9241486 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:1000000
+Time taken to read input changed edges: 1186133 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 320.829 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 216954 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.028 milliseconds**
+**Time taken for updateNeighbors_del: 0 milliseconds**
+**Time taken for updateNeighbors: 87.17 milliseconds**
+**Time taken for SSSP update STEP2: 87.172 milliseconds**
+****Total Time taken for SSSP update: 87.2 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:5:153641 5:5:153641 6:5:153641 7:5:153641 8:6:26 9:5:307685 10:6:26 11:6:26 12:5:285919 13:6:26 14:6:26 15:6:26 16:6:26 17:5:487305 18:6:26 19:6:26 20:6:26 21:6:26 22:6:26 23:6:26 24:6:26 25:6:26 26:5:788436 27:5:653564 28:5:653564 29:5:653564 30:5:653564 31:5:670649 32:5:487874 33:6:49 34:6:49 35:6:49 36:6:49 37:5:555028 38:6:49 39:6:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:5 5:5 6:5 7:5 8:6 9:5 10:6 11:6 12:5 13:6 14:6 15:6 16:6 17:5 18:6 19:6 20:6 21:6 22:6 23:6 24:6 25:6 26:5 27:5 28:5 29:5 30:5 31:5 32:5 33:6 34:6 35:6 36:6 37:5 38:6 39:6 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_1M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9217293 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:750000
+Time taken to read input changed edges: 1058086 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 315.652 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 220475 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.029 milliseconds**
+**Time taken for updateNeighbors_del: 105.881 milliseconds**
+**Time taken for updateNeighbors: 11.333 milliseconds**
+**Time taken for SSSP update STEP2: 117.241 milliseconds**
+****Total Time taken for SSSP update: 117.27 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:5:153641 5:5:153641 6:5:153641 7:5:153641 8:6:26 9:5:307685 10:6:26 11:6:26 12:6:26 13:6:26 14:6:26 15:6:26 16:6:26 17:6:26 18:6:26 19:6:26 20:6:26 21:6:26 22:6:26 23:6:26 24:6:26 25:6:26 26:5:788436 27:5:653564 28:5:653564 29:5:653564 30:5:653564 31:5:670649 32:5:653564 33:6:49 34:6:49 35:6:49 36:6:49 37:5:555028 38:6:49 39:6:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:5 5:5 6:5 7:5 8:6 9:5 10:6 11:6 12:6 13:6 14:6 15:6 16:6 17:6 18:6 19:6 20:6 21:6 22:6 23:6 24:6 25:6 26:5 27:5 28:5 29:5 30:5 31:5 32:5 33:6 34:6 35:6 36:6 37:5 38:6 39:6 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_1M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9251781 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:500000
+Time taken to read input changed edges: 945874 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 313.446 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 219889 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.03 milliseconds**
+**Time taken for updateNeighbors_del: 113.224 milliseconds**
+**Time taken for updateNeighbors: 12.021 milliseconds**
+**Time taken for SSSP update STEP2: 125.277 milliseconds**
+****Total Time taken for SSSP update: 125.307 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:5:153641 5:5:153641 6:5:153641 7:5:153641 8:6:26 9:5:307685 10:6:26 11:6:26 12:6:26 13:6:26 14:6:26 15:6:26 16:6:26 17:6:26 18:6:26 19:6:26 20:6:26 21:6:26 22:6:26 23:6:26 24:6:26 25:6:26 26:5:788436 27:5:653564 28:5:653564 29:5:653564 30:5:653564 31:6:49 32:5:653564 33:6:49 34:6:49 35:6:49 36:6:49 37:6:49 38:6:49 39:6:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:5 5:5 6:5 7:5 8:6 9:5 10:6 11:6 12:6 13:6 14:6 15:6 16:6 17:6 18:6 19:6 20:6 21:6 22:6 23:6 24:6 25:6 26:5 27:5 28:5 29:5 30:5 31:6 32:5 33:6 34:6 35:6 36:6 37:6 38:6 39:6 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_1M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9229259 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:250000
+Time taken to read input changed edges: 782198 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 314.901 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 217683 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.041 milliseconds**
+**Time taken for updateNeighbors_del: 125.074 milliseconds**
+**Time taken for updateNeighbors: 10.867 milliseconds**
+**Time taken for SSSP update STEP2: 135.954 milliseconds**
+****Total Time taken for SSSP update: 135.995 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:1 4:5:153641 5:5:153641 6:5:153641 7:5:153641 8:6:26 9:5:307685 10:6:26 11:6:26 12:6:26 13:6:26 14:6:26 15:6:26 16:6:26 17:6:26 18:6:26 19:6:26 20:6:26 21:6:26 22:6:26 23:6:26 24:6:26 25:6:26 26:5:788436 27:6:49 28:6:49 29:6:49 30:6:49 31:6:49 32:6:49 33:6:49 34:6:49 35:6:49 36:6:653537 37:6:49 38:6:49 39:6:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:5 5:5 6:5 7:5 8:6 9:5 10:6 11:6 12:6 13:6 14:6 15:6 16:6 17:6 18:6 19:6 20:6 21:6 22:6 23:6 24:6 25:6 26:5 27:6 28:6 29:6 30:6 31:6 32:6 33:6 34:6 35:6 36:6 37:6 38:6 39:6 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_1M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9217881 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 529300 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 309.182 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 216286 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.027 milliseconds**
+**Time taken for updateNeighbors_del: 131.084 milliseconds**
+**Time taken for updateNeighbors: 8.502 milliseconds**
+**Time taken for SSSP update STEP2: 139.613 milliseconds**
+****Total Time taken for SSSP update: 139.64 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:2:1 4:5:153641 5:5:153641 6:5:153641 7:5:153641 8:6:26 9:6:26 10:6:26 11:6:26 12:6:26 13:6:26 14:6:26 15:6:26 16:6:26 17:6:26 18:6:26 19:6:26 20:6:26 21:6:26 22:6:26 23:6:26 24:6:26 25:6:26 26:5:788436 27:6:49 28:6:49 29:6:49 30:6:49 31:6:49 32:6:49 33:6:49 34:6:49 35:6:49 36:7:33 37:6:49 38:6:49 39:6:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:2 4:5 5:5 6:5 7:5 8:6 9:6 10:6 11:6 12:6 13:6 14:6 15:6 16:6 17:6 18:6 19:6 20:6 21:6 22:6 23:6 24:6 25:6 26:5 27:6 28:6 29:6 30:6 31:6 32:6 33:6 34:6 35:6 36:7 37:6 38:6 39:6 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_10M_100
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9372911 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:10000000
+Time taken to read input changed edges: 6483423 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 504.687 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 217256 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.027 milliseconds**
+**Time taken for updateNeighbors_del: 0 milliseconds**
+**Time taken for updateNeighbors: 127.368 milliseconds**
+**Time taken for SSSP update STEP2: 127.369 milliseconds**
+****Total Time taken for SSSP update: 127.396 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:4:5155 5:4:810231 6:4:161020 7:4:810231 8:4:108712 9:4:108712 10:4:108712 11:4:153455 12:4:152547 13:4:108712 14:4:108712 15:4:108712 16:4:33203 17:4:25187 18:4:365480 19:4:108712 20:4:295150 21:4:108712 22:4:789537 23:4:410664 24:4:193259 25:4:331545 26:4:3254 27:4:59809 28:4:312805 29:4:719939 30:3:431010 31:4:32039 32:4:204440 33:4:335325 34:4:27167 35:4:158147 36:4:859360 37:4:49 38:4:889822 39:4:700615 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:4 5:4 6:4 7:4 8:4 9:4 10:4 11:4 12:4 13:4 14:4 15:4 16:4 17:4 18:4 19:4 20:4 21:4 22:4 23:4 24:4 25:4 26:4 27:4 28:4 29:4 30:3 31:4 32:4 33:4 34:4 35:4 36:4 37:4 38:4 39:4 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_10M_75
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9218709 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:7500000
+Time taken to read input changed edges: 5707768 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 490.175 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 217049 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.045 milliseconds**
+**Time taken for updateNeighbors_del: 221.821 milliseconds**
+**Time taken for updateNeighbors: 30.924 milliseconds**
+**Time taken for SSSP update STEP2: 252.772 milliseconds**
+****Total Time taken for SSSP update: 252.817 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:4:132093 5:4:444471 6:4:145682 7:4:130401 8:4:108712 9:4:307685 10:4:665892 11:4:1027140 12:4:9059 13:4:1025277 14:4:792707 15:4:644879 16:4:955690 17:4:25187 18:4:113670 19:4:207184 20:4:486528 21:4:812258 22:4:108712 23:4:47108 24:4:108712 25:4:170017 26:4:789710 27:4:707219 28:4:312805 29:4:707219 30:3:431010 31:4:707219 32:4:707219 33:4:785139 34:4:612878 35:4:49 36:4:49 37:4:49 38:4:889822 39:4:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:4 5:4 6:4 7:4 8:4 9:4 10:4 11:4 12:4 13:4 14:4 15:4 16:4 17:4 18:4 19:4 20:4 21:4 22:4 23:4 24:4 25:4 26:4 27:4 28:4 29:4 30:3 31:4 32:4 33:4 34:4 35:4 36:4 37:4 38:4 39:4 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_10M_50
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9212981 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:5000000
+Time taken to read input changed edges: 4983926 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 457.092 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 217634 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.04 milliseconds**
+**Time taken for updateNeighbors_del: 291.569 milliseconds**
+**Time taken for updateNeighbors: 26.345 milliseconds**
+**Time taken for SSSP update STEP2: 317.927 milliseconds**
+****Total Time taken for SSSP update: 317.967 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:1:0 2:1:0 3:1:0 4:4:584809 5:5:153641 6:5:153641 7:4:340044 8:4:108712 9:4:108712 10:4:108712 11:4:358405 12:4:108712 13:4:108712 14:4:600589 15:4:108712 16:4:335786 17:4:108712 18:4:108712 19:5:12081 20:4:108712 21:4:812258 22:4:108712 23:4:108712 24:4:108712 25:4:170017 26:4:788932 27:4:707219 28:4:707219 29:4:707219 30:4:707219 31:4:707219 32:4:707219 33:4:49 34:4:49 35:4:49 36:4:49 37:4:49 38:4:49 39:4:49 ]
+from CPU: 
+[0:0 1:1 2:1 3:1 4:4 5:5 6:5 7:4 8:4 9:4 10:4 11:4 12:4 13:4 14:4 15:4 16:4 17:4 18:4 19:5 20:4 21:4 22:4 23:4 24:4 25:4 26:4 27:4 28:4 29:4 30:4 31:4 32:4 33:4 34:4 35:4 36:4 37:4 38:4 39:4 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_10M_25
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9227002 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:2500000
+Time taken to read input changed edges: 3918442 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 444.86 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 217324 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.033 milliseconds**
+**Time taken for updateNeighbors_del: 368.515 milliseconds**
+**Time taken for updateNeighbors: 24.734 milliseconds**
+**Time taken for SSSP update STEP2: 393.276 milliseconds**
+****Total Time taken for SSSP update: 393.309 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:2:2 2:1:0 3:1:0 4:4:584809 5:5:153641 6:5:153641 7:5:153641 8:4:108712 9:4:108712 10:4:108712 11:4:108712 12:4:108712 13:4:108712 14:4:108712 15:4:108712 16:4:108712 17:4:108712 18:4:108712 19:5:12081 20:4:108712 21:4:812258 22:4:108712 23:4:108712 24:4:108712 25:4:170017 26:4:108712 27:4:707219 28:4:707219 29:4:707219 30:4:707219 31:4:707219 32:4:707219 33:5:785139 34:5:49 35:5:722604 36:5:40 37:5:49 38:5:40 39:5:296309 ]
+from CPU: 
+[0:0 1:2 2:1 3:1 4:4 5:5 6:5 7:5 8:4 9:4 10:4 11:4 12:4 13:4 14:4 15:4 16:4 17:4 18:4 19:5 20:4 21:4 22:4 23:4 24:4 25:4 26:4 27:4 28:4 29:4 30:4 31:4 32:4 33:5 34:5 35:5 36:5 37:5 38:5 39:5 ]
+./op_mainLatest hollywood-2009_wp_sor 1069112 29142494 SSSPhollywood-2009 hollywood-2009_cE_10M_0
+Reading input graph...
+Reading input graph completed
+Time taken to read input graph: 9214917 microseconds
+Reading input changed edges data...
+Reading input changed edges data completed. totalInsertion:0
+Time taken to read input changed edges: 2827971 microseconds
+creating 1D array from 2D to fit it in GPU
+creating 1D array from 2D completed
+Transferring graph data from CPU to GPU
+**Time taken to transfer graph data from CPU to GPU: 420.008 milliseconds**
+Reading input SSSP tree data...
+Reading input SSSP tree data completed
+Time taken to read input input SSSP tree: 219102 microseconds
+reading input data completed
+**Time taken for SSSP update STEP1: 0.026 milliseconds**
+**Time taken for updateNeighbors_del: 471.32 milliseconds**
+**Time taken for updateNeighbors: 14.94 milliseconds**
+**Time taken for SSSP update STEP2: 486.286 milliseconds**
+****Total Time taken for SSSP update: 486.312 milliseconds****
+Total affected nodes by Delete edge only: 0
+from GPU: 
+[from GPU:
+[0:0:0 1:2:2 2:1:0 3:2:219137 4:5:153641 5:5:153641 6:6:4 7:5:153641 8:6:26 9:6:26 10:6:108712 11:6:26 12:6:26 13:6:26 14:6:26 15:6:26 16:6:26 17:6:108712 18:6:26 19:6:26 20:6:26 21:6:26 22:6:26 23:6:26 24:6:26 25:6:26 26:5:788436 27:6:653564 28:6:653564 29:6:707219 30:6:653564 31:7:27 32:6:653564 33:7:653537 34:7:653537 35:7:49 36:8:33 37:7:653537 38:7:653537 39:7:653537 ]
+from CPU: 
+[0:0 1:2 2:1 3:2 4:5 5:5 6:6 7:5 8:6 9:6 10:6 11:6 12:6 13:6 14:6 15:6 16:6 17:6 18:6 19:6 20:6 21:6 22:6 23:6 24:6 25:6 26:5 27:6 28:6 29:6 30:6 31:7 32:6 33:7 34:7 35:7 36:8 37:7 38:7 39:7 ]
